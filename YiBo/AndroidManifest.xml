@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+ 	android:installLocation="auto"
+	package="net.dev123.yibo"
+	android:versionName="2.2.3" 
+	android:versionCode="2020">
+	<application android:name="YiBoApplication"
+	    android:icon="@drawable/icon"
+	    android:label="@string/app_name"
+		android:debuggable="false">
+		<activity android:name="HomePageActivity"
+		    android:label="@string/app_name"
+			android:theme="@style/Common_Theme"
+			android:launchMode="singleTask"
+			android:alwaysRetainTaskState="true"
+			android:windowSoftInputMode="stateUnspecified|adjustPan"
+			android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<action android:name="net.dev123.yibo.MAIN" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name="SplashActivity"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true">
+		    <intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name="AccountsActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="PassportActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="AddAccountActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="AuthorizeActivity"
+		    android:screenOrientation="behind"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="SettingActivity"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="MicroBlogActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="EditMicroBlogActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:windowSoftInputMode="stateVisible|adjustResize"
+		    android:configChanges="orientation|keyboardHidden" >
+		    <intent-filter android:label="@string/app_name">
+				<action android:name="android.intent.action.SEND">
+				</action>
+				<category android:name="android.intent.category.DEFAULT">
+				</category>
+				<data android:mimeType="image/*">
+				</data>
+			</intent-filter>
+			<intent-filter android:label="@string/app_name"	>
+				<action	android:name="android.intent.action.SEND">
+				</action>
+				<category android:name="android.intent.category.DEFAULT">
+				</category>
+				<data android:mimeType="text/plain">
+				</data>
+			</intent-filter>
+		</activity>
+
+		<activity android:name="EditRetweetActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:windowSoftInputMode="stateVisible|adjustResize"
+		    android:configChanges="orientation|keyboardHidden" >
+		</activity>
+
+		<activity android:name="EditCommentActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:windowSoftInputMode="stateVisible|adjustResize"
+		    android:configChanges="orientation|keyboardHidden" >
+		</activity>
+
+		<activity android:name="ProfileEditActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden" >
+		</activity>
+
+		<activity android:name="ProfileActivity"
+		     android:screenOrientation="behind"
+		     android:theme="@style/Common_Theme"
+		     android:configChanges="orientation|keyboardHidden">
+             <intent-filter>
+                 <action android:name="android.intent.action.VIEW" />
+                 <category android:name="android.intent.category.DEFAULT" />
+                 <category android:name="android.intent.category.BROWSABLE" />
+                 <data android:scheme="yibo" android:host="info"/>
+             </intent-filter>
+		</activity>
+
+		<activity android:name="ConversationActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:windowSoftInputMode="stateHidden|adjustResize"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+		<activity android:name="EditDirectMessageActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:windowSoftInputMode="stateVisible|adjustResize"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="SocialGraphActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		    <intent-filter>
+				<action android:name="net.dev123.yibo.SOCIAL_GRAPH" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name="GroupActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="GroupMemberActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:windowSoftInputMode="stateHidden"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="MyStatusesActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="MyFavoritesActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="ImageWebViewerActivity"
+		    android:screenOrientation="behind"
+			android:theme="@style/Common_Theme"
+			android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="ImageViewerActivity"
+		    android:screenOrientation="behind"
+			android:theme="@style/Common_Theme"
+			android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="CropImageActivity"
+		    android:screenOrientation="behind"
+			android:theme="@style/Common_Theme"
+			android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="ImageViewer4GifActivity"
+		    android:label="@string/app_image_viewer"
+		    android:screenOrientation="behind"
+			android:theme="@style/Common_Theme"
+            android:process=":image"
+	        android:launchMode="singleInstance"
+			android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+                 <action android:name="android.intent.action.VIEW" />
+                 <category android:name="android.intent.category.DEFAULT" />
+                 <category android:name="android.intent.category.BROWSABLE" />
+                 <data android:scheme="file"/>
+                 <data android:mimeType="image/*" />
+             </intent-filter>
+		</activity>
+
+		<activity android:name="SearchActivity"
+		    android:screenOrientation="behind"
+			android:theme="@style/Common_Theme"
+			android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+                 <action android:name="android.intent.action.VIEW" />
+                 <category android:name="android.intent.category.DEFAULT" />
+                 <category android:name="android.intent.category.BROWSABLE" />
+                 <data android:scheme="yibo" android:host="topic"/>
+             </intent-filter>
+             <intent-filter>
+                 <action android:name="android.intent.action.SEARCH" />
+             </intent-filter>
+             <meta-data android:name="android.app.searchable"
+                 android:resource="@xml/searchable"/>
+		</activity>
+
+		<activity android:name="HotTopicsActivity"
+		    android:screenOrientation="behind"
+			android:theme="@style/Common_Theme"
+			android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="HotStatusesActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+		
+		<activity android:name="StatusSubscribeActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+		
+		<activity android:name="UserTopicsActivity"
+            android:screenOrientation="behind"
+            android:theme="@style/Common_Theme"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+        <activity android:name="UserTopicStatusesActivity"
+            android:screenOrientation="behind"
+            android:theme="@style/Common_Theme"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+
+      	<activity android:name="UserQuickSelectorActivity"
+      	    android:screenOrientation="behind"
+      	    android:theme="@style/Common_Theme"
+      	    android:configChanges="orientation|keyboardHidden"
+      	    android:windowSoftInputMode="stateHidden">
+		</activity>
+
+		<activity android:name="PublicTimelineActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+
+		<activity android:name="ThemeActivity"
+		    android:screenOrientation="behind"
+		    android:theme="@style/Common_Theme"
+		    android:configChanges="orientation|keyboardHidden">
+		</activity>
+		
+		<service android:name="AutoUpdateService">
+		</service>
+
+        <receiver android:name="RollerWidget">
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_roller" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="net.dev123.action.update_widget" />
+            </intent-filter>
+        </receiver>
+        <service android:name="RollerWidgetService">
+		</service>
+
+        <provider android:name="SearchCatalogProvider"
+            android:authorities="me.yibo.search">
+        </provider>
+
+        <meta-data android:name="android.app.default_searchable"
+            android:value=".SearchActivity" />
+
+
+		<meta-data android:value="4cfcf9853ea7a35e89026260" android:name="UMENG_APPKEY" />
+		<!-- 发布渠道属性值请勿更改，使用Ant进行打包时会自行替换为相应渠道 -->
+		<meta-data android:value="{publish_channel}" android:name="UMENG_CHANNEL"/>
+		
+		<!-- 万普 -->
+		<activity android:name="com.waps.OffersWebView" android:configChanges="keyboardHidden|orientation" />
+		<meta-data android:name="WAPS_ID" android:value="e29a3e28ea4a56beddb071f0b619a067" />
+		
+		
+	</application>
+
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <supports-screens android:largeScreens="true" android:anyDensity="true" />
+
+	<uses-sdk android:minSdkVersion="4" />
+	<uses-sdk android:targetSdkVersion="8" />
+	<!-- 
+	<uses-sdk android:maxSdkVersion="15" />
+	 -->
+</manifest>
