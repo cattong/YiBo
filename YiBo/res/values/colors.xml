@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Commons -->
+	<color name="transparent">#0FFF</color>
+	<color name="black">#000000</color>
+	<color name="white">#FFFFFF</color>
+	<color name="red">#FF0000</color>
+
+    <color name="background">#f0f4f7</color><!-- 面板背景颜色 -->
+    <color name="background_content">#EDF4FA</color><!-- 部分面板的背景颜色 -->
+	<color name="content">#000000</color><!-- 内容文字的主颜色 -->
+	<color name="content_half_alpha">#80000000</color><!-- 内容文字半透明 -->
+	<color name="highlight">#3188d5</color><!-- 高度区域的颜色  #2078c8-->
+	<color name="highlight_bg">#b8d8f8</color><!-- 高度区域的背景颜色 -->
+	<color name="link">#2078c8</color><!-- 链接,##,@的颜色 -->
+	<color name="link_bg">#b8d8f8</color><!-- 链接,##,@的背景颜色 -->
+	<color name="emphasize">#5986d3</color><!-- 强调区域颜色，如需突出的部分，时间或转发评论 -->
+	<color name="remind">#f0a820</color><!-- 提醒色，未读时间 -->
+    <color name="quote">#666666</color><!-- 引用区域的颜色 -->
+    <color name="remark">#b0b0b1</color><!-- 备注的颜色 -->
+    <color name="header_title">#ffffff</color><!-- 头部标题的颜色 -->
+    <color name="header_title_disabled">#80ffffff</color>
+    <color name="header_action">#ffffff</color><!-- 头部动作按钮的颜色 -->
+    <color name="header_action_disabled">#80ffffff</color><!-- 头部动作不可用按钮的颜色 -->
+    <color name="action_negative">#000000</color><!-- 消极按钮的文字颜色 -->
+    <color name="action_negative_disabled">#80000000</color><!-- 消极按钮不可用的文字颜色 -->
+    <color name="action_positive">#ffffff</color><!-- 积极按钮的文字颜色 -->
+    <color name="action_positive_disabled">#80ffffff</color><!-- 积极按钮不可用的文字颜色 -->
+    <color name="personal_count">#297acc</color><!-- 显示醒目数量 -->
+    
+    <!-- ListView item背景 -->
+    <color name="list_item_normal">#edf4fa</color>
+    <color name="list_item_highline">#edf4fa</color>
+    <color name="list_item_focused">#dbe8f3</color>
+    <color name="list_item_pressed">#dbe8f3</color>
+    <color name="list_item_disabled">#dbe8f3</color>
+    <color name="list_item_more">#e5eaee</color>
+    
+    <!-- 框选项背景 -->
+    <color name="frame_item_normal">#FFF</color>
+    <color name="frame_item_focused">#dadee6</color>
+    <color name="frame_item_pressed">#dadee6</color>
+    <color name="frame_item_disabled">#FFF</color>
+
+    <!-- APP -->
+    <color name="list_item_app_name">#6f7375</color>
+    
+    <!-- status -->
+    <color name="list_status_time_readed">#5986d3</color>
+    <color name="list_status_time_unreaded">#f0a820</color>
+    <color name="home_blog_time_readed">#a9aaab</color>
+    <color name="home_blog_time_unreaded">#f0a820</color>
+    
+    <!-- comment -->
+    <color name="comment_time">#808080</color>
+    <color name="comment_count">#808080</color>
+    
+    <!-- personal -->
+    <color name="personal_header_normal">#fff5d9</color>
+    <color name="personal_header_pressed">#f3e2ae</color>
+
+    <!-- Edit MicroBlog/Comment/Retweet-->
+    <color name="status_capability">#FFFFFF</color>
+    
+    <!-- widget -->
+    <color name="widget_dialog_list_choose_item">#f1e0d1</color>
+    <color name="widget_dialog_tweet_progress_screen_name">#e1e1e1</color>
+    <color name="widget_dialog_tweet_progress_sp_name">#767371</color>
+</resources>

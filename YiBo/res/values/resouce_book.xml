@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gender_book">
+        <item>Gender.UNKNOW[0]=Unknown</item>
+        <item>Gender.MALE[1]=Male</item>
+        <item>Gender.FEMALE[2]=Female</item>
+    </string-array>
+	<string-array name="code_book">
+		<item>ExceptionCode.UNKNOWN_EXCEPTION[2]=Unknown exception, pleas try again later!</item>
+		<item>ExceptionCode.PARAMETER_ERROR[3]=Operation failed for parameters exception!</item>
+		<item>ExceptionCode.PARAMETER_NULL[4]=Some Parameters are null, Operation is abandoned!</item>
+
+		<!-- Http协议异常 -->
+		<item>HttpStatus.SC_BAD_REQUEST[400]=Bad request, please check the the request</item>
+		<item>HttpStatus.SC_UNAUTHORIZED[401]=Authentication failed</item>
+		<item>HttpStatus.SC_FORBIDDEN[403]=The server is refusing the request, or unauthorized access</item>
+		<item>HttpStatus.SC_NOT_FOUND[404]=Requested resource not found, please check the request</item>
+		<item>HttpStatus.SC_REQUEST_TIMEOUT[408]=Request timed out, please try again later</item>
+		<item>HttpStatus.SC_INTERNAL_SERVER_ERROR[500]=Internal server error, can not complete your request, please try again later</item>
+		<item>HttpStatus.SC_BAD_GATEWAY[502]=Server is down or being upgraded</item>
+		<item>HttpStatus.SC_SERVICE_UNAVAILABLE[503]=Service temporarily unavailable, server is overloaded or down for maintenance, please try again later</item>
+
+		<!-- YiBo应用的异常代号 -->
+		<item>ExceptionCode.UNSUPPORTED_API[1000]=Unsupported API</item>
+		<item>ExceptionCode.FILE_NOT_FOUND[1001]=File not found</item>
+		<item>ExceptionCode.NOT_A_FILE[1002]=Not a file</item>
+
+		<item>ExceptionCode.NET_ISSUE[1100]=Operation failed due to network issues, please check your network connection</item>
+		<item>ExceptionCode.NET_SOCKET_TIME_OUT[1101]=Operation failed due to connection timed out</item>
+		<item>ExceptionCode.I_O_EXCEPTION[1102]=Network communication error, please try again later</item>
+		<item>ExceptionCode.NETWORK_UNCONNECTED[1103]=Network is unconnected, please check your network connection</item>
+		<item>ExceptionCode.CLIENT_PROTOCOL_EXCEPTION[1110]=Client protocol exception</item>
+
+		<item>ExceptionCode.URL_MALFORMED_ERROR[2010]=Malformed url</item>
+		<item>ExceptionCode.URI_SYNTAX_ERROR[2011]=Uri syntax error</item>
+		<item>ExceptionCode.JSON_PARSE_ERROR[2020]=JSON parse exception</item>
+		<item>ExceptionCode.DATE_PARSE_ERROR[2030]=Date parse exception</item>
+		<item>ExceptionCode.OAUTH_EXCEPTION[2040]=OAuth certificate authority error</item>
+
+		<item>ExceptionCode.NET_HTTPS_UNDER_CMWAP[3000]=Https is unsupported in CMWAP</item>
+		<item>ExceptionCode.AUTH_TOKEN_IS_NULL[3001]=Auth token is null</item>
+		<item>ExceptionCode.ACCOUNT_IS_EXIST[3002]=Account already exists</item>
+		<item>ExceptionCode.TOKEN_MISMATCH[3003]=Token mismatch</item>
+
+		<!-- OAuth异常 -->
+		<item>ExceptionCode.OAUTH_AUTHORIZATION_REQUIRED[60000]=OAuth authorization required</item>
+		<item>ExceptionCode.OAUTH_VERSION_REJECTED[60001]=OAuth version rejected</item>
+		<item>ExceptionCode.OAUTH_PARAMETER_ABSENT[60002]=OAuth parameter absent</item>
+		<item>ExceptionCode.OAUTH_PARAMETER_REJECTED[60003]=OAuth parameter rejected</item>
+		<item>ExceptionCode.OAUTH_TIMESTAMP_REFUSED[60004]=OAuth timestamp refused, please adjust the system clock and time zone</item>
+		<item>ExceptionCode.OAUTH_SIGNATURE_METHOD_REJECTED[60005]=OAuth signature method rejected</item>
+		<item>ExceptionCode.OAUTH_NONCE_USED[60006]=OAuth nonce used</item>
+		<item>ExceptionCode.OAUTH_TOKEN_USED[60007]=OAuth token used</item>
+		<item>ExceptionCode.OAUTH_TOKEN_EXPIRED[60008]=OAuth token expired</item>
+		<item>ExceptionCode.OAUTH_TOKEN_REVOKED[60009]=OAuth token revoked</item>
+		<item>ExceptionCode.OAUTH_TOKEN_REJECTED[60010]=OAuth token rejected</item>
+		<item>ExceptionCode.OAUTH_TOKEN_NOT_AUTHORIZED[60011]=OAuth token not authorized</item>
+		<item>ExceptionCode.OAUTH_SIGNATURE_INVALID[60012]=OAuth signature invalid</item>
+		<item>ExceptionCode.OAUTH_CONSUMER_KEY_UNKNOWN[60013]=Unknown application key, please re-add this account</item>
+		<item>ExceptionCode.OAUTH_CONSUMER_KEY_REJECTED[60014]=OAuth consumer key rejected</item>
+		<item>ExceptionCode.OAUTH_ADDITIONAL_AUTHORIZATION_REQUIRED[60015]=OAuth additional authorization required</item>
+		<item>ExceptionCode.OAUTH_PERMISSION_UNKNOWN[60016]=OAuth permission unknown</item>
+		<item>ExceptionCode.OAUTH_PERMISSION_DENIED[60017]=OAuth permission denied</item>
+		<item>ExceptionCode.OAUTH_USER_REFUSED[60018]=OAuth user refused</item>
+		<item>ExceptionCode.OAUTH_CONSUMER_KEY_REFUSED[60019]=OAuth consumer key refused</item>
+
+		<!-- MicroBlog异常 -->
+		<item>MicroBlog.API_PARAMS_ERROR[40001]=Parameters error, please refer to the api document for more info</item>
+		<item>MicroBlog.API_NOT_OWNER[40001]=Not the owner, permission denied</item>
+        <item>MicroBlog.API_FORMAT_UNSUPPORT[40007]=Unsupported format</item>
+        <item>MicroBlog.API_INTERNAL_ERROR[40028]=Internal error</item>
+        <item>MicroBlog.API_DOMAIN_ERROR[40043]=Domain parameter error</item>
+        <item>MicroBlog.API_APPKEY_EMPTY[40044]=Appkey wanted</item>
+        <item>MicroBlog.API_APPKEY_SOURCE_EMPTY[40022]=source parameter needed</item>
+        <item>MicroBlog.API_PARAM_ERROR[40054]=Parameter error, please refer to the api document</item>
+        <item>MicroBlog.API_SIGNATURE_INVALID[40107]=signature invalid</item>
+        <item>MicroBlog.API_HTTP_METHOD_UNSUPPORT[40307]=Unsupported http method</item>
+        <item>MicroBlog.API_RATE_LIMITED[40312]=You have been rate limited, please try again soon later</item>
+        <item>MicroBlog.API_INVOKE_RATE_TOO_QUICK[40401]=Invoke rate too quick, please try again soon later</item>
+        <item>MicroBlog.API_SEARCH_RATE_LIMITED[40402]=You have been rate limited, please try again soon later</item>
+
+
+        <item>MicroBlog.API_USER_NOT_EXIST[40023]=User not exists</item>
+        <item>MicroBlog.API_USER_PARAM_ERROR[40026]=Please pass right user parameter</item>
+        <item>MicroBlog.API_USER_S_T_NOT_EXIST[40033]=source user or target user not exists</item>
+        <item>MicroBlog.API_UID_EMPTY[40041]=uid is null</item>
+		<item>MicroBlog.API_USER_NOT_FOLLOWING[40071]=user_id must be one of your followings</item>
+		<item>MicroBlog.API_USER_ID_EMPTY[40069]=user_id is null</item>
+
+		<item>MicroBlog.API_CONTENT_EMPTY[40012]=Content is null</item>
+		<item>MicroBlog.API_CONTENT_OVER_LENGTH[40013]=Content over length</item>
+		<item>MicroBlog.API_CONTENT_ILLEGAL[40076]=Content may contains illegal words, spammings, or advertisement</item>
+
+		<item>MicroBlog.API_TWEET_NOT_EXIST[40031]=Tweet not exists or deleted</item>
+		<item>MicroBlog.API_TWEET_NOT_OWNER[40036]=Not the owner of the tweet</item>
+		<item>MicroBlog.API_TWEET_ILLEGAL[40038]=Illegal tweet</item>
+		<item>MicroBlog.API_TWEET_REPEAT[40025]=Duplicated content</item>
+		<item>MicroBlog.API_TWEET_ID_EMPTY[40016]=Tweet id is null</item>
+		<item>MicroBlog.API_TWEET_OVER_THRESHOLD[40308]=Update tweet out of rate limit</item>
+		<item>MicroBlog.API_TWEET_RETWEET_SELF[40034]=Can not retweet your own</item>
+
+		<item>MicroBlog.API_IMAGE_UPLOAD_ERROR[40009]=Image upload error, make sure you use the multipart request</item>
+		<item>MicroBlog.API_IMAGE_FORMAT_UNSUPPORT[40045]=Unsupported image format, only accept jpg gif and png</item>
+		<item>MicroBlog.API_IMAGE_OVER_SIZE[40008]=Image file over size, the maximum size is 5M </item>
+
+		<item>MicroBlog.API_MESSAGE_NOT_EXIST[40010]=Message not exists</item>
+		<item>MicroBlog.API_MESSAGE_LIMITED[40011]=Send Message out of rate limit</item>
+		<item>MicroBlog.API_MESSAGE_RECEIVER_NOT_FOLLOWER[40017]=The receiver is not your follower</item>
+		<item>MicroBlog.API_MESSAGE_ILLEGAL[40019]=Illegal message</item>
+		<item>MicroBlog.API_MESSAGE_NOT_OWNER[40021]=Not the message owner</item>
+
+		<item>MicroBlog.API_COMMENT_NOT_OWNER[40015]=Not the comment owner</item>
+		<item>MicroBlog.API_COMMENT_ID_EMPTY[40020]=Comment id is null</item>
+		<item>MicroBlog.API_COMMENT_ILLEGAL[40037]=Illegal Comment</item>
+		<item>MicroBlog.API_COMMENT_OVER_THRESHOLD[40305]=Update comment out of rate limit</item>
+
+		<item>MicroBlog.API_ALREADY_FOLLOWED[40303]=Already followed</item>
+
+		<item>MicroBlog.API_IDS_EMPTY[40018]=Ids is null</item>
+		<item>MicroBlog.API_IDS_TOO_MANY[40024]=Ids too many</item>
+
+		<item>MicroBlog.API_LIST_NAME_TOO_LONG[40032]=List name is too long,make sure the name is within 10 characters</item>
+		<item>MicroBlog.API_LIST_DESC_TOO_LONG[40030]=List description is too long,make sure the description is within 70 characters</item>
+		<item>MicroBlog.API_LIST_NOT_EXIST[40035]=List not exists</item>
+		<item>MicroBlog.API_LIST_NAME_DUPLICATED[40061]=Duplicated list name</item>
+		<item>MicroBlog.API_LIST_ID_TOO_LONG[40062]=List id is too long</item>
+		<item>MicroBlog.API_LIST_CREATE_FAILED[40074]=List create failed</item>
+
+		<item>MicroBlog.API_GEO_PARAM_ERROR[40039]=Geo parameters error</item>
+		<item>MicroBlog.API_DB_RECORD_EXISTS[40059]=Database insert failed, record already exists</item>
+		<item>MicroBlog.API_DB_ERROR[40060]=Database insert failed, please contact the administrator</item>
+		<item>MicroBlog.API_URLS_EMPTY[40063]=Urls is null</item>
+		<item>MicroBlog.API_URLS_TOO_MANY[40064]=Too many urls</item>
+		<item>MicroBlog.API_URL_EMPTY[40066]=Url is null</item>
+		<item>MicroBlog.API_IP_LIMITED[40040]=Your IP is limited, can not request the resource</item>
+		<item>MicroBlog.API_IP_EMPTY[40065]=IP is null</item>
+
+		<item>MicroBlog.API_TREND_NAME_EMPTY[40067]=trend_name is null</item>
+		<item>MicroBlog.API_TREND_ID_EMPTY[40068]=trend_id is null</item>
+
+		<item>MicroBlog.API_GROUP_PRIVATE_UNSUPPORT[40073]=Private group is unsupported now</item>
+		<item>MicroBlog.API_GROUP_PRIVATE_SUPPORT_ONLY[40084]=Only private group is supported now</item>
+		<item>MicroBlog.API_CATEGORY_INVALID[40082]=Invalid category</item>
+		<item>MicroBlog.API_STATUS_CODE_INVALID[40083]=Invalid status code</item>
+
+		<item>MicroBlog.API_SOCIAL_GRAPH_OVER[40304]=Operation on social graph have been rate limited</item>
+		<item>MicroBlog.API_TAG_EMPTY[40027]=TAG is empty</item>
+
+		<item>MicroBlog.API_AUTH_VERIFIER_ERROR[40029]=OAuth verifier error</item>
+		<item>MicroBlog.API_AUTH_TOKEN_EMPTY[40042]=OAuth token is empty</item>
+		<item>MicroBlog.API_AUTH_REMOVED[40072]=Authorization has been removed</item>
+		<item>MicroBlog.API_AUTH_TIME_STAMP_ERROR[40104]=OAuth timestamp error, please adjust the system clock and time zone</item>
+		<item>MicroBlog.API_AUTH_TOKEN_EXPIRED[40111]=OAuth token expired</item>
+		<item>MicroBlog.API_AUTH_PIN_VERIFY_FAILED[40114]=OAuth pin verify failed</item>
+		<item>MicroBlog.API_AUTH_PASSWORD_INVALID[40309]=Password incorrect</item>
+		<item>MicroBlog.API_AUTH_VERIFY_OVER_THRESHOLD[40306]=Username and password auth out of rate limit</item>
+
+		<item>MicroBlog.API_INSUFFICIENT_PRIVILEGES[40053]=Insufficient privileges, only owner allowed</item>
+		<item>MicroBlog.API_PERMISSION_NEED_ADMIN[40075]=Insufficient privileges, only system administrator allowed</item>
+		<item>MicroBlog.API_PERMISSION_REMIND_FAILED[40084]=Notification failed, need permission</item>
+		<item>MicroBlog.API_PERMISSION_ACCESS_LIMITED[40070]=Access limited, we suggest that you should delete the account and re-add it!</item>
+		<item>MicroBlog.API_PERMISSION_NEED_HIGH_LEVEL[40314]=Permission denied! Need a high level appkey</item>
+
+		<!-- 扩展错误代号 -->
+		<item>MicroBlog.API_PERMISSION_ACCESS_DENIED[40500]=Access denied! </item>
+		<item>MicroBlog.API_USER_IS_FOLLOWING[40510]=You are following the User! </item>
+		<item>MicroBlog.API_USER_SCREEN_NAME_EXIST[40511]=Screen name is used by other</item>
+		<item>MicroBlog.API_ITEM_NOT_EXIST[40520]=Item not exist or deleted.</item>
+		<item>MicroBlog.API_ITEM_REVIEWING[40530]=Item reviewing.</item>
+
+		<!-- YiBoMe 服务异常代号 -->
+		<item>YiBoMe.SERVER_ERROR[50000]=Unknown internal error</item>
+		<item>YiBoMe.USERNAME_NULL[50001]=Username is empty</item>
+		<item>YiBoMe.USERNAME_INVALID[50002]=Username is invalid</item>
+		<item>YiBoMe.USERNAME_EXISTS[50003]=Username already exists</item>
+		<item>YiBoMe.PASSWORD_NULL[50004]=Password is empty</item>
+		<item>YiBoMe.PASSWORD_INVALID[50005]=Password is invalid</item>
+		<item>YiBoMe.CONFIRMED_PASSWORD_NULL[50006]=Confirmed password is empty</item>
+		<item>YiBoMe.CONFIRMED_PASSWORD_UNMATCH[50007]=Confirmed password is unmatched </item>
+		<item>YiBoMe.EMAIL_NULL[50008]=Email is emtpy</item>
+		<item>YiBoMe.EMAIL_INVALID[50009]=Email is invalid</item>
+		<item>YiBoMe.USERNAME_NOT_EXISTS[50010]=Username is not exists</item>
+		<item>YiBoMe.PASSWORD_INCORRECT[50011]=Password incorrect</item>
+		<item>YiBoMe.PASSPORT_INACTIVE[50012]=Passport inactive</item>
+		<item>YiBoMe.PASSPORT_FROZEN[50013]=Passport is frozen</item>
+		<item>YiBoMe.PASSPORT_REVOKED[50014]=Passport is revoked</item>
+		<item>YiBoMe.ACCOUNTS_NULL[50015]=Accounts is null</item>
+		<item>YiBoMe.GROUPS_NULL[50016]=Groups is null</item>
+		<item>YiBoMe.SP_NULL[50017]=Service Provider is null</item>
+		<item>YiBoMe.GROUP_ID_NULL[50018]=Group_Id is null</item>
+		<item>YiBoMe.USERS_NULL[50019]=Users is null</item>
+		<item>YiBoMe.SP_INVALID[50020]=Invalid Service Provider</item>
+		<item>YiBoMe.GROUP_NOT_FOUND[50021]=Group not found</item>
+		<item>YiBoMe.GROUP_ID_INVALID[50022]=Invalid Group Id</item>
+		<item>YiBoMe.EMAIL_EXISTS[50023]=Email already exists</item>
+        <item>YiBoMe.SYNC_ACCOUNT_NULL[50024]=Sync account is null</item>
+        <item>YiBoMe.SYNC_ACCOUNT_NOT_EXIST[50025]=Sync account not exist</item>
+        <item>YiBoMe.PASSPORT_POINTS_NOT_ENOUGH[50026]=point not enough</item>
+	</string-array>
+</resources>

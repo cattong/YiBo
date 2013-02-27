@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llRoot"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	style="@style/panel_background">
+
+    <include layout="@layout/include_secondary_header_base"/>
+
+    <LinearLayout
+    	android:id="@+id/llYiBoPassport"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal"
+    	android:gravity="center"
+    	android:padding="8sp"
+    	android:background="@drawable/selector_bg_profile_header">
+		<ImageView
+		    android:id="@+id/ivPassportPicture"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="0"
+			android:src="@drawable/icon_header_default" />
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_marginLeft="8sp"
+		 	android:orientation="vertical"
+		 	android:layout_weight="1">
+		 	<TextView 
+		 	    android:id="@+id/tvPassportUsername"
+		 		android:layout_width="fill_parent"
+		 		android:layout_height="wrap_content"
+		 		android:ellipsize="end"
+		 		android:text="@string/label_passport_username"
+		 		style="@style/header_passport_username"/>
+		 	<TextView 
+		 	    android:id="@+id/tvUsageDescription"
+		 		android:layout_width="fill_parent"
+		 		android:layout_height="wrap_content"
+		 		android:maxLines="2"
+		 		android:text="@string/hint_passport_usage"
+		 		style="@style/header_passport_desc"/>
+		 </LinearLayout>
+		 <Button 
+		     android:id="@+id/btnPassport"
+		 	 android:layout_width="wrap_content"
+		 	 android:layout_height="wrap_content"
+		 	 android:minWidth="78sp"
+		 	 android:text="@string/btn_passport_login"
+		 	 style="@style/btn_action_positive" />
+    </LinearLayout>
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:scrollbars="none"
+		android:padding="0sp" >
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:padding="8sp"
+			android:orientation="vertical" >
+			<ListView 
+			    android:id="@+id/lvAccounts"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8sp"
+				android:padding="0sp"
+				android:scrollbars="none"
+				android:listSelector="@color/selector_list_item"
+				android:footerDividersEnabled="true"
+				android:background="@drawable/bg_frame_normal"
+				android:divider="@drawable/line_seperator"
+				android:cacheColorHint="@android:color/transparent"	>
+			</ListView>
+
+			<LinearLayout 
+			    android:id="@+id/llAddAccountFrame"
+			    android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="1sp"
+				android:background="@drawable/bg_frame_normal">
+				<LinearLayout 
+				    android:id="@+id/llAddAccount"
+				    android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:padding="8sp"
+					android:layout_gravity="center_vertical"
+					android:orientation="horizontal"
+					android:background="@drawable/selector_frame_item_all_corner">
+				    <ImageView 
+				        android:id="@+id/ivAddAccount"
+				        android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:src="@drawable/icon_account_add_normal"
+					    android:paddingRight="8sp"/>
+					<TextView 
+					    android:id="@+id/tvAddAccount"
+					    android:layout_width="fill_parent"
+					    android:layout_height="fill_parent"
+					    android:layout_weight="1"
+					    android:text="@string/label_accounts_add"
+					    android:gravity="center_vertical"
+					    style="@style/list_account_screen_name" />
+					<ImageView 
+					    android:id="@+id/ivAddAccountMore"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:src="@drawable/icon_more_detail"
+					    android:layout_gravity="center_vertical" />
+				</LinearLayout>
+			</LinearLayout>
+
+		</LinearLayout>
+	</ScrollView>
+
+	<LinearLayout
+	    android:id="@+id/llFooterAction"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:paddingLeft="12sp"
+		android:paddingRight="12sp"
+		android:paddingTop="8sp"
+		android:paddingBottom="8sp"
+		android:background="@drawable/bg_footer_action" >
+		<ImageView
+		    android:id="@+id/ivAccountSync"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/icon_account_sync_normal" />
+		<LinearLayout
+			android:layout_height="fill_parent"
+			android:layout_width="wrap_content"
+			android:layout_marginLeft="8sp"
+		 	android:orientation="vertical"
+		 	android:gravity="center_vertical"
+		 	android:layout_weight="1">
+		 	<TextView
+		 	    android:id="@+id/tvAccountSync"
+		 		android:layout_width="wrap_content"
+		 		android:layout_height="fill_parent"
+		 		android:layout_weight="1"
+		 		android:gravity="center_vertical"
+		 		android:ellipsize="end"
+		 		android:textColor="@color/content"
+		 		android:textStyle="bold"
+		 		android:textSize="14sp"
+		 		android:text="@string/label_accounts_sync" />
+		 	<TextView 
+		 	    android:id="@+id/tvLastSyncTime"
+		 		android:layout_width="wrap_content"
+		 		android:layout_height="fill_parent"
+		 		android:layout_weight="1"
+		 		android:ellipsize="end"
+		 		android:textColor="@color/content"
+		 		android:textSize="12sp"
+		 		android:visibility="gone"/>
+		 </LinearLayout>
+		 <Button
+		 	 android:id="@+id/btnAccountSync"
+		 	 android:layout_height="wrap_content"
+		 	 android:layout_width="wrap_content"
+		 	 android:minWidth="78sp"
+		 	 android:enabled="false"
+		 	 android:text="@string/btn_accounts_sync"
+		 	 style="@style/btn_action_negative" />
+	</LinearLayout>
+
+</LinearLayout>

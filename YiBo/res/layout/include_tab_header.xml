@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llTabHeader"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:layout_margin="0sp"
+	android:paddingLeft="6sp"
+	android:paddingRight="6sp"
+	android:paddingTop="8sp"
+	android:paddingBottom="8sp"
+	android:orientation="vertical"
+	android:background="@drawable/bg_header_corner_tab">
+        
+    <LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="4sp"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+		<Button android:id="@+id/btnTabLeft"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:padding="4sp"
+			android:text="@string/label_tab_all"
+			android:gravity="center"
+			style="@style/tab_toggle_left" />
+		<Button android:id="@+id/btnTabRight"
+		    android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:padding="4sp"
+			android:text="@string/label_tab_group"
+			android:gravity="center"
+			style="@style/tab_toggle_right" />
+	</LinearLayout>
+</LinearLayout>

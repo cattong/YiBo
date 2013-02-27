@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llToolbar"
+    android:layout_width="fill_parent"
+	android:layout_height="wrap_content" 
+	android:layout_weight="0"
+	android:background="@drawable/bg_toolbar"
+	android:orientation="horizontal">
+
+    <LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1" 
+		android:gravity="center"
+		android:orientation="vertical">
+		<Button android:id="@+id/btnComment"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_toolbar_comment"
+			android:layout_alignParentLeft="true">
+		</Button>
+	</LinearLayout>
+	
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1" 
+		android:gravity="center"
+		android:orientation="vertical">
+		<Button android:id="@+id/btnRetweet"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_toolbar_retweet"
+			android:layout_alignParentRight="true">
+		</Button>
+    </LinearLayout>
+	
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1" 
+		android:gravity="center"
+		android:orientation="vertical">
+		<Button android:id="@+id/btnFavorite"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_toolbar_favorite_add"
+			android:layout_centerHorizontal="true"
+			>
+		</Button>
+	</LinearLayout>
+	
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1" 
+		android:gravity="center"
+		android:orientation="vertical">
+		<Button android:id="@+id/btnShare"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_toolbar_share"
+			android:layout_centerHorizontal="true">
+		</Button>
+	</LinearLayout>
+	
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1" 
+		android:gravity="center"
+		android:orientation="vertical">
+		<Button android:id="@+id/btnMore"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/selector_toolbar_more"
+			android:layout_centerHorizontal="true">
+		</Button>
+	</LinearLayout>
+	
+</LinearLayout>

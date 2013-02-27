@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHeader"
+    android:layout_width="fill_parent"
+	android:layout_height="wrap_content" 
+	android:orientation="horizontal"
+	android:gravity="center_vertical"
+	android:clickable="true"
+	android:background="@drawable/bg_header">
+    <include layout="@layout/include_home_page_header_base" />
+    
+	<include layout="@layout/include_home_page_header_message" />
+</LinearLayout>

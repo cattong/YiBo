@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_pull_to_refresh">下拉可以更新</string>
+    <string name="label_release_to_refresh">松开即可更新</string>
+    <string name="label_refreshing">加载中...</string>
+    <string name="label_pull_to_refresh_tap">点击或下拉进行更新</string>
+</resources>

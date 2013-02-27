@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+   	<PreferenceScreen
+   		android:title="@string/label_setting_catalog_updates">
+		<CheckBoxPreference
+   			android:key="SHOW_STATUS_ICON"
+			android:title="@string/label_setting_show_status_icon"
+			android:summary="@string/hint_setting_show_status_icon"
+			android:defaultValue="true" />
+		<CheckBoxPreference
+			android:key="REFRESH_ON_SHAKE"
+			android:title="@string/label_setting_others_refresh_on_shake"
+			android:summary="@string/hint_setting_others_refresh_on_shake"
+			android:defaultValue="false" />
+   		<CheckBoxPreference
+   			android:key="ENABLE_UPDATES"
+			android:title="@string/label_setting_enable_updates"
+			android:defaultValue="true" />
+		<PreferenceCategory
+			android:key="UPDATE_SETTING"
+			android:title="@string/label_setting_catalog_updates">
+			<ListPreference android:key="UPDATE_INTERVAL"
+				android:title="@string/label_setting_update_interval"
+				android:summary="@string/hint_setting_update_interval"
+				android:dialogTitle="@string/title_dialog_setting_update_interval"
+				android:entries="@array/update_interval_display"
+				android:entryValues="@array/update_interval_value"
+				android:defaultValue="300" />
+			<Preference android:key="CHECK_FOR"
+				android:title="@string/label_setting_check_for"
+				android:summary="@string/hint_setting_check_for" />
+			<ListPreference android:key="UPDATE_COUNT"
+				android:title="@string/label_setting_general_update_count"
+				android:summary="@string/hint_setting_general_update_count"
+				android:dialogTitle="@string/title_setting_general_update_count"
+				android:entries="@array/update_count"
+				android:entryValues="@array/update_count_value"
+				android:defaultValue="20" />
+			<Preference android:key="NOTIFICATIONS"
+				android:title="@string/label_setting_notification"
+				android:summary="@string/hint_setting_notification" />
+		</PreferenceCategory>
+		<PreferenceCategory
+			android:key="RINGTONE_SETTING"
+			android:title="@string/label_setting_catalog_ringtone" >
+			<RingtonePreference
+				android:key="RINGTONE_URI"
+				android:title="@string/label_setting_updates_ringtone"
+				android:showDefault="true"
+				android:ringtoneType="notification" />
+		</PreferenceCategory>
+   	</PreferenceScreen>
+   	<PreferenceScreen
+   		android:title="@string/label_setting_catalog_display">
+   		<ListPreference
+   			android:key="LOCALE"
+			android:title="@string/label_setting_general_locale"
+			android:summary="@string/hint_setting_general_locale"
+			android:dialogTitle="@string/title_dialog_setting_locale"
+			android:entries="@array/locale_display"
+			android:entryValues="@array/locale_value"
+			android:defaultValue="auto" />		
+   		<ListPreference
+   			android:key="FONT_SIZE"
+			android:title="@string/label_setting_general_font_size"
+			android:summary="@string/hint_setting_general_font_size"
+			android:dialogTitle="@string/title_dialog_setting_font_size"
+			android:entries="@array/font_size_display"
+			android:entryValues="@array/font_size_value"
+			android:defaultValue="17" />
+    	<CheckBoxPreference
+    		android:key="SHOW_HEAD"
+			android:title="@string/label_setting_general_show_head"
+			android:summary="@string/hint_setting_general_show_head"
+			android:defaultValue="true" />
+		<ListPreference
+			android:key="SHOW_THUMBNAIL"
+			android:title="@string/label_setting_general_show_thumbnail"
+			android:summary="@string/hint_setting_general_show_thumbnail"
+			android:dialogTitle="@string/title_setting_general_show_thumbnail"
+			android:entries="@array/show_thumbnail_policy"
+			android:entryValues="@array/show_thumbnail_value"
+			android:defaultValue="2" />
+		<CheckBoxPreference
+			android:key="USE_SLIDER"
+			android:title="@string/label_setting_others_use_slider"
+			android:summary="@string/hint_setting_others_use_slider"
+			android:defaultValue="false" />
+		<ListPreference
+			android:key="IMAGE_DOWNLOAD_QUALITY"
+			android:title="@string/label_setting_general_image_download_quality"
+			android:summary="@string/hint_setting_general_image_download_quality"
+			android:dialogTitle="@string/title_dialog_setting_image_quality"
+			android:entries="@array/image_download_quality"
+			android:entryValues="@array/image_download_quality_value"
+			android:defaultValue="Low" />
+		<ListPreference
+			android:key="AUTO_LOAD_COMMENTS"
+			android:title="@string/label_setting_auto_load_comments"
+			android:summary="@string/hint_setting_auto_load_comments"
+			android:dialogTitle="@string/title_dialog_setting_auto_load_comments"
+			android:entries="@array/auto_load_comments"
+			android:entryValues="@array/auto_load_comments_value"
+			android:defaultValue="2" />
+		<CheckBoxPreference
+			android:key="AUTO_LOAD_MORE"
+			android:title="@string/label_setting_general_load_more"
+			android:summary="@string/hint_setting_general_load_more"
+			android:defaultValue="true" />
+   	</PreferenceScreen>
+   	<PreferenceScreen
+   		android:title="@string/label_setting_catalog_compose">
+		<CheckBoxPreference
+			android:key="SYNC_TO_ALL"
+			android:title="@string/label_setting_general_sync_to_all"
+			android:summary="@string/hint_setting_general_sync_to_all"
+			android:defaultValue="false" />
+    	<ListPreference
+    		android:key="IMAGE_UPLOAD_QUALITY"
+			android:title="@string/label_setting_general_image_upload_quality"
+			android:summary="@string/hint_setting_general_image_upload_quality"
+			android:dialogTitle="@string/title_dialog_setting_image_quality"
+			android:entries="@array/image_upload_quality"
+			android:entryValues="@array/image_upload_quality_value"
+			android:defaultValue="Adaptive_Net" />
+		<CheckBoxPreference
+			android:key="AUTO_LOCATE"
+			android:title="@string/label_setting_general_add_geo"
+			android:summary="@string/hint_setting_general_add_geo"
+			android:defaultValue="false"/>
+   	</PreferenceScreen>
+   	<PreferenceScreen
+   		android:title="@string/label_setting_catalog_other">
+		<CheckBoxPreference
+			android:key="REFRESH_ON_FIRST_ENTER"
+			android:title="@string/label_setting_others_refresh_on_first_enter"
+			android:summary="@string/hint_setting_others_refresh_on_first_enter"
+			android:defaultValue="true" />
+		<CheckBoxPreference
+			android:key="ENABLE_GESTURE"
+			android:title="@string/label_setting_others_enable_gesture"
+			android:summary="@string/hint_setting_others_enable_gesture"
+			android:defaultValue="true" />
+		<CheckBoxPreference
+			android:key="AUTO_SCREEN_ORIENTATION"
+			android:title="@string/label_setting_others_screen_orientation"
+			android:summary="@string/hint_setting_others_screen_orientation"
+			android:defaultValue="true" />
+		<CheckBoxPreference
+			android:key="EXIT_ON_BACK"
+			android:title="@string/title_setting_others_exit_on_back"
+			android:summary="@string/hint_setting_others_exit_on_back"
+			android:defaultValue="false" />
+		<CheckBoxPreference
+			android:key="DETECT_IMAGE_INFO"
+			android:title="@string/label_setting_detect_image_info"
+			android:summary="@string/hint_setting_detect_image_info"
+			android:defaultValue="true" />
+		<Preference
+			android:key="IMAGE_FOLDER"
+			android:title="@string/label_setting_others_image_path"
+			android:summary="@string/hint_setting_others_image_path"
+			android:defaultValue="/sdcard/DCIM" />
+		<PreferenceCategory
+			android:title="@string/label_setting_catalog_cache">
+			<ListPreference
+				android:key="CACHE_STRATEGY"
+				android:title="@string/label_setting_others_cache_strategy"
+				android:summary="@string/hint_setting_others_cache_strategy"
+				android:dialogTitle="@string/label_setting_others_cache_strategy"
+				android:entries="@array/cache_strategy"
+				android:entryValues="@array/cache_strategy_value"
+				android:defaultValue="5" />
+			<Preference android:key="CLEAR_CACHE"
+				android:title="@string/label_setting_others_clear_cache"
+				android:summary="@string/hint_setting_others_clear_cache" />
+			<Preference android:key="CLEAR_IMAGE_CACHE"
+				android:title="@string/label_setting_others_clear_image_cache"
+				android:summary="@string/hint_setting_others_clear_image_cache" />
+		</PreferenceCategory>
+		<PreferenceCategory
+			android:title="@string/label_setting_catalog_version">
+			<CheckBoxPreference android:key="VERSION_CHECK_ON_STARTUP"
+				android:title="@string/title_setting_others_version_update"
+				android:defaultValue="true" />
+		</PreferenceCategory>
+   	</PreferenceScreen>
+   	<Preference
+		android:key="ABOUT"
+		android:title="@string/label_setting_about">
+	</Preference>
+</PreferenceScreen>

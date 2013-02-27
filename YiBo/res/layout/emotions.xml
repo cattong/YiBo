@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Gallery01" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:numColumns="6"
+    android:horizontalSpacing="10sp" 
+    android:verticalSpacing="20sp"
+    android:stretchMode="columnWidth">
+</GridView>

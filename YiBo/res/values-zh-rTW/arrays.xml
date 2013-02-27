@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="service_provider">
+		<item>新浪微博</item>
+		<item>騰訊微博</item>
+		<item>搜狐微博</item>
+		<item>網易微博</item>
+		<item>飯否</item>
+		<item>Twitter</item>
+		<item>人人網</item>
+		<item>開心網</item>
+		<item>QQ空間</item>
+	</string-array>
+	<string-array name="locale_display">
+	    <item>自動</item>
+		<item>英文</item>
+		<item>簡體中文</item>
+		<item>繁體中文</item>
+	</string-array>	
+	<string-array name="locale_value">
+	    <item>auto</item>
+		<item>en</item>
+		<item>zh_CN</item>
+		<item>zh_TW</item>
+	</string-array>		
+	<string-array name="font_size_display">
+	    <item>小</item>
+		<item>较小</item>
+		<item>中</item>
+		<item>较大</item>
+		<item>大</item>
+		<item>巨大</item>
+	</string-array>
+	<string-array name="font_size_value">
+		<item>15</item>
+		<item>16</item>
+		<item>17</item>
+		<item>18</item>
+		<item>19</item>
+		<item>20</item>
+	</string-array>
+	<string-array name="update_interval_display">
+	    <item>30秒</item>
+	    <item>90秒</item>
+		<item>3分鐘</item>
+		<item>5分鐘</item>
+		<item>10分鐘</item>
+		<item>30分鐘</item>
+		<item>1小時</item>
+	</string-array>
+	<string-array name="update_interval_value">
+	    <item>30</item>
+	    <item>90</item>
+		<item>180</item>
+		<item>300</item>
+		<item>600</item>
+		<item>1800</item>
+		<item>3600</item>
+	</string-array>
+	<string-array name="image_upload_quality">
+	    <item>原圖</item>
+		<item>高質量</item>
+		<item>中等質量</item>
+		<item>低質量</item>
+		<item>自適應2G/3G/WIFI</item>
+	</string-array>
+	<string-array name="image_upload_quality_value">
+	    <item>Un_Disposal</item>
+		<item>High</item>
+		<item>Middle</item>
+		<item>Low</item>
+		<item>Adaptive_Net</item>
+	</string-array>
+	<string-array name="image_download_quality">
+		<item>高質量</item>
+		<item>低質量</item>
+		<item>自適應2G/3G/WIFI</item>
+	</string-array>
+	<string-array name="image_download_quality_value">
+		<item>High</item>
+		<item>Low</item>
+		<item>Adaptive_Net</item>
+	</string-array>
+	<string-array name="auto_load_comments">
+		<item>不自動加載評論</item>
+		<item>自動加載評論</item>
+		<item>自適應2G/3G/WIFI</item>
+	</string-array>	
+	<string-array name="auto_load_comments_value">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>	
+	<string-array name="show_thumbnail_policy">
+		<item>不顯示縮略圖</item>
+		<item>顯示縮略圖</item>
+		<item>自適應2G/3G/WIFI</item>
+	</string-array>
+	<string-array name="show_thumbnail_value">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+	<string-array name="update_count">
+		<item>20</item>
+		<item>40</item>
+		<item>60</item>
+	</string-array>
+	<string-array name="update_count_value">
+		<item>20</item>
+		<item>40</item>
+		<item>60</item>
+	</string-array>
+	<string-array name="cache_strategy">
+	    <item>緩存2天內的微博</item>
+		<item>緩存3天內的微博</item>
+		<item>緩存5天內的微博</item>
+		<item>緩存7天內的微博</item>
+		<item>緩存14天內的微博</item>
+	</string-array>
+	<string-array name="cache_strategy_value">
+	    <item>2</item>
+		<item>3</item>
+		<item>5</item>
+		<item>7</item>
+		<item>14</item>
+	</string-array>
+</resources>

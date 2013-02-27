@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:layoutAnimation="?android:anim/fade_in">
+    <LinearLayout android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="52sp"
+	    android:layout_marginBottom="52sp"
+	    android:layout_marginLeft="20sp"
+	    android:layout_marginRight="20sp"
+	    android:gravity="center_vertical"
+	    android:padding="2sp"
+	    android:background="@drawable/bg_dialog"
+	    android:orientation="vertical">
+	    <ListView android:id="@+id/lvItem"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:divider="@drawable/line_seperator_dialog"
+		    android:cacheColorHint="@android:color/transparent"
+		    android:listSelector="@drawable/selector_dialog_list_choose">
+	    </ListView>
+	    <include layout="@layout/list_item_loading"/>
+    </LinearLayout>
+</LinearLayout>

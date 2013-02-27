@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gender_book">
+        <item>Gender.UNKNOW[0]=未知</item>
+        <item>Gender.MALE[1]=男</item>
+        <item>Gender.FEMALE[2]=女</item>
+    </string-array>
+	<string-array name="code_book">
+		<item>ExceptionCode.UNKNOWN_EXCEPTION[2]=未知异常，请稍候重试</item>
+		<item>ExceptionCode.PARAMETER_ERROR[3]=参数异常，操作未能完成</item>
+		<item>ExceptionCode.PARAMETER_NULL[4]=部分参数为空，操作未能完成</item>
+
+		<!-- Http协议异常 -->
+		<item>HttpStatus.SC_BAD_REQUEST[400]=错误请求，请检查请求地址及参数</item>
+		<item>HttpStatus.SC_UNAUTHORIZED[401]=未通过身份验证(用户名或密码错误)</item>
+		<item>HttpStatus.SC_FORBIDDEN[403]=服务器拒绝请求或非法访问</item>
+		<item>HttpStatus.SC_NOT_FOUND[404]=请求资源未找到，请检查请求地址及参数</item>
+		<item>HttpStatus.SC_REQUEST_TIMEOUT[408]=请求超时，请稍候重试</item>
+		<item>HttpStatus.SC_INTERNAL_SERVER_ERROR[500]=服务器内部错误，无法完成请求，请稍候重试</item>
+		<item>HttpStatus.SC_BAD_GATEWAY[502]=服务器宕机或正在升级</item>
+		<item>HttpStatus.SC_SERVICE_UNAVAILABLE[503]=服务暂不可用，服务器过载或停机维护，请稍候重试</item>
+
+		<!-- YiBo应用的异常代号 -->
+		<item>ExceptionCode.UNSUPPORTED_API[1000]=暂不支持此接口</item>
+		<item>ExceptionCode.FILE_NOT_FOUND[1001]=文件未找到</item>
+		<item>ExceptionCode.NOT_A_FILE[1002]=不是文件</item>
+
+		<item>ExceptionCode.NET_ISSUE[1100]=因网络异常操作失败，请检查网络连接</item>
+		<item>ExceptionCode.NET_SOCKET_TIME_OUT[1101]=连接超时，操作失败</item>
+		<item>ExceptionCode.I_O_EXCEPTION[1102]=网络通信异常，请稍后重试</item>
+		<item>ExceptionCode.NETWORK_UNCONNECTED[1103]=网络未连接，请打开网络连接</item>
+		<item>ExceptionCode.CLIENT_PROTOCOL_EXCEPTION[1110]=协议异常</item>
+
+		<item>ExceptionCode.URL_MALFORMED_ERROR[2010]=Url格式不正确</item>
+		<item>ExceptionCode.URI_SYNTAX_ERROR[2011]=Uri语法错误</item>
+		<item>ExceptionCode.JSON_PARSE_ERROR[2020]=JSON解析出现异常</item>
+		<item>ExceptionCode.DATE_PARSE_ERROR[2030]=日期解析出现异常</item>
+		<item>ExceptionCode.OAUTH_EXCEPTION[2040]=OAuth认证出现异常</item>
+
+		<item>ExceptionCode.NET_HTTPS_UNDER_CMWAP[3000]=CMWAP网络下不支持HTTPS协议</item>
+		<item>ExceptionCode.AUTH_TOKEN_IS_NULL[3001]=认证Token为空</item>
+		<item>ExceptionCode.ACCOUNT_IS_EXIST[3002]=帐号已存在</item>
+		<item>ExceptionCode.TOKEN_MISMATCH[3003]=Token不匹配</item>
+
+		<!-- OAuth异常 -->
+		<item>ExceptionCode.OAUTH_AUTHORIZATION_REQUIRED[60000]=需要OAuth认证信息</item>
+		<item>ExceptionCode.OAUTH_VERSION_REJECTED[60001]=不支持的OAuth版本</item>
+		<item>ExceptionCode.OAUTH_PARAMETER_ABSENT[60002]=缺少OAuth参数</item>
+		<item>ExceptionCode.OAUTH_PARAMETER_REJECTED[60003]=包含不支持的OAuth参数</item>
+		<item>ExceptionCode.OAUTH_TIMESTAMP_REFUSED[60004]=OAuth时间戳无效，请校准系统时钟及时区</item>
+		<item>ExceptionCode.OAUTH_SIGNATURE_METHOD_REJECTED[60005]=不支持的OAuth签名算法</item>
+		<item>ExceptionCode.OAUTH_NONCE_USED[60006]=OAuth nonce已被使用过</item>
+		<item>ExceptionCode.OAUTH_TOKEN_USED[60007]=OAuth token已被使用过</item>
+		<item>ExceptionCode.OAUTH_TOKEN_EXPIRED[60008]=OAuth token已过期</item>
+		<item>ExceptionCode.OAUTH_TOKEN_REVOKED[60009]=OAuth token已被废除</item>
+		<item>ExceptionCode.OAUTH_TOKEN_REJECTED[60010]=不支持的OAuth token</item>
+		<item>ExceptionCode.OAUTH_TOKEN_NOT_AUTHORIZED[60011]=OAuth认证失败</item>
+		<item>ExceptionCode.OAUTH_SIGNATURE_INVALID[60012]=OAuth签名无效</item>
+		<item>ExceptionCode.OAUTH_CONSUMER_KEY_UNKNOWN[60013]=未知应用Key，请重新添加此帐号</item>
+		<item>ExceptionCode.OAUTH_CONSUMER_KEY_REJECTED[60014]=应用Key不合法</item>
+		<item>ExceptionCode.OAUTH_ADDITIONAL_AUTHORIZATION_REQUIRED[60015]=需要附加的OAuth认证信息</item>
+		<item>ExceptionCode.OAUTH_PERMISSION_UNKNOWN[60016]=未知授权</item>
+		<item>ExceptionCode.OAUTH_PERMISSION_DENIED[60017]=拒绝访问</item>
+		<item>ExceptionCode.OAUTH_USER_REFUSED[60018]=用户拒绝</item>
+		<item>ExceptionCode.OAUTH_CONSUMER_KEY_REFUSED[60019]=应用Key不合法</item>
+
+		<!-- MicroBlog异常 -->
+		<item>MicroBlog.API_PARAMS_ERROR[40001]=参数错误，请参考API文档</item>
+		<item>MicroBlog.API_NOT_OWNER[40001]=不是对象所属者，没有操作权限</item>
+        <item>MicroBlog.API_FORMAT_UNSUPPORT[40007]=格式不支持，仅仅支持XML或JSON格式</item>
+        <item>MicroBlog.API_INTERNAL_ERROR[40028]=内部接口错误</item>
+        <item>MicroBlog.API_DOMAIN_ERROR[40043]=domain参数错误</item>
+        <item>MicroBlog.API_APPKEY_EMPTY[40044]=appkey参数缺失</item>
+        <item>MicroBlog.API_APPKEY_SOURCE_EMPTY[40022]=source参数(appkey)缺失</item>
+        <item>MicroBlog.API_PARAM_ERROR[40054]=参数错误，请参考API文档</item>
+        <item>MicroBlog.API_SIGNATURE_INVALID[40107]=使用的授权签名不合法</item>
+        <item>MicroBlog.API_HTTP_METHOD_UNSUPPORT[40307]=请求的HTTP METHOD不支持</item>
+        <item>MicroBlog.API_RATE_LIMITED[40312]=请求次数超限，请稍候重试</item>
+        <item>MicroBlog.API_INVOKE_RATE_TOO_QUICK[40401]=发表太快，被频率限制</item>
+        <item>MicroBlog.API_SEARCH_RATE_LIMITED[40402]=搜索微博次数超限，请稍候重试</item>
+
+        <item>MicroBlog.API_USER_NOT_EXIST[40023]=用户不存在</item>
+        <item>MicroBlog.API_USER_PARAM_ERROR[40026]=请传递正确的目标用户uid或者screen name</item>
+        <item>MicroBlog.API_USER_S_T_NOT_EXIST[40033]=source_user或者target_user用户不存在</item>
+        <item>MicroBlog.API_UID_EMPTY[40041]=uid参数为空</item>
+		<item>MicroBlog.API_USER_NOT_FOLLOWING[40071]=关系错误，user_id必须是你关注的用户</item>
+		<item>MicroBlog.API_USER_ID_EMPTY[40069]=userid是空值</item>
+
+		<item>MicroBlog.API_CONTENT_EMPTY[40012]=内容为空</item>
+		<item>MicroBlog.API_CONTENT_OVER_LENGTH[40013]=微博内容过长，请确认不超过140个字符</item>
+		<item>MicroBlog.API_CONTENT_ILLEGAL[40076]=含有非法词,比如脏话过多，包含垃圾信息、广告信息等</item>
+
+		<item>MicroBlog.API_TWEET_NOT_EXIST[40031]=微博不存在或已经被删除了</item>
+		<item>MicroBlog.API_TWEET_NOT_OWNER[40036]=您不是该微博作者</item>
+		<item>MicroBlog.API_TWEET_ILLEGAL[40038]=不合法的微博</item>
+		<item>MicroBlog.API_TWEET_REPEAT[40025]=不能重复发布内容相同的微博</item>
+		<item>MicroBlog.API_TWEET_ID_EMPTY[40016]=微博ID为空</item>
+		<item>MicroBlog.API_TWEET_OVER_THRESHOLD[40308]=发布微博超过上限</item>
+		<item>MicroBlog.API_TWEET_RETWEET_SELF[40034]=不能转发自己的微博</item>
+
+		<item>MicroBlog.API_IMAGE_UPLOAD_ERROR[40009]=图片上传出现异常，请确保使用multipart请求</item>
+		<item>MicroBlog.API_IMAGE_FORMAT_UNSUPPORT[40045]=不支持的图片类型,支持的图片类型有JPG,GIF,PNG</item>
+		<item>MicroBlog.API_IMAGE_OVER_SIZE[40008]=上传的图片过大，图片大小上限为5M</item>
+
+		<item>MicroBlog.API_MESSAGE_NOT_EXIST[40010]=私信不存在</item>
+		<item>MicroBlog.API_MESSAGE_LIMITED[40011]=私信发布超过上限</item>
+		<item>MicroBlog.API_MESSAGE_RECEIVER_NOT_FOLLOWER[40017]=不能给未关注您的人发私信</item>
+		<item>MicroBlog.API_MESSAGE_ILLEGAL[40019]=不合法的私信</item>
+		<item>MicroBlog.API_MESSAGE_NOT_OWNER[40021]=您不是该私信作者</item>
+
+		<item>MicroBlog.API_COMMENT_NOT_OWNER[40015]=您不是该评论作者</item>
+		<item>MicroBlog.API_COMMENT_ID_EMPTY[40020]=评论ID为空</item>
+		<item>MicroBlog.API_COMMENT_ILLEGAL[40037]=不合法的评论</item>
+		<item>MicroBlog.API_COMMENT_OVER_THRESHOLD[40305]=发布评论超过上限</item>
+
+		<item>MicroBlog.API_ALREADY_FOLLOWED[40303]=已关注此用户</item>
+
+		<item>MicroBlog.API_IDS_EMPTY[40018]=Ids参数为空</item>
+		<item>MicroBlog.API_IDS_TOO_MANY[40024]=ids过多，请参考API文档</item>
+
+		<item>MicroBlog.API_LIST_NAME_TOO_LONG[40032]=列表名太长，请确保输入的文本不超过10个字符</item>
+		<item>MicroBlog.API_LIST_DESC_TOO_LONG[40030]=列表描述太长，请确保输入的文本不超过70个字符</item>
+		<item>MicroBlog.API_LIST_NOT_EXIST[40035]=列表不存在</item>
+		<item>MicroBlog.API_LIST_NAME_DUPLICATED[40061]=列表名冲突</item>
+		<item>MicroBlog.API_LIST_ID_TOO_LONG[40062]=id列表太长了</item>
+		<item>MicroBlog.API_LIST_CREATE_FAILED[40074]=创建list失败</item>
+
+		<item>MicroBlog.API_GEO_PARAM_ERROR[40039]=地理信息输入错误</item>
+		<item>MicroBlog.API_DB_RECORD_EXISTS[40059]=插入失败，记录已存在</item>
+		<item>MicroBlog.API_DB_ERROR[40060]=数据库错误，请联系系统管理员</item>
+		<item>MicroBlog.API_URLS_EMPTY[40063]=urls是空的</item>
+		<item>MicroBlog.API_URLS_TOO_MANY[40064]=urls太多了</item>
+		<item>MicroBlog.API_URL_EMPTY[40066]=url是空值</item>
+		<item>MicroBlog.API_IP_LIMITED[40040]=IP限制，不能请求该资源</item>
+		<item>MicroBlog.API_IP_EMPTY[40065]=IP是空值</item>
+
+		<item>MicroBlog.API_TREND_NAME_EMPTY[40067]=trend_name是空值</item>
+		<item>MicroBlog.API_TREND_ID_EMPTY[40068]=trend_id是空值</item>
+
+		<item>MicroBlog.API_GROUP_PRIVATE_UNSUPPORT[40073]=目前不支持私有分组</item>
+		<item>MicroBlog.API_GROUP_PRIVATE_SUPPORT_ONLY[40084]=目前只支持私有分组</item>
+		<item>MicroBlog.API_CATEGORY_INVALID[40082]=无效分类</item>
+		<item>MicroBlog.API_STATUS_CODE_INVALID[40083]=无效状态码</item>
+
+		<item>MicroBlog.API_SOCIAL_GRAPH_OVER[40304]=关系操作超过上限</item>
+		<item>MicroBlog.API_TAG_EMPTY[40027]=标签参数为空</item>
+
+		<item>MicroBlog.API_AUTH_VERIFIER_ERROR[40029]=验证授权码出现错误</item>
+		<item>MicroBlog.API_AUTH_TOKEN_EMPTY[40042]=token参数为空</item>
+		<item>MicroBlog.API_AUTH_REMOVED[40072]=授权关系已经被删除</item>
+		<item>MicroBlog.API_AUTH_TIMESTAMP_ERROR[40104]=OAuth时间戳无效，请校准系统时钟及时区</item>
+		<item>MicroBlog.API_AUTH_TOKEN_EXPIRED[40111]=OAuth Token已经过期</item>
+		<item>MicroBlog.API_AUTH_PIN_VERIFY_FAILED[40114]=OAuth PIN码认证失败</item>
+		<item>MicroBlog.API_AUTH_PASSWORD_INVALID[40309]=密码不正确</item>
+		<item>MicroBlog.API_AUTH_VERIFY_OVER_THRESHOLD[40306]=用户名密码认证超过请求限制</item>
+
+		<item>MicroBlog.API_INSUFFICIENT_PRIVILEGES[40053]=权限不足，只有创建者有相关权限</item>
+		<item>MicroBlog.API_PERMISSION_NEED_ADMIN[40075]=需要系统管理员的权限</item>
+		<item>MicroBlog.API_PERMISSION_REMIND_FAILED[40084]=提醒失败，需要权限</item>
+		<item>MicroBlog.API_PERMISSION_ACCESS_LIMITED[40070]=接口访问受限，建议您删除帐号，重新添加一下!</item>
+		<item>MicroBlog.API_PERMISSION_NEED_HIGH_LEVEL[40314]=该接口需要更高级的授权</item>
+
+		<!-- 扩展错误代号 -->
+		<item>MicroBlog.API_PERMISSION_ACCESS_DENIED[40500]=接口禁止访问! </item>
+		<item>MicroBlog.API_USER_IS_FOLLOWING[40510]=您已经关注此用户 </item>
+		<item>MicroBlog.API_USER_SCREEN_NAME_EXIST[40511]=此昵称已经被占用 </item>
+		<item>MicroBlog.API_ITEM_NOT_EXIST[40520]=记录不存在或已被删除</item>
+		<item>MicroBlog.API_ITEM_REVIEWING[40530]=正在审核中</item>
+
+		<!-- YiBoMe 服务异常代号 -->
+		<item>YiBoMe.SERVER_ERROR[50000]=未知内部异常</item>
+		<item>YiBoMe.USERNAME_NULL[50001]=用户名为空</item>
+		<item>YiBoMe.USERNAME_INVALID[50002]=无效的用户名</item>
+		<item>YiBoMe.USERNAME_EXISTS[50003]=用户已存在</item>
+		<item>YiBoMe.PASSWORD_NULL[50004]=密码为空</item>
+		<item>YiBoMe.PASSWORD_INVALID[50005]=无效密码</item>
+		<item>YiBoMe.CONFIRMED_PASSWORD_NULL[50006]=确认密码为空</item>
+		<item>YiBoMe.CONFIRMED_PASSWORD_UNMATCH[50007]=两次输入密码不匹配</item>
+		<item>YiBoMe.EMAIL_NULL[50008]=Email地址为空</item>
+		<item>YiBoMe.EMAIL_INVALID[50009]=Email地址无效</item>
+		<item>YiBoMe.USERNAME_NOT_EXISTS[50010]=用户不存在</item>
+		<item>YiBoMe.PASSWORD_INCORRECT[50011]=密码错误</item>
+		<item>YiBoMe.PASSPORT_INACTIVE[50012]=通行证未激活</item>
+		<item>YiBoMe.PASSPORT_FROZEN[50013]=通行证被冻结</item>
+		<item>YiBoMe.PASSPORT_REVOKED[50014]=通行证被废除</item>
+		<item>YiBoMe.ACCOUNTS_NULL[50015]=Accounts参数为空</item>
+		<item>YiBoMe.GROUPS_NULL[50016]=Groups参数为空</item>
+		<item>YiBoMe.SP_NULL[50017]=ServiceProvider参数为空</item>
+		<item>YiBoMe.GROUP_ID_NULL[50018]=Group_Id参数为空</item>
+		<item>YiBoMe.USERS_NULL[50019]=Users参数为空</item>
+		<item>YiBoMe.SP_INVALID[50020]=无效的ServiceProvider值</item>
+		<item>YiBoMe.GROUP_NOT_FOUND[50021]=未找到指定组</item>
+		<item>YiBoMe.GROUP_ID_INVALID[50022]=组ID无效</item>
+		<item>YiBoMe.EMAIL_EXISTS[50023]=Email已存在</item>
+		<item>YiBoMe.SYNC_ACCOUNT_NULL[50024]=同步的账户为空</item>
+		<item>YiBoMe.SYNC_ACCOUNT_NOT_EXIST[50025]=同步的账户不存在</item>
+        <item>YiBoMe.PASSPORT_POINTS_NOT_ENOUGH[50026]=积分不足</item>
+	</string-array>
+</resources>

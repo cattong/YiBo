@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+    android:padding="0sp"
+    android:scrollbars="none"
+    android:background="@drawable/bg_header_corner_base">
+
+    <LinearLayout
+    	android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="8sp">
+		
+		<LinearLayout
+		    android:id="@+id/llMoreManage"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:padding="1sp"
+			android:orientation="vertical"
+			android:background="@drawable/bg_frame_normal">
+
+			<LinearLayout 
+			    android:id="@+id/llSetting"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="8sp"
+				android:orientation="horizontal"
+				android:layout_gravity="center_vertical"
+				android:background="@drawable/selector_frame_item_top_corner">
+				<ImageView
+				    android:id="@+id/ivSetting"
+					android:src="@drawable/icon_more_setting"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<TextView 
+				    android:id="@+id/tvSetting"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:layout_weight="1"
+				 	android:text="@string/label_more_setting"
+				 	android:textAppearance="@style/list_item_more"/>
+				<ImageView 
+				    android:id="@+id/ivSettingMore"
+				    android:layout_width="wrap_content"
+				  	android:layout_height="wrap_content"
+				  	android:background="@drawable/icon_more_detail"
+				  	android:layout_gravity="center_vertical"/>
+			</LinearLayout>
+			<ImageView 
+			    android:id="@+id/ivLineSeperator_1"
+			    android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/line_seperator"/>
+			
+			<LinearLayout 
+			    android:id="@+id/llAccounts"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="8sp"
+				android:orientation="horizontal"
+				android:layout_gravity="center_vertical"
+				android:background="@drawable/selector_frame_item_no_corner">
+				<ImageView
+				    android:id="@+id/ivAccounts"
+					android:src="@drawable/icon_more_accounts"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<TextView
+					android:id="@+id/tvAccounts"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:layout_weight="1"
+				 	android:text="@string/label_more_accounts"
+				 	android:textAppearance="@style/list_item_more" />
+				<ImageView 
+				    android:id="@+id/ivAccountsMore"
+				    android:layout_width="wrap_content"
+				 	android:layout_height="wrap_content"
+				  	android:background="@drawable/icon_more_detail"
+				  	android:layout_gravity="center_vertical" />
+			</LinearLayout>
+			<ImageView 
+			    android:id="@+id/ivLineSeperator_2"
+			    android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/line_seperator" />
+				
+			<LinearLayout 
+			    android:id="@+id/llGroups"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="8sp"
+				android:orientation="horizontal"
+				android:layout_gravity="center_vertical"
+				android:background="@drawable/selector_frame_item_no_corner">
+				<ImageView
+				    android:id="@+id/ivGroups"
+					android:src="@drawable/icon_more_groups"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<TextView
+					android:id="@+id/tvGroups"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:layout_weight="1"
+				 	android:text="@string/label_more_groups"
+				 	android:textAppearance="@style/list_item_more"/>
+				<ImageView 
+				    android:id="@+id/ivGroupsMore"
+				    android:layout_width="wrap_content"
+				 	android:layout_height="wrap_content"
+				  	android:background="@drawable/icon_more_detail"
+				  	android:layout_gravity="center_vertical"/>
+			</LinearLayout>
+			<ImageView 
+			    android:id="@+id/ivLineSeperator_3"
+			    android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/line_seperator" />
+			
+			<LinearLayout 
+			    android:id="@+id/llThemes"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="8sp"
+				android:orientation="horizontal"
+				android:layout_gravity="center_vertical"
+				android:background="@drawable/selector_frame_item_bottom_corner">
+				<ImageView
+				    android:id="@+id/ivThemes"
+					android:src="@drawable/icon_more_themes"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<TextView
+					android:id="@+id/tvThemes"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:layout_weight="1"
+				 	android:text="@string/label_more_themes"
+				 	android:textAppearance="@style/list_item_more"/>
+				<ImageView 
+				    android:id="@+id/ivThemesMore"
+				    android:layout_width="wrap_content"
+				 	android:layout_height="wrap_content"
+				  	android:background="@drawable/icon_more_detail"
+				  	android:layout_gravity="center_vertical"/>
+			</LinearLayout>
+		</LinearLayout>
+		
+		<LinearLayout 
+		    android:id="@+id/llMoreInfo"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10sp"
+			android:padding="1sp"
+			android:orientation="vertical"
+			android:background="@drawable/bg_frame_normal">
+			<LinearLayout 
+			    android:id="@+id/llOffical"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="8sp"
+				android:orientation="horizontal"
+				android:layout_gravity="center_vertical"
+				android:background="@drawable/selector_frame_item_top_corner" >
+				<ImageView
+				    android:id="@+id/ivOffical"
+					android:src="@drawable/icon_more_offical"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<TextView 
+				    android:id="@+id/tvOffical"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:layout_weight="1"
+				 	android:text="@string/label_more_offical_blog"
+				 	android:textAppearance="@style/list_item_more" />
+				<ImageView 
+				    android:id="@+id/ivOfficalMore"
+				    android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/icon_more_detail"
+					android:layout_gravity="center_vertical" />
+			</LinearLayout>
+			<ImageView 
+			     android:id="@+id/ivLineSeperator_4"
+			     android:layout_width="fill_parent"
+				 android:layout_height="wrap_content"
+				 android:background="@drawable/line_seperator"/>
+				 
+			<LinearLayout 
+			    android:id="@+id/llFeedback"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="8sp"
+				android:orientation="horizontal"
+				android:layout_gravity="center_vertical"
+				android:background="@drawable/selector_frame_item_no_corner" >
+				<ImageView
+				    android:id="@+id/ivFeedback"
+					android:src="@drawable/icon_more_feedback"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<TextView 
+				    android:id="@+id/tvFeedback"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:layout_weight="1"
+				 	android:text="@string/label_more_feedback"
+				 	android:textAppearance="@style/list_item_more"/>
+				<ImageView 
+				    android:id="@+id/ivFeedbackMore"
+				    android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/icon_more_detail"
+					android:layout_gravity="center_vertical"/>
+			</LinearLayout>
+			<ImageView 
+			    android:id="@+id/ivLineSeperator_5"
+			    android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/line_seperator"/>
+				 
+			<LinearLayout 
+			    android:id="@+id/llCheckUpdate"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="8sp"
+				android:orientation="horizontal"
+				android:layout_gravity="center_vertical"
+				android:background="@drawable/selector_frame_item_no_corner" >
+				<ImageView
+				    android:id="@+id/ivCheckUpdate"
+					android:src="@drawable/icon_more_update"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<TextView 
+				    android:id="@+id/tvCheckUpdate"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:layout_weight="1"
+				 	android:text="@string/label_more_check_update"
+				 	android:textAppearance="@style/list_item_more"/>
+				<ImageView 
+				    android:id="@+id/ivCheckUpdateMore"
+				    android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/icon_more_detail"
+					android:layout_gravity="center_vertical"/>
+			</LinearLayout>
+			<ImageView 
+			    android:id="@+id/ivLineSeperator_6"
+			    android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/line_seperator"/>
+				 
+			<LinearLayout 
+			    android:id="@+id/llQuit"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="8sp"
+				android:orientation="horizontal"
+				android:layout_gravity="center_vertical"
+				android:background="@drawable/selector_frame_item_bottom_corner">
+				<ImageView
+				    android:id="@+id/ivQuit"
+					android:src="@drawable/icon_more_quit"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<TextView 
+				    android:id="@+id/tvQuit"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8sp"
+					android:layout_weight="1"
+				 	android:text="@string/label_more_quit"
+				 	android:textAppearance="@style/list_item_more" />
+				<ImageView 
+				    android:id="@+id/ivQuitMore"
+				    android:layout_width="wrap_content"
+				  	android:layout_height="wrap_content"
+				  	android:background="@drawable/icon_more_detail"
+				  	android:layout_gravity="center_vertical" />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>
