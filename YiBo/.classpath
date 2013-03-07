@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="libs/AndroidAnalyticSDK3.1.1.jar"/>
 	<classpathentry kind="lib" path="libs/AppOffer_1.6.1.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/YiBoLibrary"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
