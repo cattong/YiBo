@@ -1,0 +1,27 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/menu_accounts"
+	     android:title="@string/menu_accounts"
+	     android:icon="@drawable/menu_accounts">
+	</item>
+	<item android:id="@+id/menu_search"
+	     android:title="@string/menu_search"
+	     android:icon="@drawable/menu_search">
+	</item>	
+	<item android:id="@+id/menu_back2top"
+	     android:title="@string/menu_back2top"
+	     android:icon="@drawable/menu_back2top">
+	</item>
+	<item android:id="@+id/menu_setting"
+	     android:title="@string/menu_settings"
+	     android:icon="@drawable/menu_setting">
+	</item>
+	<item android:id="@+id/menu_fullscreen"
+	     android:title="@string/menu_fullscreen"
+	     android:icon="@drawable/menu_about">
+	</item>
+	<item android:id="@+id/menu_quit"
+	     android:title="@string/menu_quit"
+	     android:icon="@drawable/menu_exit">
+	</item>
+</menu>

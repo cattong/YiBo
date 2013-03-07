@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="service_provider">
+		<item>Sina Microblog</item>
+		<item>Tencent Microblog</item>
+		<item>Sohu Microblog</item>
+		<item>NetEase Microblog</item>
+		<item>Fanfou</item>
+		<item>Twitter</item>
+		<item>RenRen</item>
+		<item>KaiXin</item>
+		<item>QQ Zone</item>
+	</string-array>
+	<string-array name="locale_display">
+	    <item>Auto</item>
+		<item>English</item>
+		<item>简体中文</item>
+		<item>繁體中文</item>
+	</string-array>
+	<string-array name="locale_value">
+	    <item>auto</item>
+		<item>en</item>
+		<item>zh_CN</item>
+		<item>zh_TW</item>
+	</string-array>		
+	<string-array name="font_size_display">
+	    <item>smallest</item>
+		<item>smaller</item>
+		<item>normal</item>
+		<item>larger</item>
+		<item>largest</item>
+		<item>hugeness</item>
+	</string-array>
+	<string-array name="font_size_value">
+		<item>15</item>
+		<item>16</item>
+		<item>17</item>
+		<item>18</item>
+		<item>19</item>
+		<item>20</item>
+	</string-array>
+	<string-array name="update_interval_display">
+	    <item>30 Seconds</item>
+	    <item>90 Seconds</item>
+		<item>3 Minutes</item>
+		<item>5 Minutes</item>
+		<item>10 Minutes</item>
+		<item>30 Minutes</item>
+		<item>1 Hour</item>
+	</string-array>
+	<string-array name="update_interval_value">
+	    <item>30</item>
+	    <item>90</item>
+		<item>180</item>
+		<item>300</item>
+		<item>600</item>
+		<item>1800</item>
+		<item>3600</item>
+	</string-array>
+	<string-array name="image_upload_quality">
+	    <item>Un Disposal</item>
+		<item>High Quality (best for Wi-Fi)</item>
+		<item>Middle Quality (best for 3G/Edge)</item>
+		<item>Low Quality (best for GPRS)</item>
+		<item>Adaptive 2G/3G/WIFI</item>
+	</string-array>
+	<string-array name="image_upload_quality_value">
+	    <item>Un_Disposal</item>
+		<item>High</item>
+		<item>Middle</item>
+		<item>Low</item>
+		<item>Adaptive_Net</item>
+	</string-array>
+	<string-array name="image_download_quality">
+		<item>High Quality</item>
+		<item>Low Quality</item>
+		<item>Adaptive 2G/3G/WIFI</item>
+	</string-array>
+	<string-array name="image_download_quality_value">
+		<item>High</item>
+		<item>Low</item>
+		<item>Adaptive_Net</item>
+	</string-array>
+	<string-array name="auto_load_comments">
+		<item>Don\'t auto load</item>
+		<item>Auto load</item>
+		<item>Adaptive 2G/3G/WIFI</item>
+	</string-array>
+	<string-array name="auto_load_comments_value">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>	
+	<string-array name="show_thumbnail_policy">
+		<item>Don\'t display</item>
+		<item>Display thumbnails</item>
+		<item>Adaptive 2G/3G/WIFI</item>
+	</string-array>
+	<string-array name="show_thumbnail_value">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+	<string-array name="update_count">
+		<item>20</item>
+		<item>40</item>
+		<item>60</item>
+	</string-array>
+	<string-array name="update_count_value">
+		<item>20</item>
+		<item>40</item>
+		<item>60</item>
+	</string-array>
+	<string-array name="cache_strategy">
+	    <item>Cache tweets in the last 2 days</item>
+		<item>Cache tweets in the last 3 days</item>
+		<item>Cache tweets in the last 5 days</item>
+		<item>Cache tweets in the last 7 days</item>
+		<item>Cache tweets in the last 14 days</item>
+	</string-array>
+	<string-array name="cache_strategy_value">
+	    <item>2</item>
+		<item>3</item>
+		<item>5</item>
+		<item>7</item>
+		<item>14</item>
+	</string-array>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:gravity="center"
+	android:background="@color/list_item_more">
+
+	<LinearLayout
+		android:id="@+id/llLoadingState"
+	    android:layout_width="fill_parent"
+	    android:layout_height="48dp"
+	    android:orientation="horizontal"
+	    android:gravity="center"
+	    android:visibility="gone">
+	    <ProgressBar
+	    	android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    style="?android:attr/progressBarStyleInverse">
+	    </ProgressBar>
+	    <TextView
+	        android:id="@+id/tvLoading"
+	    	android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/label_loading"
+		    android:layout_marginLeft="4dp"
+		    android:textAppearance="@style/content">
+	    </TextView>
+    </LinearLayout>
+
+	<TextView
+		android:id="@+id/tvFooter"
+	    android:layout_width="wrap_content"
+		android:layout_height="48sp"
+		android:text="@string/label_more"
+		android:gravity="center"
+		android:textAppearance="@style/list_footer_text">
+	</TextView>
+
+</LinearLayout>

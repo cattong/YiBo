@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:gravity="center"
+	android:background="@drawable/bg_list_item_normal">
+
+	<LinearLayout
+		android:id="@+id/llFooterLoading"
+	    android:layout_width="fill_parent"
+	    android:layout_height="48dp"
+	    android:orientation="horizontal"
+	    android:gravity="center"
+	    android:visibility="gone">
+	    <ProgressBar
+	    	android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    style="?android:attr/progressBarStyleInverse">
+	    </ProgressBar>
+	    <TextView
+	        android:id="@+id/tvLoading"
+	    	android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/label_loading"
+		    android:layout_marginLeft="4dp"
+		    style="@style/content">
+	    </TextView>
+    </LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/llFooterLoadMore"
+	    android:layout_width="fill_parent"
+	    android:layout_height="48dp"
+	    android:orientation="horizontal"
+	    android:gravity="center"
+	    android:visibility="visible">
+		<TextView
+		    android:layout_width="wrap_content"
+			android:layout_height="48dp"
+			android:text="@string/label_more"
+			android:gravity="center"
+			style="@style/list_footer_text">
+		</TextView>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/llFooterNoMore"
+	    android:layout_width="fill_parent"
+	    android:layout_height="48dp"
+	    android:orientation="horizontal"
+	    android:gravity="center"
+	    android:visibility="gone">
+		<TextView
+		    android:layout_width="wrap_content"
+			android:layout_height="48dp"
+			android:text="@string/label_no_more"
+			android:gravity="center"
+			style="@style/list_footer_text">
+		</TextView>
+	</LinearLayout>
+</LinearLayout>

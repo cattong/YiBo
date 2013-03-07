@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 正常状态下 -->
+    <item android:state_pressed="false" android:state_enabled="true"
+          android:state_focused="false" android:drawable="@drawable/btn_mention_normal" />
+    <!-- 可用，按下 -->
+    <item android:state_pressed="true" android:state_enabled="true"
+          android:drawable="@drawable/btn_mention_pressed" />
+    <!-- 可用，获得焦点 -->
+    <item android:state_pressed="false" android:state_enabled="true"
+          android:state_focused="true" android:drawable="@drawable/btn_mention_pressed" />
+    <!-- 不可用,获得焦点 -->
+    <item android:state_pressed="false" android:state_enabled="false"
+          android:state_focused="true" android:drawable="@drawable/btn_mention_pressed" />
+    <!-- 不可用 -->
+    <item android:state_pressed="false" android:state_enabled="false"
+          android:state_focused="false" android:drawable="@drawable/btn_mention_normal" />
+</selector>

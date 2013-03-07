@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+    <include layout="@layout/include_micro_blog_profile_header"/>
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:id="@+id/llStatus"
+  	    android:layout_height="wrap_content"
+  	    android:paddingTop="12sp"
+  	    android:paddingLeft="10sp"
+  	    android:paddingRight="10sp"
+  	    android:paddingBottom="6sp"
+  	    android:orientation="vertical">
+	    <com.shejiaomao.widget.RichTextView 
+	        android:id="@+id/tvText"
+		    android:hint="@string/label_loading"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:linksClickable="true"
+		    android:textColorLink="@color/selector_text_link"
+		    style="@style/status_text">
+	    </com.shejiaomao.widget.RichTextView>
+
+		<LinearLayout android:id="@+id/llThumbnail"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"
+		    android:visibility="gone">
+		    <LinearLayout
+		        android:id="@+id/llThumbnailShape"
+		        android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="20sp"
+			    android:layout_marginTop="4sp"
+			    android:gravity="center"
+			    android:background="@drawable/shape_attachment"
+			    android:orientation="vertical">
+	            <ImageView android:id="@+id/ivThumbnail"
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"
+	        	    android:minWidth="60dp"
+	        	    android:minHeight="60dp"
+	        	    android:maxWidth="120dp"
+	        	    android:maxHeight="120dp"
+			    	android:src="@drawable/icon_thumbnail_failed"
+	        	    android:visibility="gone"
+	        	    android:scaleType="centerInside">
+	        	</ImageView>
+			    <ProgressBar android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 style="?android:attr/progressBarStyleInverse">
+	            </ProgressBar>
+		    </LinearLayout>
+		    <TextView
+        	    android:id="@+id/tvImageInfo"
+        	    android:layout_width="fill_parent"
+        	    android:layout_height="wrap_content"
+        	    android:paddingLeft="8dp"
+        	    android:layout_gravity="bottom"/>
+		</LinearLayout>
+
+  	    <LinearLayout android:id="@+id/llRetweet"
+  	        android:layout_width="fill_parent"
+  	    	android:layout_height="wrap_content"
+  	    	android:orientation="vertical"
+  	    	android:paddingTop="10sp"
+  	    	android:paddingLeft="10sp"
+  	    	android:paddingRight="10sp"
+  	    	android:background="@drawable/bg_retweet_frame"
+  	    	android:visibility="gone">
+  	    	<com.shejiaomao.widget.RichTextView 
+  	    	    android:id="@+id/tvRetweetText"
+  	    	    android:layout_width="fill_parent"
+  	    		android:layout_height="wrap_content"
+  	    		android:hint="@string/label_loading"
+  	    		android:layout_weight="1"
+  	    		android:linksClickable="true"
+  	    		style="@style/status_retweet_text">
+  	    	</com.shejiaomao.widget.RichTextView>
+
+			<LinearLayout android:id="@+id/llRetweetThumbnail"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal"
+			    android:visibility="gone">
+	  	    	<LinearLayout
+	  	    	    android:id="@+id/llRetweetThumbnailShape"
+	  	    	    android:layout_width="wrap_content"
+	  	    		android:layout_height="wrap_content"
+	  	    		android:orientation="vertical"
+	  	    		android:layout_marginLeft="20sp"
+	  	    		android:layout_marginBottom="4sp"
+	  	    		android:gravity="center"
+	  	    		android:background="@drawable/shape_attachment">
+		            <ImageView android:id="@+id/ivRetweetThumbnail"
+		        	    android:layout_width="wrap_content"
+		        	    android:layout_height="wrap_content"
+		        	    android:minWidth="60dp"
+		        	    android:minHeight="60dp"
+		        	    android:maxWidth="120dp"
+		        	    android:maxHeight="120dp"
+		        	    android:src="@drawable/icon_thumbnail_failed"
+		        	    android:visibility="gone"
+		        	    android:scaleType="centerInside">
+		        	</ImageView>
+	  	    		<ProgressBar android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    style="?android:attr/progressBarStyleInverse">
+	                </ProgressBar>
+                </LinearLayout>
+                <TextView
+	        	    android:id="@+id/tvRetweetImageInfo"
+	        	    android:layout_width="fill_parent"
+	        	    android:layout_height="wrap_content"
+	        	    android:paddingLeft="8dp"
+	        	    android:layout_gravity="bottom"
+	        	    android:visibility="gone" />
+  	    	</LinearLayout>
+
+            <LinearLayout android:id="@+id/llRetweetLocation"
+	  	        android:layout_width="fill_parent"
+	 		    android:layout_height="wrap_content"
+	 		    android:orientation="horizontal"
+	 		    android:layout_marginTop="4sp"
+	 		    android:visibility="gone">
+	 		    <ImageView 
+	 		        android:id="@+id/ivRetweetLocation"
+	 		        android:layout_width="wrap_content"
+	 		        android:layout_height="wrap_content"
+	 		        android:layout_marginRight="2sp"
+	 		        android:src="@drawable/icon_location"/>
+	 		    <TextView android:id="@+id/tvRetweetLocation"
+	 		        android:layout_width="fill_parent"
+	 		        android:layout_height="wrap_content"
+	 		        android:layout_weight="1"
+	 		        android:singleLine="true"
+	 		        android:ellipsize="end"
+	 		        style="@style/status_time">
+	 		    </TextView>
+	 		</LinearLayout>
+  	    	<LinearLayout android:id="@+id/llRetweetState"
+  	    	    android:layout_width="fill_parent"
+  	    	    android:layout_height="wrap_content"
+  	    	    android:layout_marginTop="4sp"
+  	    	    android:orientation="horizontal"
+  	    	    android:visibility="gone">"
+  	    	    <TextView android:id="@+id/tvRetweetCreatedAt"
+  	    		    android:layout_width="fill_parent"
+  	    		    android:layout_height="wrap_content"
+  	    		    android:hint="@string/label_loading"
+                    android:gravity="left"
+  	    		    style="@style/status_retweet_time"
+  	    		    android:layout_weight="1">
+  	    	    </TextView>
+  	    	    <TextView android:id="@+id/tvRetweetSource"
+  	    		    android:layout_width="fill_parent"
+  	    		    android:layout_height="wrap_content"
+  	    		    android:hint="@string/label_loading"
+                    android:gravity="right"
+  	    		    style="@style/status_retweet_source"
+  	    		    android:layout_weight="1">
+  	    	    </TextView>
+  	    	</LinearLayout>
+  	    </LinearLayout>
+
+  	    <LinearLayout android:id="@+id/llLocation"
+  	        android:layout_width="fill_parent"
+ 		    android:layout_height="wrap_content"
+ 		    android:orientation="horizontal"
+ 		    android:layout_marginTop="4sp"
+ 		    android:visibility="gone">
+ 		    <ImageView 
+ 		        android:id="@+id/ivLocation"
+ 		        android:layout_width="wrap_content"
+ 		        android:layout_height="wrap_content"
+ 		        android:layout_marginRight="2sp"
+ 		        android:src="@drawable/icon_location"/>
+ 		    <TextView android:id="@+id/tvLocation"
+ 		        android:layout_width="fill_parent"
+ 		        android:layout_height="wrap_content"
+ 		        android:layout_weight="1"
+ 		        android:singleLine="true"
+	 		    android:ellipsize="end"
+ 		        style="@style/status_time">
+ 		    </TextView>
+ 		</LinearLayout>
+  	 	<LinearLayout android:layout_width="fill_parent"
+ 		    android:layout_height="wrap_content"
+ 		    android:orientation="horizontal"
+ 		    android:layout_marginTop="4sp">
+ 		    <TextView android:id="@+id/tvCreatedAt"
+ 			    android:layout_width="fill_parent"
+ 			    android:layout_height="wrap_content"
+ 			    android:hint="@string/label_loading"
+                android:gravity="left"
+ 			    style="@style/status_time"
+ 			    android:layout_weight="1">
+ 		    </TextView>
+ 		    <TextView android:id="@+id/tvSource"
+ 			    android:layout_width="fill_parent"
+ 			    android:layout_height="wrap_content"
+ 			    android:hint="@string/label_loading"
+                android:gravity="right"
+ 			    style="@style/status_source"
+ 			    android:layout_weight="1">
+ 		    </TextView>
+ 		</LinearLayout>
+ 		<LinearLayout android:layout_width="fill_parent"
+ 		    android:layout_height="wrap_content"
+ 		    android:orientation="horizontal"
+ 		    android:layout_marginTop="4sp">
+ 		    <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" "/>
+ 		    <TextView android:id="@+id/tvRetweetCount"
+ 			    android:layout_width="wrap_content"
+ 			    android:layout_height="wrap_content"
+ 			    android:hint="@string/label_loading"
+ 			    style="@style/status_response">
+ 		    </TextView>
+ 		    <TextView android:id="@+id/tvCommentCount"
+ 			    android:layout_width="wrap_content"
+ 			    android:layout_height="wrap_content"
+ 			    android:layout_marginLeft="2sp"
+ 			    android:hint="@string/label_loading"
+ 			    style="@style/status_response">
+ 		    </TextView>
+ 		</LinearLayout>
+    </LinearLayout>
+
+    <ImageView 
+        android:id="@+id/ivLineSeperator"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0sp"
+        android:padding="0sp"
+        android:background="@drawable/line_comment_of_status_normal">
+    </ImageView>
+
+</LinearLayout>

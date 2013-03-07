@@ -3,11 +3,6 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="lib" path="libs/apache-mime4j-0.6.1.jar"/>
-	<classpathentry kind="lib" path="libs/httpmime-4.0.3.jar"/>
-	<classpathentry kind="lib" path="libs/slf4j-android-1.6.1-RC1.jar"/>
-	<classpathentry kind="lib" path="libs/AndroidAnalyticSDK3.1.1.jar"/>
-	<classpathentry kind="lib" path="libs/AppOffer_1.6.1.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/YiBoLibrary"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry kind="output" path="bin/classes"/>

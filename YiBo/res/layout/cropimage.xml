@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+
+        <view class="com.shejiaomao.widget.CropImageView" 
+            android:id="@+id/image"
+            android:background="#55000000"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_x="0dip"
+            android:layout_y="0dip" />
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/btn_confirm" />
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/btn_cancel" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:layoutAnimation="?android:anim/fade_in">
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="12sp"
+	    android:layout_marginRight="12sp"
+	    android:padding="12sp"
+	    android:background="@drawable/bg_dialog"
+	    android:orientation="vertical">
+	    <TextView 
+	        android:id="@+id/tvDialogTitle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="6sp"
+	        android:gravity="left"
+	        android:text="@string/title_tweet_progress"
+	        style="@style/widget_dialog_tweet_progress_title" />
+	    
+	    <ListView 
+	        android:id="@+id/lvAccount"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:divider="@drawable/line_seperator_dialog"
+		    android:cacheColorHint="@android:color/transparent"
+		    android:listSelector="@color/selector_list_item"
+		    android:background="@drawable/bg_dialog_tweet_list"
+		    android:clickable="false"
+		    android:focusable="false">
+	    </ListView>
+	    
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="6sp"
+	        android:orientation="horizontal">
+	        <Button android:id="@+id/btnPositive"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="@string/btn_confirm"
+	            style="@style/btn_action_positive"/>
+	        <Button android:id="@+id/btnNegative"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:layout_marginLeft="6sp"
+	            android:text="@string/btn_cancel"
+	            style="@style/btn_action_negative"/>
+	    </LinearLayout>
+	
+	</LinearLayout>
+</LinearLayout>

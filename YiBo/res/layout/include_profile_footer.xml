@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llToolbar"
+    android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:gravity="center"
+	android:paddingTop="4sp"
+	android:paddingBottom="4sp"
+	android:background="@drawable/bg_toolbar" >
+
+	<Button
+		android:id="@+id/btnMention"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/selector_btn_profile_mention">
+	</Button>
+
+	<Button
+		android:id="@+id/btnMessage"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="8sp"
+		android:enabled="false"
+		android:visibility="gone"
+		android:background="@drawable/selector_btn_profile_message">
+	</Button>
+
+	<Button
+		android:id="@+id/btnBlock"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="8sp"
+		android:enabled="false"
+		android:visibility="gone"
+		android:background="@drawable/selector_btn_profile_block">
+	</Button>
+
+</LinearLayout>

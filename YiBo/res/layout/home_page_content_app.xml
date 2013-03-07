@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llContentPanel"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:background="@drawable/bg_header_corner_base">
+
+    <GridView android:id="@+id/gvApp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="20sp"
+        android:layout_weight="1"
+        android:numColumns="3"
+        android:horizontalSpacing="12sp"
+        android:verticalSpacing="12sp"
+        android:scrollbars="none">"
+    </GridView>
+    
+    <include layout="@layout/list_item_loading"/>
+</LinearLayout>

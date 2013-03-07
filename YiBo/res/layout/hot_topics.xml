@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	style="@style/panel_background" >
+
+    <include layout="@layout/include_secondary_header_base"/>
+
+	<ListView android:id="@+id/lvTopics"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:divider="@drawable/line_seperator"
+		android:footerDividersEnabled="false"
+		android:cacheColorHint="@android:color/transparent"
+		android:listSelector="@color/selector_list_item"
+	    android:fastScrollEnabled="true"
+	    android:scrollingCache="true"
+	    android:smoothScrollbar="false"
+	    android:background="@drawable/bg_header_corner_base">
+	</ListView>
+</LinearLayout>

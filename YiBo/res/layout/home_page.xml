@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llRoot"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	style="@style/panel_background" 
+	android:orientation="vertical">
+	<!-- header -->
+    <include layout="@layout/include_home_page_header"/>
+    
+    <!-- content -->
+    <LinearLayout android:id="@+id/llContainer"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1"
+	    android:orientation="vertical">
+	</LinearLayout>
+	
+    <!-- footer -->
+    <include layout="@layout/include_home_page_footer"/>
+</LinearLayout>

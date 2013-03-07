@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="15dip"
+    android:paddingBottom="15dip"
+    android:gravity="center_vertical|center_horizontal"
+    android:background="@drawable/shape_pull_to_refresh_header">
+    <RelativeLayout android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical|center_horizontal">
+        <TextView android:id="@+id/pull_to_refresh_text"
+            android:text="@string/label_pull_to_refresh"
+            android:textAppearance="@style/list_footer_text"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"/>
+        <ProgressBar android:id="@+id/pull_to_refresh_progress"
+            android:indeterminate="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dip"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/pull_to_refresh_text"
+            android:visibility="gone"
+            style="?android:attr/progressBarStyleSmallInverse"/>
+        <ImageView android:id="@+id/pull_to_refresh_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dip"
+            android:gravity="center"
+            android:layout_toLeftOf="@id/pull_to_refresh_text"            
+            android:visibility="gone"
+            android:src="@drawable/widget_pull_arrow" />
+        <TextView android:id="@+id/pull_to_refresh_updated_at"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pull_to_refresh_text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_gravity="center"
+            android:gravity="center" 
+            android:visibility="gone"/>
+    </RelativeLayout>
+</LinearLayout>

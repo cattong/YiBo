@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- style -->
+    <style name="panel_background">
+        <item name="android:background">@drawable/shape_panel_background</item>
+    </style>
+    <!-- 通用样式 -->
+    <style name="content">
+        <item name="android:textSize">@dimen/content</item>
+        <item name="android:textColor">@color/content</item>
+    </style>
+    <style name="list_footer_text">
+        <item name="android:textSize">@dimen/list_footer_text</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="btn_action_positive">
+        <item name="android:textSize">@dimen/btn_action</item>
+        <item name="android:textColor">@color/selector_btn_action_positive</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:background">@drawable/selector_btn_action_positive</item>
+    </style>
+    <style name="btn_action_negative">
+        <item name="android:textSize">@dimen/btn_action</item>
+        <item name="android:textColor">@color/selector_btn_action_negative</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:background">@drawable/selector_btn_action_negative</item>
+    </style>
+    <style name="edittext">
+        <item name="android:textSize">@dimen/content</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:background">@drawable/selector_input_frame</item>
+    </style>    
+    <style name="checkbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_checkbox</item>
+        <item name="android:textSize">@dimen/checkbox</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="checkbox_group" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_checkbox_group</item>
+    </style>
+    <style name="tab_toggle_left">
+        <item name="android:textSize">@dimen/btn_tab</item>
+        <item name="android:textColor">@color/selector_btn_tab</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:background">@drawable/selector_tab_toggle_left</item>
+    </style>
+    <style name="tab_toggle_right">
+        <item name="android:textSize">@dimen/btn_tab</item>
+        <item name="android:textColor">@color/selector_btn_tab</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:background">@drawable/selector_tab_toggle_right</item>
+    </style>
+
+    <style name="header_title">
+        <item name="android:textSize">@dimen/header_title</item>
+        <item name="android:textColor">@color/selector_header_title</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="header_action_back">
+        <item name="android:textSize">@dimen/header_action</item>
+        <item name="android:textColor">@color/selector_btn_header_action</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:background">@drawable/selector_btn_action_back</item>
+    </style>
+    <style name="header_action_additional">
+        <item name="android:textSize">@dimen/header_action</item>
+        <item name="android:textColor">@color/selector_btn_header_action</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:background">@drawable/selector_btn_action_additional</item>
+    </style>
+
+    <style name="header_profile_screen_name">
+        <item name="android:textSize">@dimen/profile_screen_name</item>
+        <item name="android:textColor">@color/highlight</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="header_profile_impress">
+        <item name="android:textSize">@dimen/profile_impress</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="header_passport_username">
+        <item name="android:textSize">@dimen/profile_screen_name</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="header_passport_desc">
+        <item name="android:textSize">@dimen/profile_impress</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="list_status_screen_name">
+        <item name="android:textSize">@dimen/list_status_screen_name</item>
+        <item name="android:textColor">@color/highlight</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_status_time_unread">
+        <item name="android:textSize">@dimen/list_status_time</item>
+        <item name="android:textColor">@color/remind</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_status_time_read">
+        <item name="android:textSize">@dimen/list_status_time</item>
+        <item name="android:textColor">@color/emphasize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_status_text">
+        <item name="android:textSize">@dimen/list_status_text</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <!-- <item name="android:lineSpacingExtra">@dimen/content_line_spacing_extra</item>-->
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+    </style>
+    <style name="list_status_retweet">
+        <item name="android:textSize">@dimen/list_status_retweet</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+    </style>
+    <style name="list_status_source">
+        <item name="android:textSize">@dimen/list_status_source</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+    </style>
+    <style name="list_status_response">
+        <item name="android:textSize">@dimen/list_status_response</item>
+        <item name="android:textColor">@color/emphasize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="list_comment_screen_name">
+        <item name="android:textSize">@dimen/list_comment_screen_name</item>
+        <item name="android:textColor">@color/highlight</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_comment_time_unread">
+        <item name="android:textSize">@dimen/list_comment_time</item>
+        <item name="android:textColor">@color/remind</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_comment_time_read">
+        <item name="android:textSize">@dimen/list_comment_time</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_comment_text">
+        <item name="android:textSize">@dimen/list_comment_text</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+    </style>
+    <style name="list_comment_quote">
+        <item name="android:textSize">@dimen/list_comment_quote</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+    </style>
+
+    <style name="list_direct_message_screen_name">
+        <item name="android:textSize">@dimen/list_direct_message_screen_name</item>
+        <item name="android:textColor">@color/highlight</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_direct_message_time_unread">
+        <item name="android:textSize">@dimen/list_direct_message_time</item>
+        <item name="android:textColor">@color/remind</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_direct_message_time_read">
+        <item name="android:textSize">@dimen/list_direct_message_time</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_direct_message_text">
+        <item name="android:textSize">@dimen/list_direct_message_text</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+    </style>
+    <style name="list_direct_message_remark">
+        <item name="android:textSize">@dimen/list_direct_message_remark</item>
+        <item name="android:textColor">@color/remark</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+    </style>
+
+    <style name="list_user_profile_name">
+        <item name="android:textSize">@dimen/list_user_profile_name</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_user_impress">
+        <item name="android:textSize">@dimen/list_user_impress</item>
+        <item name="android:textColor">@color/remark</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+
+    <!-- 用于博客信息详细时 -->
+    <style name="status_screen_name">
+        <item name="android:textSize">@dimen/status_screen_name</item>
+        <item name="android:textColor">@color/highlight</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="status_text">
+        <item name="android:textSize">@dimen/status_text</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+        <item name="android:textColorHighlight">@color/link_bg</item>
+    </style>
+    <style name="status_time">
+        <item name="android:textSize">@dimen/status_time</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="status_source">
+        <item name="android:textSize">@dimen/status_source</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+    </style>
+    <style name="status_response">
+        <item name="android:textSize">@dimen/status_response</item>
+        <item name="android:textColor">@color/emphasize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="status_retweet_text">
+        <item name="android:textSize">@dimen/status_retweet_text</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+        <item name="android:textColorHighlight">@color/link_bg</item>
+    </style>
+    <style name="status_retweet_source">
+        <item name="android:textSize">@dimen/status_retweet_source</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="status_retweet_time">
+        <item name="android:textSize">@dimen/status_retweet_time</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="status_retweet_response">
+        <item name="android:textSize">@dimen/status_retweet_response</item>
+        <item name="android:textColor">@color/selector_text_link</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:background">@color/selector_text_link_bg</item>
+    </style>
+    <style name="status_list_comment_screen_name">
+        <item name="android:textSize">@dimen/status_list_comment_screen_name</item>
+        <item name="android:textColor">@color/highlight</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="status_list_comment_time">
+        <item name="android:textSize">@dimen/status_list_comment_time</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="status_list_comment_text">
+        <item name="android:textSize">@dimen/status_list_comment_text</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!-- account设置 -->
+    <style name="list_account_screen_name">
+        <item name="android:textSize">@dimen/list_account_screen_name</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_account_sp_name">
+        <item name="android:textSize">@dimen/list_account_sp_name</item>
+        <item name="android:textColor">@color/quote</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="list_account_expired_hint">
+        <item name="android:textSize">@dimen/list_account_sp_name</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!-- 写微博 -->
+    <style name="status_capability">
+        <item name="android:textSize">@dimen/status_capability</item>
+        <item name="android:textColor">@color/status_capability</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!-- 写评论 -->
+    <style name="comment_screen_name">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/highlight</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textScaleX">1.8</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="comment_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColorLink">@color/selector_text_link</item>
+        <item name="android:textScaleX">1.2</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="comment_time">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/comment_time</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="comment_count">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/comment_count</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <!-- 写私信 -->
+    <style name="label_message_user">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!-- 个人信息 -->
+    <style name="personal_desc">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textScaleX">1.2</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+    <style name="personal_item">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textScaleX">1.2</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+    <style name="personal_count">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/personal_count</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="personal_count_label">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+	<style name="list_item_topic">
+		<item name="android:textSize">@dimen/list_item_topic</item>
+		<item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+	</style>
+
+    <!-- app -->
+    <style name="list_item_app_name">
+        <item name="android:textSize">@dimen/list_item_app_name</item>
+        <item name="android:textColor">@color/list_item_app_name</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <!-- more -->
+    <style name="list_item_more">
+        <item name="android:textSize">@dimen/list_item_more</item>
+        <item name="android:textColor">@color/content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!-- 通用组件 -->
+    <style name="widget_dialog_list_choose_item">
+        <item name="android:textSize">@dimen/widget_dialog_list_choose_item</item>
+        <item name="android:textColor">@color/widget_dialog_list_choose_item</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+        <style name="widget_dialog_tweet_progress_title">
+        <item name="android:textSize">@dimen/widget_tweet_progress_title</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="widget_tweet_progress_list_screen_name">
+        <item name="android:textSize">@dimen/widget_dialog_tweet_progress_screen_name</item>
+        <item name="android:textColor">@color/widget_dialog_tweet_progress_screen_name</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="widget_tweet_progress_list_sp_name">
+        <item name="android:textSize">@dimen/widget_dialog_tweet_progress_sp_name</item>
+        <item name="android:textColor">@color/widget_dialog_tweet_progress_sp_name</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!-- appwidget -->
+    <style name="widget_blog_screen_name">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/highlight</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="widget_blog_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColorLink">#2F8AB5</item>
+    </style>
+    <style name="widget_retweet_text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#606060</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColorLink">#2F8AB5</item>
+    </style>
+</resources>

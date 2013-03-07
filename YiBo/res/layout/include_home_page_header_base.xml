@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHeaderBase"    
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center_vertical"
+	android:orientation="horizontal">
+    <ImageButton android:id="@+id/ibProfileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_account_display"
+        android:src="@drawable/icon_header_default_min">
+    </ImageButton>
+
+    <TextView android:id="@+id/tvTitle"
+	    android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:text="@string/label_loading"
+		android:gravity="center"
+		android:layout_marginLeft="10sp"
+		android:layout_marginRight="10sp"
+		android:layout_weight="1"
+		android:ellipsize="marquee"
+		android:marqueeRepeatLimit="1"
+		android:singleLine="true"
+		android:focusable="true"
+		android:focusableInTouchMode="true"
+		android:textAppearance="@style/header_title">
+    </TextView>
+
+	<ImageButton android:id="@+id/ibGroup"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/bg_header_divider"
+		android:src="@drawable/selector_btn_group">
+	</ImageButton>
+
+	<ImageButton android:id="@+id/ibEdit"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/bg_header_divider"
+		android:src="@drawable/selector_btn_status">
+	</ImageButton>
+</LinearLayout>

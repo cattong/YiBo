@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llDirectMessageHeader"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:layout_margin="0sp"
+	android:padding="8sp"
+	android:orientation="horizontal"
+	android:background="@drawable/bg_header_corner_tab">
+
+    <LinearLayout 
+        android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+	    <EditText android:id="@+id/etDirectMessage"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:singleLine="true"
+	        android:background="@drawable/bg_input_frame_left_half" />
+	    <Button android:id="@+id/btnDirectMessage"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/selector_btn_message_edit"/>
+    </LinearLayout>
+</LinearLayout>

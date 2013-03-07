@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	style="@style/panel_background"
+	android:orientation="vertical">
+
+    <include layout="@layout/include_secondary_header_base"/>
+
+    <include layout="@layout/include_profile_header"/>
+
+	<ScrollView
+	    android:id="@+id/llContentPanel"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:scrollbars="none"
+		android:padding="0sp"
+		android:background="@color/background_content">
+		<LinearLayout
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:padding="8sp"
+		    android:layout_weight="1" >
+			<LinearLayout
+				android:id="@+id/llChangeProfilePhoto"
+				android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:background="@drawable/selector_btn_action_negative">
+				<ImageView
+				    android:id="@+id/ivProfileEdit"
+					android:src="@drawable/icon_profile_edit"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<TextView
+				    android:id="@+id/tvProfileEdit"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="4sp"
+					android:text="@string/btn_profile_update_profile_image"
+					android:textSize="18sp"
+					android:textColor="@color/selector_btn_action_negative" />
+			</LinearLayout>
+			<EditText
+				android:id="@+id/etProfileScreenName"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8sp"
+				android:hint="@string/hint_profile_edit_screenname"
+				android:singleLine="true" 
+				style="@style/edittext"/>
+			<EditText
+				android:id="@+id/etProfileDescription"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5sp"
+				android:gravity="top"
+				android:hint="@string/hint_profile_edit_description"
+				android:lines="5" 
+				style="@style/edittext"/>
+		</LinearLayout>
+	</ScrollView>
+
+	<LinearLayout
+	    android:id="@+id/llToolbar"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="4sp"
+		android:background="@drawable/bg_toolbar"
+		android:orientation="horizontal"
+		android:gravity="center">
+		<Button
+			android:id="@+id/btnProfileUpdate"
+			android:text="@string/btn_form_submit"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_marginRight="2sp"
+			style="@style/btn_action_positive"
+			android:enabled="false" />
+		<Button
+			android:id="@+id/btnProfileReset"
+			android:text="@string/btn_form_reset"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_marginLeft="2sp"			
+			style="@style/btn_action_negative" />
+	</LinearLayout>
+</LinearLayout>

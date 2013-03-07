@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llFooter"
+    android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_weight="0"
+	android:padding="0sp"
+	android:background="@drawable/bg_footer"
+	android:orientation="horizontal">
+
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:orientation="vertical">
+        <Button android:id="@+id/btnMyHome"
+            android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/selector_tab_home">
+	    </Button>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:orientation="vertical">
+	    <Button android:id="@+id/btnMessage"
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/selector_tab_message">
+	    </Button>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:orientation="vertical">
+	    <Button android:id="@+id/btnProfile"
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/selector_tab_profile">
+	    </Button>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:orientation="vertical">
+	    <Button android:id="@+id/btnApp"
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/selector_tab_app">
+	    </Button>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:orientation="vertical">
+	    <Button android:id="@+id/btnMore"
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/selector_tab_more">
+	    </Button>
+	</LinearLayout>
+</LinearLayout>
+

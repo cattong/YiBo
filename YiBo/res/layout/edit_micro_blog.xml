@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	style="@style/panel_background"
+	android:orientation="vertical">
+
+    <include layout="@layout/include_edit_micro_blog_header"/>
+
+    <LinearLayout 
+        android:id="@+id/llContentPanel"
+        android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1"
+	    android:paddingLeft="6dp"
+	    android:paddingRight="6dp"
+	    android:paddingTop="8dp"
+	    android:paddingBottom="0dp"
+	    android:orientation="vertical"
+	    android:background="@drawable/bg_header_corner_base">
+	    <LinearLayout
+	        android:id="@+id/llEditText"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_margin="3dp"
+	        android:layout_weight="1"
+	        android:orientation="vertical"
+	        android:background="@drawable/bg_input_frame_normal">
+	        <MultiAutoCompleteTextView
+	        	android:id="@+id/etText"
+	         	android:completionThreshold="1"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:paddingTop="4dp"
+	            android:paddingBottom="4dp"
+	            android:gravity="top"
+	            android:minLines="3"
+	            android:textAppearance="@style/content"
+	            android:background="@null"
+	            android:scrollbars="vertical">
+	        </MultiAutoCompleteTextView>
+
+			<ImageView
+            	android:id="@+id/ivAttachment"
+                android:layout_width="60dp"
+                android:layout_height="48dp"
+                android:background="@drawable/shape_attachment"
+                android:visibility="gone" />
+	        <RelativeLayout 
+	            android:id="@+id/rlKeyboard"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="0dp"
+	            android:layout_marginBottom="0dp">	
+	            <Button android:id="@+id/btnCamera"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:background="@drawable/selector_btn_camera">
+	            </Button>
+	            <Button android:id="@+id/btnLocation"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@id/btnCamera"
+	                android:background="@drawable/selector_btn_location">
+	            </Button>
+	            <Button android:id="@+id/btnMention"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@id/btnLocation"
+	                android:background="@drawable/selector_btn_mention">
+	            </Button>
+	            <Button android:id="@+id/btnEmotion"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@id/btnMention"
+	                android:background="@drawable/selector_btn_emotion">
+	            </Button>
+	            <Button android:id="@+id/btnTopic"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@id/btnEmotion"
+	                android:background="@drawable/selector_btn_topic">
+	            </Button>
+	            <Button android:id="@+id/btnTextCount"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	   	            android:paddingLeft="6dp"
+	                android:paddingRight="20dp"
+	                android:layout_alignParentRight="true"
+	                style="@style/status_capability"
+	                android:background="@drawable/selector_btn_text_count">
+	            </Button>
+	        </RelativeLayout>	        
+	    </LinearLayout>
+
+        <include layout="@layout/emotion_grid" android:visibility="gone"/>
+        
+	</LinearLayout>       
+    
+</LinearLayout>

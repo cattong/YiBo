@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  	<item android:id="@+id/menuReComment"
+	     android:title="@string/menu_recomment">
+	</item>
+	<item android:id="@+id/menuPersonalInfo"
+	     android:title="@string/menu_personal_info">
+	</item>
+</menu>

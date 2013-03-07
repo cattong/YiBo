@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHeaderBase"
+    android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:paddingLeft="8sp"
+	android:paddingRight="8sp"
+	android:paddingTop="0sp"
+	android:paddingBottom="0sp"
+	android:background="@drawable/bg_header"
+	android:orientation="horizontal">
+
+	<Button android:id="@+id/btnBack"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/btn_back"
+		android:gravity="center"
+		android:paddingLeft="10sp"
+		style="@style/header_action_back">
+	</Button>
+
+	<TextView android:id="@+id/tvTitle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/label_loading"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:singleLine="true"
+		android:textAppearance="@style/header_title">
+	</TextView>
+
+	<Button android:id="@+id/btnPrevious"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		android:background="@drawable/selector_btn_action_previous">
+	</Button>
+	<Button android:id="@+id/btnNext"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/selector_btn_action_next"
+		android:visibility="gone">
+	</Button>
+	<Button android:id="@+id/btnOperate"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingTop="0sp"
+		android:paddingBottom="0sp"
+		android:paddingLeft="12sp"
+		android:paddingRight="12sp"
+		android:text="@string/btn_back"
+		style="@style/header_action_additional"
+		android:visibility="invisible">
+	</Button>
+</LinearLayout>

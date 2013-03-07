@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHeaderSearch"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:layout_margin="0sp"
+	android:paddingLeft="6sp"
+	android:paddingRight="6sp"
+	android:paddingTop="8sp"
+	android:paddingBottom="8sp"
+	android:orientation="vertical"
+	android:background="@drawable/bg_header_corner_search">
+
+    <LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+	    <EditText android:id="@+id/etKeyWord"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:hint="@string/hint_search"
+	        android:singleLine="true"
+	        android:background="@drawable/bg_input_frame_left_half" />
+	    <Button android:id="@+id/btnSearch"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/selector_btn_search" />	
+	</LinearLayout>
+        
+    <LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="4sp"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+		<Button android:id="@+id/btnSearchStatus"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:padding="0sp"
+			android:text="@string/label_search_status"
+			android:gravity="center"
+			style="@style/tab_toggle_left" />
+		<Button android:id="@+id/btnSearchUser"
+		    android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:padding="0sp"
+			android:text="@string/label_search_user"
+			android:gravity="center"
+			style="@style/tab_toggle_right" />
+	</LinearLayout>
+</LinearLayout>

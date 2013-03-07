@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llRoot"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	style="@style/panel_background" 
+	android:orientation="vertical">
+
+    <include layout="@layout/include_secondary_header_base" />
+    <include layout="@layout/include_user_selector_header"/>
+
+	<ListView android:id="@+id/lvUser"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		android:layout_weight="1"
+		android:divider="@drawable/line_seperator"
+		android:footerDividersEnabled="false"
+		android:cacheColorHint="@android:color/transparent"
+		android:listSelector="@color/selector_list_item"
+	    android:fastScrollEnabled="true"
+	    android:scrollingCache="true"
+	    android:smoothScrollbar="true">
+	</ListView>
+
+	<LinearLayout 
+	    android:id="@+id/llToolbar"
+	    android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:background="@drawable/bg_toolbar"
+		android:orientation="horizontal">
+		<Button android:id="@+id/btnConfirm"
+		    android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="12sp"
+			android:layout_marginRight="6sp"
+			android:layout_weight="1"	    
+			android:text="@string/btn_confirm"
+			style="@style/btn_action_positive">
+		</Button>
+		<Button android:id="@+id/btnCancel"
+		    android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="6sp"	
+			android:layout_marginRight="12sp"
+			android:layout_weight="1"			
+			android:text="@string/btn_cancel"
+			style="@style/btn_action_negative">
+		</Button>
+	</LinearLayout>
+</LinearLayout>

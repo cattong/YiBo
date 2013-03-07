@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHeaderMessage"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:paddingLeft="20sp"
+	android:paddingRight="20sp"
+	android:gravity="center_vertical"
+	android:visibility="gone">
+    <Button android:id="@+id/btnMention"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    android:text="@string/title_mention"
+		android:gravity="center"
+		style="@style/header_title"
+		android:background="@drawable/selector_tab_mention">
+	</Button>
+	<Button android:id="@+id/btnComment"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" 
+	    android:layout_weight="1"
+	    android:gravity="center"
+	    android:text="@string/title_comment"
+		style="@style/header_title"
+		android:background="@drawable/selector_tab_comment">
+	</Button>	
+	<Button android:id="@+id/btnDirectMessage"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    android:gravity="center"
+	    android:text="@string/title_direct_message"
+		style="@style/header_title"
+		android:background="@drawable/selector_tab_direct_message">
+	</Button>
+</LinearLayout>

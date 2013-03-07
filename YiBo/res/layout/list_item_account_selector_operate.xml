@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="6sp"
+    android:orientation="horizontal">
+    <Button
+		android:id="@+id/btnSelectAll"
+		android:text="@string/btn_accounts_select_all"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:layout_marginRight="2sp"
+		android:textColor="@color/selector_btn_action_positive"
+		android:textAppearance="@style/btn_action_positive"
+		android:background="@drawable/selector_btn_action_positive"/>
+
+	<Button
+		android:id="@+id/btnSelectInverse"
+		android:text="@string/btn_accounts_select_inverse"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:layout_marginLeft="2sp"
+		android:textAppearance="@style/btn_action_negative"
+		android:background="@drawable/selector_btn_action_negative" />
+</LinearLayout>

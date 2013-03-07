@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:layout_width="fill_parent"
+	android:orientation="horizontal"
+	android:gravity="center_vertical"
+	android:padding="4sp">
+    <ImageView
+    	android:id="@+id/ivSpIcon"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="0sp"
+	    android:gravity="center_vertical"  />
+	<TextView
+		android:id="@+id/tvSpName"
+		android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1"
+	    android:paddingLeft="12sp"
+	    android:textColor="@color/content"
+	    android:textSize="18sp"
+	    android:textStyle="bold"
+	    android:gravity="center_vertical" />
+</LinearLayout>

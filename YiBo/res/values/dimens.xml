@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="content_line_spacing_extra">4sp</dimen>
+    <dimen name="checkbox">15sp</dimen>
+    <!-- 字体 -->
+    <dimen name="content">16sp</dimen>
+     <dimen name="list_footer_text">18sp</dimen>
+    <dimen name="header_title">18sp</dimen>
+    <dimen name="header_action">17sp</dimen>
+    <dimen name="btn_action">16sp</dimen>
+    <dimen name="btn_tab">18sp</dimen>
+    
+    <dimen name="list_status_screen_name">18sp</dimen>
+    <dimen name="list_status_time">14sp</dimen>
+    <dimen name="list_status_text">16sp</dimen>
+    <dimen name="list_status_retweet">16sp</dimen>
+    <dimen name="list_status_source">14sp</dimen>
+    <dimen name="list_status_response">14sp</dimen>
+
+    <dimen name="list_comment_screen_name">18sp</dimen>
+    <dimen name="list_comment_time">14sp</dimen>
+    <dimen name="list_comment_text">16sp</dimen>
+    <dimen name="list_comment_quote">15sp</dimen>
+
+    <dimen name="list_direct_message_screen_name">18sp</dimen>
+    <dimen name="list_direct_message_time">14sp</dimen>
+    <dimen name="list_direct_message_text">16sp</dimen>
+    <dimen name="list_direct_message_remark">16sp</dimen>
+
+    <dimen name="list_user_profile_name">18sp</dimen>
+    <dimen name="list_user_impress">16sp</dimen>
+
+    <dimen name="profile_screen_name">18sp</dimen>
+    <dimen name="profile_impress">14sp</dimen>
+
+    <dimen name="status_screen_name">18sp</dimen>
+    <dimen name="status_time">14sp</dimen>
+    <dimen name="status_text">17sp</dimen>
+    <dimen name="status_retweet_text">17sp</dimen>
+    <dimen name="status_retweet_time">14sp</dimen>
+    <dimen name="status_retweet_source">14sp</dimen>
+    <dimen name="status_retweet_response">14sp</dimen>
+    <dimen name="status_source">14sp</dimen>
+    <dimen name="status_response">14sp</dimen>
+    <dimen name="status_list_comment_screen_name">16sp</dimen>
+    <dimen name="status_list_comment_time">14sp</dimen>
+    <dimen name="status_list_comment_text">15sp</dimen>
+
+    <dimen name="list_account_screen_name">18sp</dimen>
+    <dimen name="list_account_sp_name">14sp</dimen>
+
+    <dimen name="list_item_app_name">17sp</dimen>
+
+    <dimen name="list_item_more">18sp</dimen>
+    <dimen name="list_item_topic">18sp</dimen>
+
+    <dimen name="status_capability">14sp</dimen>    
+
+    <dimen name="widget_dialog_list_choose_item">18sp</dimen>
+    <dimen name="widget_tweet_progress_title">18sp</dimen>
+    <dimen name="widget_dialog_tweet_progress_screen_name">18sp</dimen>
+    <dimen name="widget_dialog_tweet_progress_sp_name">14sp</dimen>
+</resources>

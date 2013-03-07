@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/llSocialGraphItem"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:gravity="center_vertical"
+	android:paddingBottom="4sp"
+	android:paddingTop="4sp"
+	android:paddingLeft="8sp"
+	android:paddingRight="16sp"
+	android:descendantFocusability="blocksDescendants">
+
+	<ImageView android:id="@+id/ivGroup"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/icon_group" />
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:layout_marginLeft="8sp"
+		android:layout_marginRight="2sp"
+		android:orientation="vertical">
+	    <TextView android:id="@+id/tvGroupName"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:ellipsize="end"
+		    android:singleLine="true"
+		    android:text="@string/label_add_group"
+		    style="@style/list_user_profile_name">
+	    </TextView>
+
+		<TextView android:id="@+id/tvImpress"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/hint_add_group"
+			style="@style/list_user_impress">
+		</TextView>
+	</LinearLayout>
+
+	<ImageView android:id="@+id/ivMoreDetail"
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/icon_more_detail"/>
+</LinearLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llStatus"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:paddingTop="8sp"
+	android:paddingBottom="8sp"
+	android:paddingLeft="8sp">
+
+	<ImageView android:id="@+id/ivProfilePicture"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		android:paddingRight="6sp">
+	</ImageView>
+
+    <LinearLayout android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical"
+    	android:paddingRight="10sp">
+    	<LinearLayout android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:orientation="horizontal">
+    		<TextView android:id="@+id/tvScreenName"
+    			android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    		    style="@style/list_status_screen_name"
+    			android:freezesText="true">
+    		</TextView>
+    		<ImageView android:id="@+id/ivVerify"
+    			android:layout_width="wrap_content"
+    	        android:layout_height="fill_parent"
+    	        android:layout_marginRight="2sp"
+    	        android:layout_gravity="bottom"
+    			android:visibility="gone">
+    		</ImageView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" "/>
+    		<ImageView android:id="@+id/ivLocation"
+    			android:layout_width="wrap_content"
+    	        android:layout_height="fill_parent"
+    	        android:layout_marginRight="2sp"
+    	        android:layout_gravity="bottom"
+    			android:visibility="gone">
+    		</ImageView>
+    		<ImageView android:id="@+id/ivFavorite"
+    			android:layout_width="wrap_content"
+    	        android:layout_height="fill_parent"
+    	        android:layout_marginRight="2sp"
+    	        android:layout_gravity="bottom"
+    			android:visibility="gone">
+    		</ImageView>
+    		<ImageView android:id="@+id/ivAttachment"
+    			android:layout_width="wrap_content"
+    	        android:layout_height="fill_parent"
+    	        android:layout_marginRight="2sp"
+    	        android:layout_gravity="bottom"
+    			android:visibility="gone">
+    		</ImageView>
+    		<TextView android:id="@+id/tvCreatedAt"
+    		    android:hint="@string/label_loading"
+    			android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    			style="@style/list_status_time_read">
+    		</TextView>
+    	</LinearLayout>
+
+        <LinearLayout android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:orientation="vertical"
+        	android:paddingTop="2sp">
+        	<com.shejiaomao.widget.RichTextView android:id="@+id/tvText"
+        	    android:hint="@string/label_loading"
+        		android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+        		android:layout_weight="1"
+        		android:linksClickable="false"
+        		style="@style/list_status_text">
+        	</com.shejiaomao.widget.RichTextView>
+
+			<LinearLayout
+			    android:id="@+id/llThumbnail"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal">
+	            <ImageView android:id="@+id/ivThumbnail"
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"
+	        	    android:layout_marginLeft="20sp"
+	        	    android:minWidth="60dp"
+	        	    android:minHeight="60dp"
+	        	    android:maxWidth="120dp"
+	        	    android:maxHeight="120dp"
+	        	    android:background="@drawable/shape_attachment"
+	        	    android:visibility="visible"
+	        	    android:scaleType="centerInside" >
+	        	</ImageView>
+	        	<TextView
+	        	    android:id="@+id/tvImageInfo"
+	        	    android:layout_width="fill_parent"
+	        	    android:layout_height="wrap_content"
+	        	    android:paddingLeft="8dp"
+	        	    android:layout_gravity="bottom"/>
+        	</LinearLayout>
+
+        	<LinearLayout android:id="@+id/llRetweet"
+        	    android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:paddingLeft="10sp"
+        		android:paddingRight="10sp"
+        		android:paddingTop="10sp"
+        	    android:paddingBottom="6sp"
+        		android:visibility="gone"
+        		android:orientation="vertical">
+        	    <com.shejiaomao.widget.RichTextView android:id="@+id/tvRetweetText"
+        	        android:hint="@string/label_loading"
+        		    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:linksClickable="false"
+                    android:textColorLink="@color/selector_text_link"
+        		    style="@style/list_status_retweet">
+        	    </com.shejiaomao.widget.RichTextView>
+	            <LinearLayout
+				    android:id="@+id/llRetweetThumbnail"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal">
+		            <ImageView android:id="@+id/ivRetweetThumbnail"
+		        	    android:layout_width="wrap_content"
+		        	    android:layout_height="wrap_content"
+		        	    android:minWidth="60dp"
+		        	    android:minHeight="60dp"
+		        	    android:maxWidth="120dp"
+		        	    android:maxHeight="120dp"
+		        	    android:background="@drawable/shape_attachment"
+		        	    android:visibility="visible"
+		        	    android:scaleType="centerInside" >
+		        	</ImageView>
+		        	<TextView
+		        	    android:id="@+id/tvRetweetImageInfo"
+		        	    android:layout_width="fill_parent"
+		        	    android:layout_height="wrap_content"
+		        	    android:paddingLeft="8dp"
+		        	    android:layout_gravity="bottom"/>
+		        </LinearLayout>
+            </LinearLayout>
+
+        	<LinearLayout android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:orientation="horizontal"
+        		android:paddingTop="2sp">
+        		<TextView android:id="@+id/tvSource"
+        			android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_loading"
+                    android:layout_weight="1"
+                    android:gravity="left"
+        			android:textAppearance="@style/list_status_source">
+        		</TextView>
+        		<TextView android:id="@+id/tvResponse"
+        			android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+        		    android:hint="@string/label_loading"
+                    android:layout_weight="1"
+                    android:gravity="right"
+        			style="@style/list_status_response">
+        		</TextView>
+        	</LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

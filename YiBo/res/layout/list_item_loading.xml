@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llLoadingView"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:gravity="center"
+	android:background="@color/list_item_more">
+	
+	<ProgressBar 
+	    android:id="@+id/pbLoading"
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		style="?android:attr/progressBarStyleInverse">
+	</ProgressBar>
+	<TextView 
+	    android:id="@+id/tvLoading"
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="@string/label_loading"
+		android:layout_marginLeft="4dp"
+		android:textAppearance="@style/content">
+	</TextView>
+	
+</LinearLayout>

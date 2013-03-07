@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+    <include layout="@layout/include_image_header"/>
+
+	<LinearLayout
+		android:id="@+id/flPlainImageViewer"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:layout_weight="1">
+		<com.shejiaomao.widget.TouchImageViewV4
+			android:id="@+id/ivImageViewer"
+		    android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="1" />
+		<LinearLayout
+			android:id="@+id/llToolbar"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:padding="8sp"
+			android:background="@drawable/bg_toolbar" >
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center_horizontal" >
+				<ImageView
+					android:id="@+id/ivRotateLeft"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/selector_btn_image_rotate_left" />
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center_horizontal" >
+				<ImageView
+					android:id="@+id/ivRotateRight"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/selector_btn_image_rotate_right" />
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center_horizontal" >
+				<ImageView
+					android:id="@+id/ivZoomIn"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/selector_btn_image_zoom_in" />
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center_horizontal" >
+				<ImageView
+					android:id="@+id/ivZoomOut"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/selector_btn_image_zoom_out" />
+			</LinearLayout>
+		</LinearLayout>
+
+	</LinearLayout>
+</LinearLayout>

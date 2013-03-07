@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	style="@style/panel_background"
+	android:orientation="vertical">
+
+    <include layout="@layout/include_secondary_header_base"/>
+
+    <include layout="@layout/include_profile_header"/>
+
+	<include layout="@layout/include_profile_content"/>
+
+    <include layout="@layout/include_profile_footer"/>
+
+</LinearLayout>

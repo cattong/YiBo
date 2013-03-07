@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llEmotion"
+    android:layout_weight="1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <LinearLayout 
+        android:id="@+id/llEmotionTab"
+        android:layout_width="fill_parent"
+        android:layout_height="40sp"
+        android:orientation="horizontal"
+        android:layout_marginTop="0sp"
+        android:layout_marginBottom="0sp"
+        android:visibility="gone">
+        <Button android:id="@+id/btnBaseEmotion"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0sp"
+            android:text="@string/label_emotion_base"
+            android:gravity="center"
+            style="@style/tab_toggle_left" />
+        <Button android:id="@+id/btnExtEmotion"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0sp"
+            android:text="@string/label_emotion_ext"
+            android:gravity="center"
+            style="@style/tab_toggle_left" />
+    </LinearLayout>
+    
+	<GridView 
+	    android:id="@+id/emotionGrid"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:padding="5dp"
+	    android:verticalSpacing="10dp"
+	    android:horizontalSpacing="5dp"
+	    android:numColumns="auto_fit"
+	    android:columnWidth="40dp"
+	    android:stretchMode="columnWidth"
+	    android:gravity="center"/>
+</LinearLayout>
