@@ -25,7 +25,6 @@ import com.cattong.commons.http.HttpRequestHelper;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.commons.util.TimeSpanUtil;
 import com.shejiaomao.common.CompatibilityUtil;
-import com.shejiaomao.common.HardwareUtil;
 import com.shejiaomao.common.ImageQuality;
 import com.shejiaomao.common.NetType;
 import com.shejiaomao.common.NetUtil;
@@ -405,13 +404,7 @@ public class SheJiaoMaoApplication extends Application {
 	}
 
 	private void initPrefs() {
-		String deviceId = HardwareUtil.getDeviceId(this);
-		
-		SharedPreferences prefs = this.getSharedPreferences(
-				Constants.PREFS_NAME_APP_SETTING, 0);
-		Editor editor = prefs.edit();
-		editor.putString(Constants.PREFS_NAME_USERNAME, deviceId);
-		editor.commit();
+
 	}
 	
     private void initGlobalVars() {
