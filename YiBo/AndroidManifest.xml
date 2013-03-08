@@ -270,7 +270,7 @@
         </service>        
 		<meta-data android:value="5135b940527015355a00006c" android:name="UMENG_APPKEY" />
 		<!-- 发布渠道属性值请勿更改，使用Ant进行打包时会自行替换为相应渠道 -->
-		<meta-data android:value="{publish_channel}" android:name="UMENG_CHANNEL"/>
+		<meta-data android:value="github.com" android:name="UMENG_CHANNEL"/>
 		
 	</application>
 
