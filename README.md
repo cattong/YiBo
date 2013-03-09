@@ -6,7 +6,7 @@ A simple and fast weibo app,support Sina, Tencent, Twiiter, Netease,Soho...
 目录介绍
 ====
 -----YiBo  yibo的android源代码
------YiBoLibrary yibo的底层库，包括各平台封闭
+-----YiBoLibrary yibo的底层库，包括各平台封装
 
 
 社区版本
