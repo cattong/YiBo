@@ -2,16 +2,15 @@ package com.cattong.commons;
 
 public enum ServiceProvider {
 
-	None(-1, null, ServiceProvider.CATEGORY_SOCAILCAT, null), // 空，仅用于非SP请求或无需指定SP的情况
-	SocialCat(ServiceProvider.SP_SOCIALCAT, "Shejiaomao.com", ServiceProvider.CATEGORY_SOCAILCAT, "Shejiaomao.com"),
+	None(-1, null, ServiceProvider.CATEGORY_WEIBO, null), // 空，仅用于非SP请求或无需指定SP的情况
 	
 	//微博
-	Sina(ServiceProvider.SP_SINA, "新浪微博", ServiceProvider.CATEGORY_WEIBO, "积分邦"),
-	Sohu(ServiceProvider.SP_SOHU, "搜狐微博", ServiceProvider.CATEGORY_WEIBO, "积分邦"),
-	NetEase(ServiceProvider.SP_NETEASE, "网易微博", ServiceProvider.CATEGORY_WEIBO, "积分邦"),
-	Tencent(ServiceProvider.SP_TENCENT, "腾讯微博", ServiceProvider.CATEGORY_WEIBO, "jifenbang_net"),
-	Twitter(ServiceProvider.SP_TWITTER, "Twitter", ServiceProvider.CATEGORY_WEIBO, "jifenbang"),
-	Fanfou(ServiceProvider.SP_FANFOU, "饭否", ServiceProvider.CATEGORY_WEIBO, "积分邦"),
+	Sina(ServiceProvider.SP_SINA, "新浪微博", ServiceProvider.CATEGORY_WEIBO, "YiBo微博客户端"),
+	Sohu(ServiceProvider.SP_SOHU, "搜狐微博", ServiceProvider.CATEGORY_WEIBO, "YiBo微博客户端"),
+	NetEase(ServiceProvider.SP_NETEASE, "网易微博", ServiceProvider.CATEGORY_WEIBO, "YiBo微博客户端"),
+	Tencent(ServiceProvider.SP_TENCENT, "腾讯微博", ServiceProvider.CATEGORY_WEIBO, "yiboclient"),
+	Twitter(ServiceProvider.SP_TWITTER, "Twitter", ServiceProvider.CATEGORY_WEIBO, "yiboclient"),
+	Fanfou(ServiceProvider.SP_FANFOU, "饭否", ServiceProvider.CATEGORY_WEIBO, "YiBo微博客户端"),
 
 	//SNS
 	RenRen(ServiceProvider.SP_RENREN, "人人网", ServiceProvider.CATEGORY_SNS, ""),
@@ -65,14 +64,10 @@ public enum ServiceProvider {
 
 	public static final String CATEGORY_WEIBO = "weibo";
 	public static final String CATEGORY_SNS = "sns";
-	public static final String CATEGORY_SOCAILCAT = "socialcat";
 
 	public static ServiceProvider getServiceProvider(int spNo){
 		ServiceProvider sp = null;
 		switch(spNo){
-		case SP_SOCIALCAT:
-			sp = SocialCat;
-			break;
 		case SP_SINA:
 			sp = Sina;
 			break;
