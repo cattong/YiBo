@@ -44,7 +44,7 @@ public class AddAccountConfigAppItemSelectedListener implements
 		OAuthConfig oauthConfig = auth.getoAuthConfig();
 		oauthConfig.setConsumerKey(configApp.getAppKey());
 		oauthConfig.setConsumerSecret(configApp.getAppSecret());
-		oauthConfig.setCallbackUrl(oauthConfig.getCallbackUrl());
+		oauthConfig.setCallbackUrl(configApp.getCallbackUrl());
 		Logger.debug("callback:{}", oauthConfig.getCallbackUrl());
 	}
 	
