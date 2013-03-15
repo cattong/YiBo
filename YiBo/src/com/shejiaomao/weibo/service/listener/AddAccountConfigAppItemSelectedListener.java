@@ -1,5 +1,6 @@
 package com.shejiaomao.weibo.service.listener;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -10,6 +11,8 @@ import com.cattong.commons.http.auth.Authorization;
 import com.cattong.commons.oauth.config.OAuthConfig;
 import com.cattong.entity.ConfigApp;
 import com.shejiaomao.weibo.activity.AddAccountActivity;
+import com.shejiaomao.weibo.activity.AddConfigAppActivity;
+import com.shejiaomao.weibo.common.Constants;
 
 public class AddAccountConfigAppItemSelectedListener implements
 		OnItemSelectedListener {
@@ -23,19 +26,26 @@ public class AddAccountConfigAppItemSelectedListener implements
 	public void onItemSelected(AdapterView<?> parent, View view,
 			int position, long id) {
 		Adapter adapter = parent.getAdapter();
-		ConfigApp configApp = (ConfigApp)adapter.getItem(position);
-		
 		Authorization auth = context.getAuth();
 		if (auth == null) {
 			Logger.error("auth can't be null");
 			return;
 		}
 		
+		ConfigApp configApp = (ConfigApp)adapter.getItem(position);		
+		if (configApp.getAppId() == -2l) {
+			Intent intent = new Intent();
+			intent.setClass(context, AddConfigAppActivity.class);
+			intent.putExtra("spNo", auth.getServiceProvider().getSpNo());
+			context.startActivityForResult(intent, Constants.REQUEST_CODE_ACCOUNT_ADD);
+			return;
+		}
+		
 		OAuthConfig oauthConfig = auth.getoAuthConfig();
 		oauthConfig.setConsumerKey(configApp.getAppKey());
 		oauthConfig.setConsumerSecret(configApp.getAppSecret());
-		
-		//context.setConfigApp(configApp);
+		oauthConfig.setCallbackUrl(oauthConfig.getCallbackUrl());
+		Logger.debug("callback:{}", oauthConfig.getCallbackUrl());
 	}
 	
 	@Override

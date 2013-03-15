@@ -80,7 +80,7 @@ public class XAuthTask extends AsyncTask<Void, Void, Boolean> {
     	String password = auth.getAccessSecret();
     	ServiceProvider sp = auth.getServiceProvider();
 		try {
-			if (NetUtil.isCMWAP()
+			if (NetUtil.isNETWAP()
 				&& (URLUtil.isHttpsUrl(oauthConfig.getRequestTokenUrl())
 				  	|| URLUtil.isHttpsUrl(oauthConfig.getAccessTokenUrl()))) {
 				throw new SheJiaoMaoException(SheJiaoMaoException.NET_HTTPS_UNDER_CMWAP);

@@ -1,5 +1,6 @@
 package com.shejiaomao.weibo.service.adapter;
 
+import net.dev123.yibo.R;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
@@ -7,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cattong.commons.ServiceProvider;
-import net.dev123.yibo.R;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalResource;
 import com.shejiaomao.weibo.common.GlobalVars;
@@ -187,25 +187,6 @@ public class StatusHolder {
     	headTask = null;
     	thumbnailTask = null;
     	responseCountTask = null;
-
-    	if (ivThumbnail != null) {
-    		ivThumbnail.clearAnimation();
-    	}
-    	if (ivRetweetThumbnail != null) {
-    		ivRetweetThumbnail.clearAnimation();
-    	}
-//    	if (ivProfilePicture != null && ivProfilePicture.getVisibility() == View.VISIBLE) {
-//    		ivProfilePicture.setVisibility(View.GONE);
-//    		ivProfilePicture.setImageDrawable(null);
-//    	}
-//    	if (ivThumbnail != null && ivThumbnail.getVisibility() == View.VISIBLE) {
-//    		ivThumbnail.setVisibility(View.GONE);
-//    		ivThumbnail.setImageDrawable(null);
-//    	}
-//    	if (ivRetweetThumbnail != null && ivRetweetThumbnail.getVisibility() == View.VISIBLE) {
-//    		ivRetweetThumbnail.setVisibility(View.GONE);
-//    		ivRetweetThumbnail.setImageDrawable(null);
-//    	}
 
     	if (Constants.DEBUG) Log.d(TAG, "status convertView recycle");
     }

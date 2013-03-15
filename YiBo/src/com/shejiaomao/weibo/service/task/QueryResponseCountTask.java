@@ -22,10 +22,10 @@ import com.shejiaomao.weibo.common.GlobalResource;
 import com.shejiaomao.weibo.common.GlobalVars;
 
 public class QueryResponseCountTask extends AsyncTask<Void, Void, ResponseCount> {
-    private static final String LOG_TAG  = "QueryStatusCount";
+    private static final String LOG_TAG  = "QueryResponseCountTask";
 
 	private Context context;
-	private Weibo microBlog = null;
+	private Weibo weibo = null;
 	private String resultMsg = null;
 
 	//更新列表的转发和评论
@@ -35,7 +35,7 @@ public class QueryResponseCountTask extends AsyncTask<Void, Void, ResponseCount>
 		this.context = context;
 		this.status = status;
 		SheJiaoMaoApplication sheJiaoMao = (SheJiaoMaoApplication)((Activity)context).getApplication();
-		microBlog = GlobalVars.getMicroBlog(sheJiaoMao.getCurrentAccount());
+		weibo = GlobalVars.getMicroBlog(sheJiaoMao.getCurrentAccount());
 	}
 
 	public QueryResponseCountTask(Context context, com.cattong.entity.Status status, TextView tvResponse) {
@@ -43,7 +43,7 @@ public class QueryResponseCountTask extends AsyncTask<Void, Void, ResponseCount>
 		this.status = status;
 		this.tvResponse = tvResponse;
 		SheJiaoMaoApplication sheJiaoMao = (SheJiaoMaoApplication)((Activity)context).getApplication();
-		microBlog = GlobalVars.getMicroBlog(sheJiaoMao.getCurrentAccount());
+		weibo = GlobalVars.getMicroBlog(sheJiaoMao.getCurrentAccount());
 	}
 
 	@Override
@@ -70,7 +70,7 @@ public class QueryResponseCountTask extends AsyncTask<Void, Void, ResponseCount>
 
 	@Override
 	protected ResponseCount doInBackground(Void... params) {
-		if (microBlog == null || status == null) {
+		if (weibo == null || status == null) {
 			return null;
 		}
 
@@ -81,7 +81,7 @@ public class QueryResponseCountTask extends AsyncTask<Void, Void, ResponseCount>
 
 		ResponseCount count = null;
 		try {
-			count = microBlog.getResponseCount(status);
+			count = weibo.getResponseCount(status);
 		} catch (LibException e) {
 			if (Constants.DEBUG) Log.e(LOG_TAG, resultMsg, e);
 			if (e.getErrorCode() != LibResultCode.API_UNSUPPORTED) {

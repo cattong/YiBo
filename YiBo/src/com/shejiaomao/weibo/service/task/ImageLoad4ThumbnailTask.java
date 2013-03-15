@@ -7,8 +7,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -24,6 +22,7 @@ import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.MicroBlogActivity;
 import com.shejiaomao.weibo.common.CacheManager;
 import com.shejiaomao.weibo.common.Constants;
+import com.shejiaomao.weibo.common.GlobalResource;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.service.adapter.StatusUtil;
 import com.shejiaomao.weibo.service.cache.ImageCache;
@@ -40,11 +39,12 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
 
 	private ImageView imageView;
 	private TextView tvImageInfo;
-	private CachedImageKey key;
+	private CachedImageKey cachedImageKey;
 	private String url;
+	private boolean isMemoryHit = false;
 	private boolean isHit = false;
 	private Bitmap bitmap;
-	private CachedImage wrap = null;
+	private CachedImage cachedImage = null;
 
 	private ProgressBar pBar;
 	private String orignUrl;
@@ -69,18 +69,19 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
 	    	}
 	    }
 	    
-		init();
-	}
-	
-	private void init() {
 	    imageCache = (ImageCache)CacheManager.getInstance().getCache(ImageCache.class.getName());
-        //if (Constants.DEBUG) imageCache.stat();
-	    key = new CachedImageKey(url, CachedImageKey.IMAGE_THUMBNAIL);
-	    if (url != null
-	    	&& (wrap = imageCache.get(key)) != null) {
-		    bitmap = wrap.getWrap();
-			isHit = true;
-		}
+	    cachedImageKey = new CachedImageKey(url, CachedImageKey.IMAGE_THUMBNAIL);
+	    isHit = imageCache.containsKey(cachedImageKey);
+	    if (isHit && (cachedImage = imageCache.getMemoryCached(cachedImageKey)) != null) {
+	    	bitmap = cachedImage.getWrap();
+	    	isMemoryHit = true;
+    	}
+	    
+	    if (!isMemoryHit) {
+	    	imageView.setImageDrawable(GlobalResource.getDefaultThumbnail(imageView.getContext()));
+	    } else {
+	    	imageView.setImageBitmap(bitmap);
+	    }
 	}
 
 	@Override
@@ -90,9 +91,9 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
         	tvImageInfo.setVisibility(View.GONE);
         	tvImageInfo.setText("");
         }
-		if (isHit && imageView != null) {
+		if (isMemoryHit && imageView != null) {
 			cancel(true);
-			onPostExecute(wrap);
+			onPostExecute(cachedImage);
 			return;
 		}
 		if (GlobalVars.NET_TYPE == NetType.NONE) {
@@ -105,8 +106,14 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
 	@Override
 	protected CachedImage doInBackground(com.cattong.entity.Status... params) {
 		if (imageView == null || url == null) {
-			return wrap;
+			return cachedImage;
 		}
+		if (isHit) {
+        	cachedImage = imageCache.get(cachedImageKey);
+        	bitmap = cachedImage.getWrap();
+        	return cachedImage;
+        }
+		
 		String bigImageUrl = null;
 		if (params.length == 1) {
 			com.cattong.entity.Status status = params[0];
@@ -121,7 +128,7 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
 			if (bitmap == null) {
 				return null;
 			}
-			wrap = new CachedImage(bitmap);
+			cachedImage = new CachedImage(bitmap);
 
 			int maxWidth = 120 * SheJiaoMaoApplication.getDensityDpi() / DisplayMetrics.DENSITY_DEFAULT;
 			if (isNetEase(orignUrl)	
@@ -141,22 +148,22 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
 				}
 				bitmap = thumbnailMap;
 
-				wrap = new CachedImage(bitmap);
+				cachedImage = new CachedImage(bitmap);
 			} else {
 				//直接写入文件，不使用bitmap的压缩写入
-				ImageCache.write(key, imageData);
-				wrap.setLocalCached(true);
+				ImageCache.write(cachedImageKey, imageData);
+				cachedImage.setLocalCached(true);
 			}
 
 			/**加入cache中**/
-			imageCache.put(key, wrap);
+			imageCache.put(cachedImageKey, cachedImage);
 			
 		} catch (LibException e) {
 			if(Constants.DEBUG) Log.e(TAG, e.getMessage(), e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), imageView.getContext());
 		}
 
-		return wrap;
+		return cachedImage;
 	}
 
 	@Override
@@ -165,16 +172,8 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
 
 		if (result != null) {
 			imageView.setVisibility(View.VISIBLE);
-			imageView.setImageBitmap(bitmap);
-			Animation alphaAnimation = imageView.getAnimation();
-			if (alphaAnimation != null) {
-				alphaAnimation.reset();
-			} else {
-				alphaAnimation = AnimationUtils.loadAnimation(imageView.getContext(), android.R.anim.fade_in);
-			}
-			imageView.setAnimation(alphaAnimation);
+			imageView.setImageBitmap(bitmap);			
 			if (Constants.DEBUG) Log.v(TAG, "update imageview");
-
 		} else {
 			imageView.setVisibility(View.GONE);
 			if (Constants.DEBUG && resultMsg != null) {

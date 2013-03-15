@@ -14,7 +14,7 @@ import com.shejiaomao.widget.SQLiteOpenHelper;
  */
 public class DBHelper extends SQLiteOpenHelper {
 
-	private static final int DB_VERSION = 42;
+	private static final int DB_VERSION = 60;
 	private static final String DB_NAME = "shejiaomao.db";
 
 	private String[] createSQL = null;

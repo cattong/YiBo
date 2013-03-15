@@ -161,8 +161,7 @@ public class MyHomePageUpTask extends AsyncTask<Void, Void, Boolean> {
 		}
 
 		if (cacheSize > 0
-			&& listNewBlog.get(cacheSize - 1) instanceof LocalStatus
-		) {
+			&& listNewBlog.get(cacheSize - 1) instanceof LocalStatus) {
 			cacheSize--;
 		}
 
@@ -172,8 +171,7 @@ public class MyHomePageUpTask extends AsyncTask<Void, Void, Boolean> {
 				adapter.getContext(),
 				adapter.getContext().getString(R.string.msg_refresh_frends_timeline, cacheSize),
 				Toast.LENGTH_LONG
-			);
-			toast.getView().setBackgroundResource(R.drawable.shape_toast);
+			);			
 			toast.show();
 		}
 	}

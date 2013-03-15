@@ -4,7 +4,7 @@ import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.HeaderViewListAdapter;
 
-import com.shejiaomao.widget.BaseListAdapter;
+import com.shejiaomao.weibo.service.BaseListAdapter;
 
 public class AdapterUtil {
 

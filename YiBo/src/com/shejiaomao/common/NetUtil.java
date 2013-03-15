@@ -24,7 +24,7 @@ public class NetUtil {
 	/** 查询所有当前正在使用的APN的CONTENT_URI */
 	private static final Uri PREFER_APN_CONTENT_URI = Uri.parse("content://telephony/carriers/preferapn");
 
-	private static boolean isCMWAP = false;
+	private static boolean isNETWAP = false;
 
 	public enum NetworkOperator {
 		CHINA_MOBILE,
@@ -113,7 +113,7 @@ public class NetUtil {
 	 * @param context
 	 */
 	public static void updateNetworkConfig(Context context) {
-		boolean isNetCmwap = false;
+		boolean isNetWap = false;
 		NetType type = getCurrentNetType(context);
 		if (type == NetType.NONE) {
 			return;
@@ -129,8 +129,9 @@ public class NetUtil {
 			return;
 		}
 		NetworkOperator operator = getNetworkOperator(context);
-		if (operator == NetworkOperator.CHINA_MOBILE
-			&& (type == NetType.MOBILE_EDGE	|| type == NetType.MOBILE_GPRS)) {
+		if (type == NetType.MOBILE_EDGE 
+			|| type == NetType.MOBILE_GPRS
+			|| type == NetType.MOBILE_3G) {
 
 			String apnName = networkInfo.getExtraInfo();
 			Logger.debug("extraInfo:{}", apnName);
@@ -139,8 +140,8 @@ public class NetUtil {
 			if (StringUtil.isNotEmpty(apnName)) {
 
 				String[] projection = {"apn", "proxy", "port", "user", "password"};
-				Cursor cursor = context.getContentResolver()
-						.query(PREFER_APN_CONTENT_URI, projection, null, null, null);
+				Cursor cursor = context.getContentResolver().query(PREFER_APN_CONTENT_URI, 
+					projection, null, null, null);
 				if (cursor != null && cursor.moveToFirst()) {
 					int apnIndex = cursor.getColumnIndex("apn");
 					int proxyIndex = cursor.getColumnIndex("proxy");
@@ -153,8 +154,9 @@ public class NetUtil {
 							proxyPort = cursor.getInt(portIndex);
 							proxyUser = cursor.getString(userIndex);
 							proxyPassword = cursor.getString(passwordIndex);
-
-							isNetCmwap = "10.0.0.172".equals(cursor.getString(proxyIndex));
+                            
+							//移动联通wap（代理相同：10.0.0.172：80），电信wap（代理：10.0.0.200：80）
+							isNetWap = "10.0.0.172".equals(proxyHost) || "10.0.0.200".equals(proxyHost);
 						}
 
 						cursor.moveToNext();
@@ -163,13 +165,13 @@ public class NetUtil {
 			}
 		}
 
-		if (isCMWAP ^ isNetCmwap) {
+		if (isNETWAP ^ isNetWap) {
 		   HttpRequestHelper.setGlobalProxy(proxyHost, proxyPort, proxyUser, proxyPassword);
-		   isCMWAP = isNetCmwap;
+		   isNETWAP = isNetWap;
 		}
 		if (Logger.isDebug()) {
 			Toast.makeText(context,
-				"Network switch to " + type + " , CMWAP = " + isCMWAP + ", Proxy = " + proxyHost,
+				"Network switch to " + type + " , CMWAP = " + isNETWAP + ", Proxy = " + proxyHost,
 				Toast.LENGTH_SHORT
 			).show();
 		}
@@ -207,8 +209,8 @@ public class NetUtil {
 	    return imsi;
 	}
 
-	public static boolean isCMWAP() {
-		return isCMWAP;
+	public static boolean isNETWAP() {
+		return isNETWAP;
 	}
 	
 	/*

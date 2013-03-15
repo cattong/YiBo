@@ -20,13 +20,13 @@
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:orientation="vertical"
-			android:padding="8sp" >
+			android:padding="8dp" >
 			<EditText
 				android:id="@+id/etPassportUsername"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="4sp"
-				android:layout_marginBottom="4sp"
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"
 				android:hint="@string/hint_passport_login_username"
 				android:maxLength="20"
 				android:singleLine="true"
@@ -37,8 +37,8 @@
 				android:id="@+id/etPassportPassword"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="4sp"
-				android:layout_marginBottom="4sp"
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"
 				android:hint="@string/hint_passport_login_password"
 				android:maxLength="16"
 				android:singleLine="true"
@@ -50,8 +50,8 @@
 				android:id="@+id/etPassportPasswordConfirmed"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="4sp"
-				android:layout_marginBottom="4sp"				
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"				
 				android:hint="@string/hint_passport_password_confirmed"
 				android:singleLine="true"
 				android:password="true"
@@ -63,8 +63,8 @@
 				android:id="@+id/etPassportEmail"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="4sp"
-				android:layout_marginBottom="4sp"				
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"				
 				android:hint="@string/hint_passport_email"
 				android:singleLine="true"
 				android:inputType="textEmailAddress"
@@ -78,7 +78,7 @@
 	    android:id="@+id/llFooterAction"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:padding="8sp"
+		android:padding="8dp"
 		android:gravity="center"
 		android:orientation="horizontal"
 		android:background="@drawable/bg_footer_action">
@@ -89,7 +89,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
-			android:layout_marginRight="4sp"
+			android:layout_marginRight="4dp"
 			style="@style/btn_action_positive"
 			android:enabled="false" />
 
@@ -99,7 +99,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
-			android:layout_marginLeft="4sp"
+			android:layout_marginLeft="4dp"
 			style="@style/btn_action_negative" />
 	</LinearLayout>
 

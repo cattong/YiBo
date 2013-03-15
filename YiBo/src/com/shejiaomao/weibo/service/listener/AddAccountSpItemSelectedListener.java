@@ -42,7 +42,6 @@ public class AddAccountSpItemSelectedListener implements OnItemSelectedListener 
 	private EditText etSearchProxy;
 	private CheckBox cbFollowOffical;
 	private CheckBox cbMakeDefault;
-	private CheckBox cbUseCustomKey;
 	private Spinner spConfigApp;
 	private Button btnAuthorize;
 	
@@ -61,7 +60,6 @@ public class AddAccountSpItemSelectedListener implements OnItemSelectedListener 
 		etSearchProxy = (EditText) context.findViewById(R.id.etSearchProxy);
 		cbFollowOffical = (CheckBox) context.findViewById(R.id.cbFollowOffical);
 		cbMakeDefault = (CheckBox) context.findViewById(R.id.cbDefault);
-		cbUseCustomKey = (CheckBox) context.findViewById(R.id.cbUseCustomKey);
 		spConfigApp = (Spinner) context.findViewById(R.id.spConfigApp);
 		btnAuthorize = (Button) context.findViewById(R.id.btnAuthorize);
 	}
@@ -79,9 +77,6 @@ public class AddAccountSpItemSelectedListener implements OnItemSelectedListener 
         	ConfigAppSpinnerAdapter adapter = (ConfigAppSpinnerAdapter) spConfigApp.getAdapter();
         	adapter.setServiceProvider(sp);
         }
-        
-        cbUseCustomKey.setChecked(false);
-        spConfigApp.setVisibility(View.GONE);
 
         showForm(sp);
 
@@ -104,15 +99,9 @@ public class AddAccountSpItemSelectedListener implements OnItemSelectedListener 
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 					if (isChecked) {
-						showXAuthForm(sp);
-						if (context.isCustomKeyLevel()) {
-							cbUseCustomKey.setVisibility(View.GONE);
-						}
+						showXAuthForm(sp);						
 					} else {
-						showOAuthForm(sp);
-						if (context.isCustomKeyLevel()) {
-							cbUseCustomKey.setVisibility(View.VISIBLE);
-						}
+						showOAuthForm(sp);						
 					}
 				}
 			});

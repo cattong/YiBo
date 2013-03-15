@@ -16,7 +16,7 @@
 		android:fillViewport="true" 
 		android:background="@drawable/bg_header_corner_base">
 
-		<LinearLayout
+	   <LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
@@ -122,28 +122,15 @@
 				android:text="@string/label_accounts_add_follow_official"
 				style="@style/checkbox" />
 
-			<LinearLayout android:id="@+id/llConfigApp"
-				android:orientation="vertical"
+
+			<Spinner
+				android:id="@+id/spConfigApp"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="16dp"
-			 	android:visibility="gone">
-				<CheckBox
-					android:id="@+id/cbUseCustomKey"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/label_accounts_add_use_custom_key"
-					style="@style/checkbox" />
-				<Spinner
-					android:id="@+id/spConfigApp"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:padding="2dp"
-					android:drawSelectorOnTop="true"
-					android:background="@drawable/selector_btn_dropdown"
-					android:visibility="gone" />
-			</LinearLayout>
-			
+				android:padding="2dp"
+				android:drawSelectorOnTop="true"
+				android:prompt="@string/hint_sp_prompt"
+				android:background="@drawable/selector_btn_dropdown"/>			
 		</LinearLayout>
 	</ScrollView>
 

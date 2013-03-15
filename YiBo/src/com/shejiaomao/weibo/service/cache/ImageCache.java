@@ -16,6 +16,7 @@ import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.StringUtil;
 import com.shejiaomao.common.ImageUtil;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
@@ -82,11 +83,13 @@ public class ImageCache implements MapCache<CachedImageKey, CachedImage> {
 
 	@Override
 	public boolean containsKey(CachedImageKey key) {
-		boolean isContain = true;
-		if (!memoryCache.containsKey(key)) {
+		boolean isContain = memoryCache.containsKey(key);
+		if (!isContain) {
 			String filePath = getRealPath(key);
 			if (filePath == null) {
 				isContain = false;
+			} else {
+				isContain = true;
 			}
 		}
 
@@ -145,30 +148,44 @@ public class ImageCache implements MapCache<CachedImageKey, CachedImage> {
 			return null;
 		}
 
-		CachedImage bWrap = null;
-		if (memoryCache.containsKey(key)) {
-			bWrap = memoryCache.get(key);
-		}
-
-		if (bWrap != null && bWrap.getWrap() != null) {
-			if(Constants.DEBUG) Log.v("ImageCache", "hit memory cache");
-			return bWrap;
+		CachedImage cachedImage = memoryCache.get(key);
+		if (cachedImage != null && cachedImage.getWrap() != null) {
+			if(Logger.isDebug()) Log.v("ImageCache", "hit memory cache");
+			return cachedImage;
 		}
 
 	    CachedImage temp = read(key);
 	    Bitmap bitmap = null;
 	    if (temp != null) {
 	    	bitmap = temp.getWrap();
-	    	if (bWrap != null) {
-	            bWrap.setWrap(bitmap);
+	    	if (cachedImage != null) {
+	            cachedImage.setWrap(bitmap);
 	    	} else {
-	    		bWrap = temp;
-	    		memoryCache.put(key, bWrap);
+	    		cachedImage = temp;
+	    		memoryCache.put(key, cachedImage);
 	    	}
-	        if(Constants.DEBUG) Log.v("ImageCache", "hit local cache");
+	        if(Logger.isDebug()) Log.v("ImageCache", "hit local cache");
 	    }
 
-		return bWrap;
+		return cachedImage;
+	}
+
+	public CachedImage getMemoryCached(CachedImageKey key) {
+		boolean isContain = containsKey(key);
+		CachedImage cachedImage = null;
+		if (!isContain) {
+			return cachedImage;
+		}
+		
+		cachedImage = memoryCache.get(key);
+		if (cachedImage != null && cachedImage.getWrap() != null) {
+			if(Logger.isDebug()) Log.v("ImageCache", "getMemoryCached hit memory cache");
+			return cachedImage;
+		} else {
+			cachedImage = null;
+		}
+
+		return cachedImage;
 	}
 
 	@Override

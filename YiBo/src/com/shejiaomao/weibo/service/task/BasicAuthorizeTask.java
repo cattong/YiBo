@@ -64,7 +64,7 @@ public class BasicAuthorizeTask extends AsyncTask<Void, Void, Boolean> {
     protected Boolean doInBackground(Void... arg) {
     	boolean isSuccess = false;
     	//Authorization auth = new BasicAuthorization(username, password, spSelected);
-    	Authorization auth = new Authorization(spSelected, Authorization.AUTH_VERSION_BASIC);
+    	Authorization auth = new Authorization(spSelected);
     	auth.setAccessToken(username);
     	auth.setAccessSecret(password);
     	

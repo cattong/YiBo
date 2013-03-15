@@ -136,7 +136,8 @@
 		    [App_Secret]        TEXT NOT NULL,
 		    [Auth_Version]      INT NOT NULL,
 		    [Auth_Flow]         INT NOT NULL,
-		    [Service_Provider]  INT NOT NULL
+		    [Service_Provider]  INT NOT NULL,
+		    [Callback_Url]      TEXT NULL
         );
     </item>
     <item name="task_create">

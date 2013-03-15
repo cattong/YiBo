@@ -194,6 +194,13 @@
 	<string name="msg_accounts_operation_unsupported">该SNS帐号暂时只支持同步状态和相册功能</string>
 	<string name="msg_accounts_authorization_expired">授权已过期</string>
 
+	<string name="title_add_config_app">添加自定义尾巴</string>
+	<string name="hint_add_config_app_name">申请的应用名称</string>
+	<string name="hint_add_config_app_key">app key</string>
+	<string name="hint_add_config_app_secret">app secret</string>
+	<string name="hint_add_config_callback_url">oauth 2的回调url地址</string>	
+	<string name="label_add_config_submit">确定</string>
+	
     <!-- Direct Message -->
     <string name="title_edit_direct_message">写私信</string>
     <string name="label_message_receiver">收信人:</string>

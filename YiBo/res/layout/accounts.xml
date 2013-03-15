@@ -14,8 +14,9 @@
     	android:layout_height="wrap_content"
     	android:orientation="horizontal"
     	android:gravity="center"
-    	android:padding="8sp"
-    	android:background="@drawable/selector_bg_profile_header">
+    	android:padding="8dp"
+    	android:background="@drawable/selector_bg_profile_header"
+    	android:visibility="gone">
 		<ImageView
 		    android:id="@+id/ivPassportPicture"
 			android:layout_width="wrap_content"
@@ -25,7 +26,7 @@
 		<LinearLayout
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:layout_marginLeft="8sp"
+			android:layout_marginLeft="8dp"
 		 	android:orientation="vertical"
 		 	android:layout_weight="1">
 		 	<TextView 
@@ -47,7 +48,7 @@
 		     android:id="@+id/btnPassport"
 		 	 android:layout_width="wrap_content"
 		 	 android:layout_height="wrap_content"
-		 	 android:minWidth="78sp"
+		 	 android:minWidth="78dp"
 		 	 android:text="@string/btn_passport_login"
 		 	 style="@style/btn_action_positive" />
     </LinearLayout>
@@ -57,18 +58,18 @@
 		android:layout_height="fill_parent"
 		android:layout_weight="1"
 		android:scrollbars="none"
-		android:padding="0sp" >
+		android:padding="0dp" >
 		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
-			android:padding="8sp"
+			android:padding="8dp"
 			android:orientation="vertical" >
 			<ListView 
 			    android:id="@+id/lvAccounts"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="8sp"
-				android:padding="0sp"
+				android:layout_marginBottom="8dp"
+				android:padding="0dp"
 				android:scrollbars="none"
 				android:listSelector="@color/selector_list_item"
 				android:footerDividersEnabled="true"
@@ -81,13 +82,13 @@
 			    android:id="@+id/llAddAccountFrame"
 			    android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:padding="1sp"
+				android:padding="1dp"
 				android:background="@drawable/bg_frame_normal">
 				<LinearLayout 
 				    android:id="@+id/llAddAccount"
 				    android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:padding="8sp"
+					android:padding="8dp"
 					android:layout_gravity="center_vertical"
 					android:orientation="horizontal"
 					android:background="@drawable/selector_frame_item_all_corner">
@@ -96,7 +97,7 @@
 				        android:layout_width="wrap_content"
 					    android:layout_height="wrap_content"
 					    android:src="@drawable/icon_account_add_normal"
-					    android:paddingRight="8sp"/>
+					    android:paddingRight="8dp"/>
 					<TextView 
 					    android:id="@+id/tvAddAccount"
 					    android:layout_width="fill_parent"
@@ -123,11 +124,12 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center"
-		android:paddingLeft="12sp"
-		android:paddingRight="12sp"
-		android:paddingTop="8sp"
-		android:paddingBottom="8sp"
-		android:background="@drawable/bg_footer_action" >
+		android:paddingLeft="12dp"
+		android:paddingRight="12dp"
+		android:paddingTop="8dp"
+		android:paddingBottom="8dp"
+		android:background="@drawable/bg_footer_action"
+		android:visibility="gone" >
 		<ImageView
 		    android:id="@+id/ivAccountSync"
 			android:layout_width="wrap_content"
@@ -136,7 +138,7 @@
 		<LinearLayout
 			android:layout_height="fill_parent"
 			android:layout_width="wrap_content"
-			android:layout_marginLeft="8sp"
+			android:layout_marginLeft="8dp"
 		 	android:orientation="vertical"
 		 	android:gravity="center_vertical"
 		 	android:layout_weight="1">
@@ -165,7 +167,7 @@
 		 	 android:id="@+id/btnAccountSync"
 		 	 android:layout_height="wrap_content"
 		 	 android:layout_width="wrap_content"
-		 	 android:minWidth="78sp"
+		 	 android:minWidth="78dp"
 		 	 android:enabled="false"
 		 	 android:text="@string/btn_accounts_sync"
 		 	 style="@style/btn_action_negative" />

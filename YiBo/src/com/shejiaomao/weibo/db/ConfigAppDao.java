@@ -55,6 +55,7 @@ public class ConfigAppDao extends BaseDao<ConfigApp> {
 		values.put("App_Secret", app.getAppSecret());
 		values.put("Auth_Version", app.getAuthVersion());
 		values.put("Auth_Flow", app.getAuthFlow());
+		values.put("Callback_Url", app.getCallbackUrl());
 		long rowId = sqLiteDatabase.insert(TABLE, null, values);
 		app.setAppId(rowId);
 	}
@@ -76,6 +77,7 @@ public class ConfigAppDao extends BaseDao<ConfigApp> {
 			values.put("App_Secret", app.getAppSecret());
 			values.put("Auth_Version", app.getAuthVersion());
 			values.put("Auth_Flow", app.getAuthFlow());
+			values.put("Callback_Url", app.getCallbackUrl());
 			rowsAffected = sqLiteDatabase.update(TABLE, values, 
 				"App_ID = " + app.getAppId(), null);
 			sqLiteDatabase.setTransactionSuccessful();
@@ -156,6 +158,7 @@ public class ConfigAppDao extends BaseDao<ConfigApp> {
 		app.setAuthVersion(cursor.getInt(cursor.getColumnIndex("Auth_Version")));
 		app.setState(ConfigApp.STATE_ENABLED);
 		app.setShared(false);
+		app.setCallbackUrl(cursor.getString(cursor.getColumnIndex("Callback_Url")));
 		return app;
 	}
 

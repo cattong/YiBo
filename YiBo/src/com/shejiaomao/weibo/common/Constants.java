@@ -124,6 +124,7 @@ public final class Constants {
 	public static final int REQUEST_CODE_OAUTH_AUTHORIZE        = 3000;    //OAuth授权
 	public static final int REQUEST_CODE_PASSPORT_LOGIN         = 3001;    //通行证登录
 	public static final int REQUEST_CODE_ACCOUNT_ADD            = 3002;    //帐号添加
+	public static final int REQUEST_CODE_CONFIG_APP_ADD         = 3003;    //添加自定义尾巴
 
 	//Activity 跳回的result code
 	public static final int RESULT_CODE_SUCCESS                 = Activity.RESULT_OK;

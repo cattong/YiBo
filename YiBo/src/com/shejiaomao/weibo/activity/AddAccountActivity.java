@@ -1,12 +1,13 @@
 package com.shejiaomao.weibo.activity;
 
+import net.dev123.yibo.R;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextWatcher;
 import android.view.Gravity;
-import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -14,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.cattong.commons.ServiceProvider;
 import com.cattong.commons.http.auth.Authorization;
@@ -22,7 +22,6 @@ import com.cattong.commons.oauth.OAuth;
 import com.cattong.commons.oauth.OAuth2;
 import com.cattong.entity.Passport;
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;
 import com.shejiaomao.weibo.db.ConfigSystemDao;
@@ -30,7 +29,6 @@ import com.shejiaomao.weibo.service.adapter.ConfigAppSpinnerAdapter;
 import com.shejiaomao.weibo.service.adapter.ServiceProviderSpinnerAdapter;
 import com.shejiaomao.weibo.service.listener.AddAccountAuthorizeClickListener;
 import com.shejiaomao.weibo.service.listener.AddAccountConfigAppItemSelectedListener;
-import com.shejiaomao.weibo.service.listener.AddAccountCustomKeyClickListener;
 import com.shejiaomao.weibo.service.listener.AddAccountSpItemSelectedListener;
 import com.shejiaomao.weibo.service.listener.AddAccountTextWatcher;
 import com.shejiaomao.weibo.service.listener.GoBackClickListener;
@@ -49,7 +47,6 @@ public class AddAccountActivity extends BaseActivity {
 	private EditText etPassword;
 	private CheckBox cbMakeDefault;
 	private CheckBox cbFollowOffical;
-	private CheckBox cbUseCustomKey;
 	
 	private CheckBox cbUseProxy;
 	private EditText etRestProxy;
@@ -79,7 +76,6 @@ public class AddAccountActivity extends BaseActivity {
 		cbMakeDefault = (CheckBox) findViewById(R.id.cbDefault);
 		cbFollowOffical = (CheckBox) findViewById(R.id.cbFollowOffical);
 		cbUseProxy = (CheckBox) findViewById(R.id.cbUseApiProxy);
-		cbUseCustomKey = (CheckBox) findViewById(R.id.cbUseCustomKey);
 		etRestProxy = (EditText) findViewById(R.id.etRestProxy);
 		etSearchProxy = (EditText) findViewById(R.id.etSearchProxy);
 		btnAuthorize = (Button) findViewById(R.id.btnAuthorize);
@@ -104,8 +100,6 @@ public class AddAccountActivity extends BaseActivity {
     	cbMakeDefault.setTextColor(content);
     	cbFollowOffical.setButtonDrawable(theme.getDrawable("selector_checkbox"));
     	cbFollowOffical.setTextColor(content);
-    	cbUseCustomKey.setButtonDrawable(theme.getDrawable("selector_checkbox"));
-    	cbUseCustomKey.setTextColor(content);
     	cbUseProxy.setButtonDrawable(theme.getDrawable("selector_checkbox"));
     	cbUseProxy.setTextColor(content);
     	etRestProxy.setBackgroundDrawable(theme.getDrawable("selector_input_frame"));
@@ -133,10 +127,9 @@ public class AddAccountActivity extends BaseActivity {
 			isCustomKeyLevel = passport.getPointsLevel().getPoints() 
 			    >= Constants.POINTS_CUSTOM_SOURCE_LEVEL ;
 		}
-		// isCustomKeyLevel = true; // 调试用
+		isCustomKeyLevel = true; // 调试用
 		if (isCustomKeyLevel) {
-			LinearLayout llAppKey = (LinearLayout) findViewById(R.id.llConfigApp);
-			llAppKey.setVisibility(View.VISIBLE);
+
 		}
 	}
 
@@ -148,7 +141,7 @@ public class AddAccountActivity extends BaseActivity {
 		OnItemSelectedListener spItemListener = new AddAccountSpItemSelectedListener(this);
 		spServiceProvider.setOnItemSelectedListener(spItemListener);
 		
-		cbUseCustomKey.setOnClickListener(new AddAccountCustomKeyClickListener(this));
+		
 		spConfigApp.setAdapter(new ConfigAppSpinnerAdapter(this));
 		OnItemSelectedListener configAppItemSelectedListener = null;
 		configAppItemSelectedListener = new AddAccountConfigAppItemSelectedListener(this);
@@ -178,8 +171,18 @@ public class AddAccountActivity extends BaseActivity {
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == Constants.REQUEST_CODE_OAUTH_AUTHORIZE
-			&& resultCode == Constants.RESULT_CODE_SUCCESS) {
+		if (resultCode != Constants.RESULT_CODE_SUCCESS) {
+			this.resetAuthToken();
+			return;
+		}
+		
+		if (requestCode == Constants.REQUEST_CODE_CONFIG_APP_ADD) {
+			ConfigAppSpinnerAdapter adapter = (ConfigAppSpinnerAdapter)spConfigApp.getAdapter();
+			adapter.setServiceProvider(this.getSp());
+			return;
+		}
+		
+		if (requestCode == Constants.REQUEST_CODE_OAUTH_AUTHORIZE) {
 
 			String spStr = data.getStringExtra("ServiceProvider");
 			ServiceProvider sp = ServiceProvider.valueOf(spStr);
@@ -196,11 +199,9 @@ public class AddAccountActivity extends BaseActivity {
 				String verifier = data.getStringExtra(OAuth.OAUTH_VERIFIER);
 				String token = data.getStringExtra(OAuth.OAUTH_TOKEN);
 				OAuthRetrieveAccessTokenTask task
-				    = new OAuthRetrieveAccessTokenTask(AddAccountActivity.this);
+				    = new OAuthRetrieveAccessTokenTask(this);
 				task.execute(token, verifier, spStr);
 			}
-		} else {
-			this.resetAuthToken();
 		}
 	};
 
@@ -213,20 +214,14 @@ public class AddAccountActivity extends BaseActivity {
 		if (sp == null) {
 			return;
 		}
-		if (sp == ServiceProvider.Sina) {
-			auth = new Authorization(sp, Authorization.AUTH_VERSION_OAUTH_2);
-		} else {
-		    auth = new Authorization(sp);
-		}
+		
+		auth = new Authorization(sp);
 	}
 
 	public boolean isCustomKeyLevel() {
 		return isCustomKeyLevel;
 	}
-	
-	public boolean isUseCustomAppKey() {
-		return this.cbUseCustomKey.isChecked();
-	}
+
 
 	public void resetAuthToken() {
 		if (auth != null) {

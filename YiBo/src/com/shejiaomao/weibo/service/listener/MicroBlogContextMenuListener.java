@@ -95,8 +95,9 @@ public class MicroBlogContextMenuListener implements
 	    });
 
 	    account = getAccount(adapter);
-	    if (account != null &&
-	    	status.getUser().equals(account.getUser())) {
+	    if (account != null 
+	    	&& account.getUser() != null
+	    	&& account.getUser().equals(status.getUser())) {
 	    	MenuItem deleteMenu = menu.add(0, Constants.CONTEXT_MENU_BLOG_DELETE, order++, R.string.menu_blog_delete);
 	    	deleteMenu.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 				@Override

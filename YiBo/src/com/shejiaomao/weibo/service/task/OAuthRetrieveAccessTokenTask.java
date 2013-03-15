@@ -81,7 +81,7 @@ public class OAuthRetrieveAccessTokenTask extends AsyncTask<String, Void, Boolea
     	}
 
 		try {
-			if (NetUtil.isCMWAP()
+			if (NetUtil.isNETWAP()
 				&& URLUtil.isHttpsUrl(oauthConfig.getAccessTokenUrl())) {
 				throw new SheJiaoMaoException(SheJiaoMaoException.NET_HTTPS_UNDER_CMWAP);
 			}

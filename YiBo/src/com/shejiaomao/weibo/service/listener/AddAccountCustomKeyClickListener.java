@@ -1,5 +1,6 @@
 package com.shejiaomao.weibo.service.listener;
 
+import net.dev123.yibo.R;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -11,7 +12,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.cattong.commons.ServiceProvider;
-import net.dev123.yibo.R;
 import com.shejiaomao.weibo.activity.AddAccountActivity;
 
 public class AddAccountCustomKeyClickListener implements OnClickListener {
@@ -29,7 +29,6 @@ public class AddAccountCustomKeyClickListener implements OnClickListener {
 	private EditText etSearchProxy;
 	private CheckBox cbFollowOffical;
 	private CheckBox cbMakeDefault;
-	private CheckBox cbUseCustomKey;
 	private Spinner spConfigApp;
 	private Button btnAuthorize;
 	
@@ -47,27 +46,24 @@ public class AddAccountCustomKeyClickListener implements OnClickListener {
 		etSearchProxy = (EditText) context.findViewById(R.id.etSearchProxy);
 		cbFollowOffical = (CheckBox) context.findViewById(R.id.cbFollowOffical);
 		cbMakeDefault = (CheckBox) context.findViewById(R.id.cbDefault);
-		cbUseCustomKey = (CheckBox) context.findViewById(R.id.cbUseCustomKey);
-		spConfigApp = (Spinner) context.findViewById(R.id.spConfigApp);
+		spConfigApp = (Spinner)context.findViewById(R.id.spConfigApp);
 		btnAuthorize = (Button) context.findViewById(R.id.btnAuthorize);
 	}
 	
 	@Override
 	public void onClick(View v) {
 		ServiceProvider sp = context.getSp();
-		if (cbUseCustomKey.isChecked()) {
-			spConfigApp.setVisibility(View.VISIBLE);
+		if (true) {
 			showOAuthForm(sp);
 		} else {
-			spConfigApp.setVisibility(View.GONE);
 			showForm(sp);
 			context.resetAuthConfigApp();
-		}
-		
+		}		
 	}
 
 	private void showForm(final ServiceProvider sp) {
 		switch (sp) {
+		case Sina:
 		case Tencent:
 			showOAuthForm(sp);
 			break;
@@ -78,14 +74,10 @@ public class AddAccountCustomKeyClickListener implements OnClickListener {
 				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 					if (isChecked) {
 						showXAuthForm(sp);
-						if (context.isCustomKeyLevel()) {
-							cbUseCustomKey.setVisibility(View.GONE);
-						}
+						
 					} else {
 						showOAuthForm(sp);
-						if (context.isCustomKeyLevel()) {
-							cbUseCustomKey.setVisibility(View.VISIBLE);
-						}
+						
 					}
 				}
 			});

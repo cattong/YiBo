@@ -288,7 +288,7 @@ public class LocalAccountDao extends BaseDao<LocalAccount> {
 		int sp = cursor.getInt(cursor.getColumnIndex("Service_Provider"));
 		ServiceProvider serviceProvider = ServiceProvider.getServiceProvider(sp);
 		
-		Authorization auth = new Authorization(serviceProvider, authVersion);
+		Authorization auth = new Authorization(serviceProvider);
 		auth.setAccessToken(accessToken);
 		auth.setAccessSecret(accessSecret);
         auth.setExpiredAt(account.getTokenExpiredAt());
