@@ -15,8 +15,7 @@
     	android:orientation="horizontal"
     	android:gravity="center"
     	android:padding="8dp"
-    	android:background="@drawable/selector_bg_profile_header"
-    	android:visibility="gone">
+    	android:background="@drawable/selector_bg_profile_header">
 		<ImageView
 		    android:id="@+id/ivPassportPicture"
 			android:layout_width="wrap_content"
@@ -50,7 +49,8 @@
 		 	 android:layout_height="wrap_content"
 		 	 android:minWidth="78dp"
 		 	 android:text="@string/btn_passport_login"
-		 	 style="@style/btn_action_positive" />
+		 	 style="@style/btn_action_positive" 
+		 	 android:visibility="gone"/>
     </LinearLayout>
 
 	<ScrollView

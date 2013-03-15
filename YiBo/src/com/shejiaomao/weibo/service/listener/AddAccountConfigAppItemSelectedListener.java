@@ -37,7 +37,7 @@ public class AddAccountConfigAppItemSelectedListener implements
 			Intent intent = new Intent();
 			intent.setClass(context, AddConfigAppActivity.class);
 			intent.putExtra("spNo", auth.getServiceProvider().getSpNo());
-			context.startActivityForResult(intent, Constants.REQUEST_CODE_ACCOUNT_ADD);
+			context.startActivityForResult(intent, Constants.REQUEST_CODE_CONFIG_APP_ADD);
 			return;
 		}
 		

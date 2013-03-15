@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
  	android:installLocation="auto"
 	package="net.dev123.yibo"
-	android:versionName="Cat_2.3.0" 
-	android:versionCode="2030">
+	android:versionName="Cat_2.4.1" 
+	android:versionCode="31415">
 	<application 
 	    android:name="com.shejiaomao.weibo.SheJiaoMaoApplication"
 	    android:icon="@drawable/icon"

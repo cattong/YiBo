@@ -129,7 +129,7 @@
 				android:layout_height="wrap_content"
 				android:padding="2dp"
 				android:drawSelectorOnTop="true"
-				android:prompt="@string/hint_sp_prompt"
+				android:prompt="@string/hint_config_app_prompt"
 				android:background="@drawable/selector_btn_dropdown"/>			
 		</LinearLayout>
 	</ScrollView>

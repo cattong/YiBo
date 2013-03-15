@@ -194,7 +194,14 @@
     
 	<string name="msg_accounts_operation_unsupported">The SNS account only supports synchronization status and photo album</string>
 	<string name="msg_accounts_authorization_expired">Authorization Expired</string>
-
+    
+    <string name="title_add_config_app">Custome app key</string>
+	<string name="hint_config_app_prompt">select app key</string>
+	<string name="hint_add_config_app_name">app name</string>
+	<string name="hint_add_config_app_key">app key</string>
+	<string name="hint_add_config_app_secret">app secret</string>
+	<string name="hint_add_config_callback_url">callback url</string>	
+	
 	<!-- Direct Message -->
     <string name="title_edit_direct_message">Edit Message</string>
     <string name="label_message_receiver">Receiver:</string>

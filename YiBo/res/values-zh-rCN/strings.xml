@@ -129,8 +129,8 @@
 	<string name="msg_accounts_delete_failed">删除失败</string>
 	<string name="msg_accounts_set_successful">设置成功</string>
 	<string name="msg_accounts_set_failed">设置失败</string>
-	<string name="label_passport_username">通行证</string>
-	<string name="hint_passport_usage">用于同步帐号和分组数据</string>
+	<string name="label_passport_username">社区维护版</string>
+	<string name="hint_passport_usage">免费开放自定义尾巴</string>
 	<string name="label_passport_points">积分: %1$d, 头衔: %2$s</string>
 	<string name="btn_passport_login">登　录</string>
 	<string name="btn_passport_logout">注　销</string>
@@ -172,7 +172,7 @@
     <string name="hint_accounts_add_proxy_rest">API代理Url地址</string>
     <string name="label_accounts_add_proxy_search">Search API</string>
     <string name="hint_accounts_add_proxy_search">http://search.example.com/</string>
-
+     
 	<string name="hint_passport_login_username">用户名</string>
 	<string name="hint_passport_login_password">密码</string>
 	<string name="hint_passport_register_username">用户名，4～20位字母数字组合</string>
@@ -195,11 +195,11 @@
 	<string name="msg_accounts_authorization_expired">授权已过期</string>
 
 	<string name="title_add_config_app">添加自定义尾巴</string>
+	<string name="hint_config_app_prompt">请选择尾巴</string>
 	<string name="hint_add_config_app_name">申请的应用名称</string>
 	<string name="hint_add_config_app_key">app key</string>
 	<string name="hint_add_config_app_secret">app secret</string>
 	<string name="hint_add_config_callback_url">oauth 2的回调url地址</string>	
-	<string name="label_add_config_submit">确定</string>
 	
     <!-- Direct Message -->
     <string name="title_edit_direct_message">写私信</string>

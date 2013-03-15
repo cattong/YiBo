@@ -22,9 +22,9 @@ public class CustomAppKeyTest {
 	public void testOauth1CustomeAppKey() {
 		Authorization auth = new Authorization(Config.SP);
 		OAuthConfig oauthConfig = auth.getoAuthConfig();
-		oauthConfig.setConsumerKey(appkey);
-		oauthConfig.setConsumerSecret(appSecret);
-		oauthConfig.setCallbackUrl(callbackUrl);
+		oauthConfig.setConsumerKey(Config.appkey);
+		oauthConfig.setConsumerSecret(Config.appSecret);
+		oauthConfig.setCallbackUrl(Config.callbackUrl);
 		
 		try {
 			OAuthAuthorizeHelper oauthHelper = new OAuthAuthorizeHelper();
@@ -51,9 +51,9 @@ public class CustomAppKeyTest {
 	public void testOauth2CustomeAppKey() {
 		Authorization auth = new Authorization(Config.SP);
 		OAuthConfig oauthConfig = auth.getoAuthConfig();
-		oauthConfig.setConsumerKey(appkey);
-		oauthConfig.setConsumerSecret(appSecret);
-		oauthConfig.setCallbackUrl(callbackUrl);
+		oauthConfig.setConsumerKey(Config.appkey);
+		oauthConfig.setConsumerSecret(Config.appSecret);
+		oauthConfig.setCallbackUrl(Config.callbackUrl);
 		
 		try {
 			OAuth2AuthorizeHelper oauthHelper = new OAuth2AuthorizeHelper();

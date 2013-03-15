@@ -129,8 +129,8 @@
 	<string name="msg_accounts_delete_failed">刪除失敗</string>
 	<string name="msg_accounts_set_successful">設置成功</string>
 	<string name="msg_accounts_set_failed">設置失敗</string>
-    <string name="label_passport_username">通行證</string>
-    <string name="hint_passport_usage">用於同步帳號和分組數據</string>
+    <string name="label_passport_username">社区维护版</string>
+	<string name="hint_passport_usage">免费开放自定义尾巴</string>
     <string name="label_passport_points">積分：%1$d、头衔：%2$s</string>
     <string name="btn_passport_login">登　錄</string>
     <string name="btn_passport_logout">註　銷</string>
@@ -194,6 +194,13 @@
 	<string name="msg_accounts_operation_unsupported">該SNS帳號暫時只支持同步化狀態和相冊功能</string>
 	<string name="msg_accounts_authorization_expired">授權已過期</string>
 
+    <string name="title_add_config_app">添加自定义尾巴</string>
+	<string name="hint_config_app_prompt">请选择尾巴</string>
+	<string name="hint_add_config_app_name">申请的应用名称</string>
+	<string name="hint_add_config_app_key">app key</string>
+	<string name="hint_add_config_app_secret">app secret</string>
+	<string name="hint_add_config_callback_url">oauth 2的回调url地址</string>	
+	
     <!-- Direct Message -->
     <string name="title_edit_direct_message">寫私信</string>
     <string name="label_message_receiver">收信人:</string>
