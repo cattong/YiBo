@@ -13,13 +13,12 @@ import com.cattong.commons.http.auth.OAuth2AuthorizeHelper;
 import com.cattong.commons.oauth.OAuth2.DisplayType;
 import com.cattong.commons.oauth.OAuth2.GrantType;
 import com.cattong.sns.TokenConfig;
-import com.cattong.weibo.Config;
 
 public class OAuth2AuthorizeHelperTest {
 
 	@Test
 	public void testAuthorizationCode() {
-		Authorization auth = new Authorization(ServiceProvider.Sina, Authorization.AUTH_VERSION_OAUTH_2);
+		Authorization auth = new Authorization(ServiceProvider.Sina);
 		try {
 			OAuth2AuthorizeHelper oauthHelper = new OAuth2AuthorizeHelper();
 			String authorzieUrl = oauthHelper.getAuthorizeUrl(auth, GrantType.AUTHORIZATION_CODE, DisplayType.PC);

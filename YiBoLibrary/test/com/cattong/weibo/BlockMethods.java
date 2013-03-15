@@ -11,17 +11,21 @@ import org.junit.Test;
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
 import com.cattong.commons.Paging;
+import com.cattong.commons.http.auth.Authorization;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.User;
-import com.cattong.weibo.Weibo;
+import com.cattong.oauth.Config;
 
 public class BlockMethods {
 
-	private static Weibo mBlog = null;
+	private static Weibo weibo = null;
 
 	@BeforeClass
 	public static void beforClass() {
-        mBlog = Config.getMicroBlog(Config.currentProvider);
+		Authorization auth = new Authorization(Config.SP);
+		auth.setAccessToken(Config.ACCESS_TOKEN);
+        auth.setAccessSecret(Config.ACCESS_SECRET);
+		weibo = WeiboFactory.getInstance(auth);
 	}
 
 	@Test
@@ -29,12 +33,12 @@ public class BlockMethods {
 		User blockedUser = null;
 		try {
 			Paging<User> userPaging = new Paging<User>();
-			List<User> friends = mBlog.getFriends(userPaging);
+			List<User> friends = weibo.getFriends(userPaging);
 			assertTrue(ListUtil.isNotEmpty(friends));
 			User user = friends.get(0);
 			assertNotNull(user);
 
-			blockedUser = mBlog.createBlock(user.getUserId());
+			blockedUser = weibo.createBlock(user.getUserId());
 			assertTrue(blockedUser != null);
 		} catch (LibException e) {
 			if (e.getErrorCode() != LibResultCode.API_UNSUPPORTED) {
@@ -50,13 +54,13 @@ public class BlockMethods {
 		User unBlockedUser = null;
 		try {
 			Paging<User> userPaging = new Paging<User>();
-			List<User> friends = mBlog.getFriends(userPaging);
+			List<User> friends = weibo.getFriends(userPaging);
 			assertTrue(ListUtil.isNotEmpty(friends));
 			User user = friends.get(0);
 			assertNotNull(user);
 
-			user = mBlog.createBlock(user.getUserId());
-			unBlockedUser = mBlog.destroyBlock(user.getUserId());
+			user = weibo.createBlock(user.getUserId());
+			unBlockedUser = weibo.destroyBlock(user.getUserId());
 			assertTrue(unBlockedUser != null);
 		} catch (LibException e) {
 			if (e.getErrorCode() != LibResultCode.API_UNSUPPORTED) {
@@ -72,16 +76,16 @@ public class BlockMethods {
 		boolean notexists = false;
 		try {
 			Paging<User> userPaging = new Paging<User>();
-			List<User> friends = mBlog.getFriends(userPaging);
+			List<User> friends = weibo.getFriends(userPaging);
 			assertTrue(ListUtil.isNotEmpty(friends));
 			User user = friends.get(0);
 			assertNotNull(user);
 
-			user = mBlog.createBlock(user.getUserId());
+			user = weibo.createBlock(user.getUserId());
 			
 			assertTrue(exists);
 
-			mBlog.destroyBlock(user.getUserId());
+			weibo.destroyBlock(user.getUserId());
 			
 			assertTrue(notexists);
 		} catch (LibException e) {
@@ -100,7 +104,7 @@ public class BlockMethods {
 			Paging<User> paging = new Paging<User>();
 			paging.moveToFirst();
 
-			blocked = mBlog.getBlockingUsers(paging);
+			blocked = weibo.getBlockingUsers(paging);
 			assertTrue(blocked != null);
 		} catch (LibException e) {
 			if (e.getErrorCode() != LibResultCode.API_UNSUPPORTED) {

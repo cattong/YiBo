@@ -11,18 +11,22 @@ import org.junit.Test;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.Paging;
+import com.cattong.commons.http.auth.Authorization;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.User;
-import com.cattong.weibo.Weibo;
+import com.cattong.oauth.Config;
 
 //已经完成基本的测试用例
 //@Ignore
 public class UserMethods {
-	private static Weibo mBlog = null;
+	private static Weibo weibo = null;
 
 	@BeforeClass
 	public static void beforClass() {
-        mBlog = Config.getMicroBlog(Config.currentProvider);
+		Authorization auth = new Authorization(Config.SP);
+		auth.setAccessToken(Config.ACCESS_TOKEN);
+        auth.setAccessSecret(Config.ACCESS_SECRET);
+		weibo = WeiboFactory.getInstance(auth);
 	}
 
 	@AfterClass
@@ -34,13 +38,13 @@ public class UserMethods {
 	public void showUser() {
 		try {
 			Paging<User> paging = new Paging<User>();
-			List<User> listUser = mBlog.getFriends(paging);
+			List<User> listUser = weibo.getFriends(paging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 
 			User user = listUser.get(0);
 			assertNotNull(user);
 
-			User showUser = mBlog.showUser(user.getUserId());
+			User showUser = weibo.showUser(user.getUserId());
 			assertNotNull(showUser);
 		} catch (LibException e) {
 			e.printStackTrace();
@@ -51,7 +55,7 @@ public class UserMethods {
 	@Test
 	public void showUser_param() {
 		try {
-			User showUser = mBlog.showUser("");
+			User showUser = weibo.showUser("");
 			assertNotNull(showUser);
 			assertTrue(false);
 		} catch (LibException e) {
@@ -59,7 +63,7 @@ public class UserMethods {
 		}
 
 		try {
-			User showUser = mBlog.showUser(null);
+			User showUser = weibo.showUser(null);
 			assertNotNull(showUser);
 			assertTrue(false);
 		} catch (LibException e) {
@@ -74,7 +78,7 @@ public class UserMethods {
 		Paging<User> paging = new Paging<User>();
 
 		try {
-			listUser = mBlog.searchUsers("Neo", paging);
+			listUser = weibo.searchUsers("Neo", paging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 
 			paging.moveToNext();
@@ -91,7 +95,7 @@ public class UserMethods {
 		Paging<User> paging = new Paging<User>();
 
 		try {
-			listUser = mBlog.searchUsers("", paging);
+			listUser = weibo.searchUsers("", paging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 
 			assertTrue(false);
@@ -100,7 +104,7 @@ public class UserMethods {
 		}
 
 		try {
-			listUser = mBlog.searchUsers("Neo", null);
+			listUser = weibo.searchUsers("Neo", null);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 
 			assertTrue(false);
@@ -118,7 +122,7 @@ public class UserMethods {
 		try {
 			while (paging.hasNext()) {
 				paging.moveToNext();
-			    listUser = mBlog.getFriends(paging);
+			    listUser = weibo.getFriends(paging);
 			    assertTrue(ListUtil.isNotEmpty(listUser) ||
 			    	(ListUtil.isEmpty(listUser) && paging.isLastPage())
 			    );
@@ -134,7 +138,7 @@ public class UserMethods {
 		List<User> listUser = null;
 
 		try {
-			listUser = mBlog.getFriends(null);
+			listUser = weibo.getFriends(null);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 			assertTrue(false);
 		} catch (LibException e) {
@@ -150,7 +154,7 @@ public class UserMethods {
 		Paging<User> paging = new Paging<User>();
 
 		try {
-			listUser = mBlog.getFriends(paging);
+			listUser = weibo.getFriends(paging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 
 			User user = listUser.get(0);
@@ -159,7 +163,7 @@ public class UserMethods {
 			paging = new Paging<User>();
 			while (paging.hasNext()) {
 				paging.moveToNext();
-			    listUser = mBlog.getUserFriends(user.getUserId(), paging);
+			    listUser = weibo.getUserFriends(user.getUserId(), paging);
 			    assertTrue(ListUtil.isNotEmpty(listUser) ||
 			    	(ListUtil.isEmpty(listUser) && paging.isLastPage())
 			    );
@@ -176,7 +180,7 @@ public class UserMethods {
 		Paging<User> paging = new Paging<User>();
 
 		try {
-			listUser = mBlog.getUserFriends("", paging);
+			listUser = weibo.getUserFriends("", paging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 			assertTrue(false);
 		} catch (LibException e) {
@@ -185,7 +189,7 @@ public class UserMethods {
 		}
 
 		try {
-			listUser = mBlog.getUserFriends("shejiaomao", null);
+			listUser = weibo.getUserFriends("shejiaomao", null);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 			assertTrue(false);
 		} catch (LibException e) {
@@ -203,7 +207,7 @@ public class UserMethods {
 		try {
 			while (paging.hasNext()) {
 				paging.moveToNext();
-			    listUser = mBlog.getFollowers(paging);
+			    listUser = weibo.getFollowers(paging);
 			    assertTrue(ListUtil.isNotEmpty(listUser) ||
 			    	(ListUtil.isEmpty(listUser) && paging.isLastPage())
 			    );
@@ -219,7 +223,7 @@ public class UserMethods {
 		List<User> listUser = null;
 
 		try {
-			listUser = mBlog.getFriends(null);
+			listUser = weibo.getFriends(null);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 			assertTrue(false);
 		} catch (LibException e) {
@@ -233,7 +237,7 @@ public class UserMethods {
 		Paging<User> paging = new Paging<User>();
 
 		try {
-			listUser = mBlog.getFollowers(paging);
+			listUser = weibo.getFollowers(paging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 
 			User user = listUser.get(0);
@@ -242,7 +246,7 @@ public class UserMethods {
 			paging = new Paging<User>();
 			while (paging.hasNext()) {
 				paging.moveToNext();
-			    listUser = mBlog.getUserFollowers(user.getUserId(), paging);
+			    listUser = weibo.getUserFollowers(user.getUserId(), paging);
 			    assertTrue(ListUtil.isNotEmpty(listUser) ||
 			    	(ListUtil.isEmpty(listUser) && paging.isLastPage())
 			    );
@@ -260,7 +264,7 @@ public class UserMethods {
 		Paging<User> paging = new Paging<User>();
 
 		try {
-			listUser = mBlog.getUserFollowers("", paging);
+			listUser = weibo.getUserFollowers("", paging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 			assertTrue(false);
 		} catch (LibException e) {
@@ -269,7 +273,7 @@ public class UserMethods {
 		}
 
 		try {
-			listUser = mBlog.getUserFollowers("shejiaomao", null);
+			listUser = weibo.getUserFollowers("shejiaomao", null);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 			assertTrue(false);
 		} catch (LibException e) {
@@ -281,7 +285,7 @@ public class UserMethods {
 	@Test
 	public void getProfile() {
 		try {
-			User user = mBlog.verifyCredentials();
+			User user = weibo.verifyCredentials();
 		} catch (Exception e) {
 			e.printStackTrace();
 			assertTrue(false);

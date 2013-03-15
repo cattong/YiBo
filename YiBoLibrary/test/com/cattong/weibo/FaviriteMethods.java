@@ -13,19 +13,23 @@ import org.junit.Test;
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
 import com.cattong.commons.Paging;
+import com.cattong.commons.http.auth.Authorization;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.Status;
 import com.cattong.entity.User;
-import com.cattong.weibo.Weibo;
+import com.cattong.oauth.Config;
 
 //已经完成基本的测试用例
 //@Ignore
 public class FaviriteMethods {
-	private static Weibo mBlog = null;
+	private static Weibo weibo = null;
 
 	@BeforeClass
 	public static void beforClass() {
-        mBlog = Config.getMicroBlog(Config.currentProvider);
+		Authorization auth = new Authorization(Config.SP);
+		auth.setAccessToken(Config.ACCESS_TOKEN);
+        auth.setAccessSecret(Config.ACCESS_SECRET);
+		weibo = WeiboFactory.getInstance(auth);
 	}
 
 	@AfterClass
@@ -35,12 +39,12 @@ public class FaviriteMethods {
 	@Test
 	public void createFavorite() {
 		try {
-			List<Status> listStatus = mBlog.getPublicTimeline();
+			List<Status> listStatus = weibo.getPublicTimeline();
 			assertTrue(ListUtil.isNotEmpty(listStatus));
 			Status status = listStatus.get(0);
 			assertNotNull(status);
 
-			Status favorite = mBlog.createFavorite(status.getStatusId());
+			Status favorite = weibo.createFavorite(status.getStatusId());
 			assertNotNull(favorite);
 		} catch (LibException e) {
 			e.printStackTrace();
@@ -51,17 +55,17 @@ public class FaviriteMethods {
 	@Test
 	public void destroyFavorite() {
 		try {
-			List<Status> listStatus = mBlog.getPublicTimeline();
+			List<Status> listStatus = weibo.getPublicTimeline();
 			assertTrue(ListUtil.isNotEmpty(listStatus));
 			Status status = listStatus.get(0);
 			assertNotNull(status);
 
-			Status favorite = mBlog.createFavorite(status.getStatusId());
+			Status favorite = weibo.createFavorite(status.getStatusId());
 			assertNotNull(favorite);
 
 			TestUtil.sleep();
 
-			Status destroyFavorite = mBlog.destroyFavorite(favorite.getStatusId());
+			Status destroyFavorite = weibo.destroyFavorite(favorite.getStatusId());
 			assertNotNull(destroyFavorite);
 		} catch (LibException e) {
 			e.printStackTrace();
@@ -78,7 +82,7 @@ public class FaviriteMethods {
 			List<Status> listStatus = null;
 			while (paging.hasNext()) {
 				paging.moveToNext();
-			    listStatus = mBlog.getFavorites(paging);
+			    listStatus = weibo.getFavorites(paging);
 			    assertTrue(ListUtil.isNotEmpty(listStatus) ||
 			    	(ListUtil.isEmpty(listStatus) && paging.isLastPage())
 			    );
@@ -93,7 +97,7 @@ public class FaviriteMethods {
 	public void getFavorites_param() {
 		try {
 			List<Status> listStatus = null;
-			listStatus = mBlog.getFavorites(null);
+			listStatus = weibo.getFavorites(null);
 			assertNull(listStatus);
 			assertTrue(false);
 		} catch (LibException e) {
@@ -108,7 +112,7 @@ public class FaviriteMethods {
 
 		try {
 			Paging<User> userPaging = new Paging<User>();
-			List<User> listUser = mBlog.getFollowers(userPaging);
+			List<User> listUser = weibo.getFollowers(userPaging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 
 			User user = listUser.get(0);
@@ -120,7 +124,7 @@ public class FaviriteMethods {
 
 	        while (paging.hasNext()) {
 				paging.moveToNext();
-			    listStatus = mBlog.getFavorites(user.getUserId(), paging);
+			    listStatus = weibo.getFavorites(user.getUserId(), paging);
 			    assertTrue(ListUtil.isNotEmpty(listStatus));
 	        }
 		} catch (LibException e) {
@@ -135,7 +139,7 @@ public class FaviriteMethods {
 	public void getFavoritesByIdentifyName_param() {
 		try {
 			Paging<Status> paging = new Paging<Status>();
-			mBlog.getFavorites("", paging);
+			weibo.getFavorites("", paging);
 			assertTrue(false);
 		} catch (LibException e) {
 			e.printStackTrace();
@@ -145,7 +149,7 @@ public class FaviriteMethods {
 		}
 
 		try {
-			mBlog.getFavorites("12", null);
+			weibo.getFavorites("12", null);
 			assertTrue(false);
 		} catch (LibException e) {
 			e.printStackTrace();

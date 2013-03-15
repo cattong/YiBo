@@ -9,8 +9,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.http.auth.Authorization;
 import com.cattong.entity.User;
-import com.cattong.weibo.Weibo;
+import com.cattong.oauth.Config;
 import com.cattong.weibo.entity.RateLimitStatus;
 
 //已经完成基本的测试用例
@@ -20,7 +21,10 @@ public class AccountMethods {
 
 	@BeforeClass
 	public static void beforClass() {
-        weibo = Config.getMicroBlog(Config.currentProvider);
+		Authorization auth = new Authorization(Config.SP);
+		auth.setAccessToken(Config.ACCESS_TOKEN);
+        auth.setAccessSecret(Config.ACCESS_SECRET);
+		weibo = WeiboFactory.getInstance(auth);
 	}
 
 	@AfterClass

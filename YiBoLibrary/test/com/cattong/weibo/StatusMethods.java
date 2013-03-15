@@ -12,11 +12,12 @@ import org.junit.Test;
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
 import com.cattong.commons.Paging;
+import com.cattong.commons.http.auth.Authorization;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.GeoLocation;
 import com.cattong.entity.Status;
 import com.cattong.entity.StatusUpdate;
-import com.cattong.weibo.Weibo;
+import com.cattong.oauth.Config;
 
 //已经完成基本的测试用例
 //@Ignore
@@ -26,7 +27,10 @@ public class StatusMethods {
 
 	@BeforeClass
 	public static void beforClass() {
-        weibo = Config.getMicroBlog(Config.currentProvider);
+		Authorization auth = new Authorization(Config.SP);
+		auth.setAccessToken(Config.ACCESS_TOKEN);
+        auth.setAccessSecret(Config.ACCESS_SECRET);
+		weibo = WeiboFactory.getInstance(auth);
 	}
 
 	@AfterClass

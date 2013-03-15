@@ -158,6 +158,8 @@ public class OAuthAuthorizeHelper {
 		
 		String username = auth.getAccessToken();
 		String password = auth.getAccessSecret();
+		auth.setAccessToken(null);
+		auth.setAccessSecret(null);
 		OAuthConfig oAuthConfig = auth.getoAuthConfig();	
 		HttpRequestWrapper request = new HttpRequestWrapper(HttpMethod.POST, 
 			oAuthConfig.getAccessTokenUrl(), auth);

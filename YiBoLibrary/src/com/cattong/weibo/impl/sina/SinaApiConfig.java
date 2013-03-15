@@ -26,8 +26,8 @@ public class SinaApiConfig extends ApiConfigBase {
 		this.setRetweetStatusUrl(this.getRestBaseUrl() + "statuses/repost.json");
 		this.setResponseCountOfStatusUrl(this.getRestBaseUrl() + "statuses/count.json");
         
-		this.setUnreadCountUrl(this.getRestBaseUrl() + "remind/unread_count.json");
-        this.setResetUnreadCountUrl(this.getRestBaseUrl() + "remind/set_count.json");
+		this.setUnreadCountUrl("https://rm.api.weibo.com/2/remind/unread_count.json");
+        this.setResetUnreadCountUrl("https://rm.api.weibo.com/2/remind/set_count.json");
 
 		this.setShowOfUserUrl(this.getRestBaseUrl() + "users/show.json");
 		this.setFriendsUrl(this.getRestBaseUrl() + "friendships/friends.json");
@@ -44,8 +44,8 @@ public class SinaApiConfig extends ApiConfigBase {
 
 		this.setVerifyCredentialsUrl(this.getRestBaseUrl() + "account/get_uid.json");
 		this.setRateLimitStatusUrl(this.getRestBaseUrl() + "account/rate_limit_status.json");
-		//this.setUpdateProfileUrl(this.getRestBaseUrl() + "account/update_profile.json");
-		//this.setUpdateProfileImageUrl(this.getRestBaseUrl() + "account/update_profile_image.json");
+		this.setUpdateProfileUrl(this.getRestBaseUrl() + "account/update_profile.json");
+		this.setUpdateProfileImageUrl(this.getRestBaseUrl() + "account/update_profile_image.json");
 
 		this.setFavoritesTimelineUrl(this.getRestBaseUrl() + "favorites.json");
 		//this.setFavoritesOfUserUrl(this.getRestBaseUrl() + "favorites.json");

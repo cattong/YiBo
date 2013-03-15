@@ -13,20 +13,24 @@ import org.junit.Test;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.Paging;
+import com.cattong.commons.http.auth.Authorization;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.User;
-import com.cattong.weibo.Weibo;
+import com.cattong.oauth.Config;
 import com.cattong.weibo.entity.DirectMessage;
 
 //已经完成基本的测试用例
 //@Ignore
 public class DirectMessageMethods {
-	private static Weibo mBlog = null;
+	private static Weibo weibo = null;
 
 	@BeforeClass
 	public static void beforClass() {
-        mBlog = Config.getMicroBlog(Config.currentProvider);
+		Authorization auth = new Authorization(Config.SP);
+		auth.setAccessToken(Config.ACCESS_TOKEN);
+        auth.setAccessSecret(Config.ACCESS_SECRET);
+		weibo = WeiboFactory.getInstance(auth);
 	}
     
 	@AfterClass
@@ -40,7 +44,7 @@ public class DirectMessageMethods {
 		Paging<DirectMessage> paging = new Paging<DirectMessage>();
 		
 		try {
-			listMessage = mBlog.getInboxDirectMessages(paging);
+			listMessage = weibo.getInboxDirectMessages(paging);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -59,19 +63,19 @@ public class DirectMessageMethods {
 		}
 		
         //测试上翻
-		PagingTest.pageUp(listMessage, mBlog, method);
+		PagingTest.pageUp(listMessage, weibo, method);
 		
 		//测试下翻
-		PagingTest.pageDown(listMessage, mBlog, method);
+		PagingTest.pageDown(listMessage, weibo, method);
 		
 		//测试中间展开
-        PagingTest.pageExpand(listMessage, mBlog, method);
+        PagingTest.pageExpand(listMessage, weibo, method);
 	}
 
 	@Test
 	public void getInboxDirectMessages_param() {
 		try {
-			List<DirectMessage> listMessage = mBlog.getInboxDirectMessages(null);
+			List<DirectMessage> listMessage = weibo.getInboxDirectMessages(null);
 			assertNull(listMessage);
 			assertTrue(false);
 		} catch (LibException e) {
@@ -86,7 +90,7 @@ public class DirectMessageMethods {
 		Paging<DirectMessage> paging = new Paging<DirectMessage>();
 		
 		try {
-			listMessage = mBlog.getOutboxDirectMessages(paging);
+			listMessage = weibo.getOutboxDirectMessages(paging);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -107,19 +111,19 @@ public class DirectMessageMethods {
 		}
 		
         //测试上翻
-		PagingTest.pageUp(listMessage, mBlog, method);
+		PagingTest.pageUp(listMessage, weibo, method);
 		
 		//测试下翻
-		PagingTest.pageDown(listMessage, mBlog, method);
+		PagingTest.pageDown(listMessage, weibo, method);
 		
 		//测试中间展开
-        PagingTest.pageExpand(listMessage, mBlog, method);
+        PagingTest.pageExpand(listMessage, weibo, method);
 	}
 
 	@Test
 	public void getOutboxDirectMessages_param() {		
 		try {
-			List<DirectMessage> listMessage = mBlog.getOutboxDirectMessages(null);
+			List<DirectMessage> listMessage = weibo.getOutboxDirectMessages(null);
 			assertNull(listMessage);
 			assertTrue(false);
 		} catch (LibException e) {
@@ -131,14 +135,14 @@ public class DirectMessageMethods {
 	public void sendDirectMessage() {
 		try {
 			Paging<User> paging = new Paging<User>();
-			List<User> listUser = mBlog.getFollowers(paging);
+			List<User> listUser = weibo.getFollowers(paging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 			
 			User user = listUser.get(0);
 			assertNotNull(user);
 			
 			String text = "测试接口：sendDirectMessage,莫慌，" + System.currentTimeMillis();			
-			DirectMessage message = mBlog.sendDirectMessage(user.getDisplayName(), text);
+			DirectMessage message = weibo.sendDirectMessage(user.getDisplayName(), text);
 			assertNotNull(message);
 			assertTrue(StringUtil.isNotEmpty(message.getId()));
 		} catch (Exception e) {
@@ -151,14 +155,14 @@ public class DirectMessageMethods {
 	public void destroyInboxDirectMessage() {
 		try {
 			Paging<DirectMessage> paging = new Paging<DirectMessage>();
-			List<DirectMessage> listMessage = mBlog.getInboxDirectMessages(paging);
+			List<DirectMessage> listMessage = weibo.getInboxDirectMessages(paging);
 			assertTrue(ListUtil.isNotEmpty(listMessage));
 			DirectMessage message = listMessage.get(0);
 			assertNotNull(message);
 			
 			TestUtil.sleep();
 			
-			DirectMessage deletedMessage = mBlog.destroyInboxDirectMessage(message.getId());
+			DirectMessage deletedMessage = weibo.destroyInboxDirectMessage(message.getId());
 			assertNotNull(deletedMessage);
 			assertTrue(StringUtil.isNotEmpty(deletedMessage.getId()));	
 		} catch (Exception e) {
@@ -171,20 +175,20 @@ public class DirectMessageMethods {
 	public void destroyOutboxDirectMessage() {
 		try {
 			Paging<User> paging = new Paging<User>();
-			List<User> listUser = mBlog.getFollowers(paging);
+			List<User> listUser = weibo.getFollowers(paging);
 			assertTrue(ListUtil.isNotEmpty(listUser));
 			
 			User user = listUser.get(0);
 			assertNotNull(user);
 			
 			String text = "测试删除私信接口：destroyOutboxDirectMessage,莫慌，" + System.currentTimeMillis();			
-			DirectMessage message = mBlog.sendDirectMessage(user.getDisplayName(), text);
+			DirectMessage message = weibo.sendDirectMessage(user.getDisplayName(), text);
 			assertNotNull(message);
 			assertTrue(StringUtil.isNotEmpty(message.getId()));
 			
 			TestUtil.sleep();
 			
-			DirectMessage deletedMessage = mBlog.destroyOutboxDirectMessage(message.getId());
+			DirectMessage deletedMessage = weibo.destroyOutboxDirectMessage(message.getId());
 			assertNotNull(deletedMessage);
 			assertTrue(StringUtil.isNotEmpty(deletedMessage.getId()));		
 		} catch (LibException e) {

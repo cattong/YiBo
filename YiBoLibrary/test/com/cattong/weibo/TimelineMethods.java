@@ -11,19 +11,23 @@ import org.junit.Test;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.Paging;
+import com.cattong.commons.http.auth.Authorization;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.Status;
 import com.cattong.entity.User;
-import com.cattong.weibo.Weibo;
+import com.cattong.oauth.Config;
 
 //已经完成基本的测试用例
 //@Ignore
 public class TimelineMethods {
-	private static Weibo mBlog = null;
+	private static Weibo weibo = null;
 
 	@BeforeClass
 	public static void beforClass() {
-        mBlog = Config.getMicroBlog(Config.currentProvider);
+		Authorization auth = new Authorization(Config.SP);
+		auth.setAccessToken(Config.ACCESS_TOKEN);
+        auth.setAccessSecret(Config.ACCESS_SECRET);
+		weibo = WeiboFactory.getInstance(auth);
 	}
     
 	@AfterClass
@@ -37,7 +41,7 @@ public class TimelineMethods {
 		List<Status> listStatus = null;
 
 		try {
-			listStatus = mBlog.getPublicTimeline();
+			listStatus = weibo.getPublicTimeline();
 		} catch (LibException e) {
 			e.printStackTrace();
 		}
@@ -52,7 +56,7 @@ public class TimelineMethods {
         Paging<Status> paging = new Paging<Status>();
 
 		try {
-			listStatus = mBlog.getHomeTimeline(paging);
+			listStatus = weibo.getHomeTimeline(paging);
 		} catch (LibException e) {
 			e.printStackTrace();
 			assertTrue(false);
@@ -64,7 +68,7 @@ public class TimelineMethods {
 	@Test
 	public void getHomeTimeline_params() {
 	    try {
-			mBlog.getHomeTimeline(null);
+			weibo.getHomeTimeline(null);
 			assertTrue(false);
 		} catch (LibException e) {
 			assertTrue(true);
@@ -77,7 +81,7 @@ public class TimelineMethods {
         Paging<Status> paging = new Paging<Status>();
 
 		try {
-			listStatus = mBlog.getHomeTimeline(paging);
+			listStatus = weibo.getHomeTimeline(paging);
 		} catch (LibException e) {
 			e.printStackTrace();
 		}
@@ -98,13 +102,13 @@ public class TimelineMethods {
 		}
 		
         //测试上翻
-		PagingTest.pageUp(listStatus, mBlog, method);
+		PagingTest.pageUp(listStatus, weibo, method);
 		
 		//测试下翻
-		PagingTest.pageDown(listStatus, mBlog, method);
+		PagingTest.pageDown(listStatus, weibo, method);
 		
 		//测试中间展开
-        PagingTest.pageExpand(listStatus, mBlog, method);
+        PagingTest.pageExpand(listStatus, weibo, method);
 	}
 	
 	//翻页：自由方式(FreeStyle)
@@ -114,7 +118,7 @@ public class TimelineMethods {
         Paging<Status> paging = new Paging<Status>();
 
 		try {
-			listStatus = mBlog.getFriendsTimeline(paging);
+			listStatus = weibo.getFriendsTimeline(paging);
 		} catch (LibException e) {
 			e.printStackTrace();
 		}
@@ -125,7 +129,7 @@ public class TimelineMethods {
 	@Test
 	public void getFriendsTimeline_params() {
 	    try {
-			mBlog.getFriendsTimeline(null);
+			weibo.getFriendsTimeline(null);
 			assertTrue(false);
 		} catch (LibException e) {
 			assertTrue(true);
@@ -138,7 +142,7 @@ public class TimelineMethods {
         Paging<Status> paging = new Paging<Status>();
 
 		try {
-			listStatus = mBlog.getFriendsTimeline(paging);
+			listStatus = weibo.getFriendsTimeline(paging);
 		} catch (LibException e) {
 			e.printStackTrace();
 		}
@@ -159,13 +163,13 @@ public class TimelineMethods {
 		}
 		
         //测试上翻
-		PagingTest.pageUp(listStatus, mBlog, method);
+		PagingTest.pageUp(listStatus, weibo, method);
 		
 		//测试下翻
-		PagingTest.pageDown(listStatus, mBlog, method);
+		PagingTest.pageDown(listStatus, weibo, method);
 		
 		//测试中间展开
-        PagingTest.pageExpand(listStatus, mBlog, method);
+        PagingTest.pageExpand(listStatus, weibo, method);
 	}
 	
 	//翻页：单向方式(SingleStyle)
@@ -175,8 +179,8 @@ public class TimelineMethods {
 		Paging<Status> paging = new Paging<Status>();
 
 		try {
-			User user = mBlog.verifyCredentials();
-			listStatus = mBlog.getUserTimeline(user.getUserId(), paging);
+			User user = weibo.verifyCredentials();
+			listStatus = weibo.getUserTimeline(user.getUserId(), paging);
 		} catch (LibException e) {
 			e.printStackTrace();
 		}
@@ -187,7 +191,7 @@ public class TimelineMethods {
 	@Test
 	public void getUserTimeline_params() {
 	    try {
-			mBlog.getUserTimeline(null, null);
+			weibo.getUserTimeline(null, null);
 			assertTrue(false);
 		} catch (LibException e) {
 			assertTrue(true);
@@ -201,8 +205,8 @@ public class TimelineMethods {
 
         User user = null;
 		try {
-			user = mBlog.verifyCredentials();
-			listStatus = mBlog.getUserTimeline(user.getUserId(), paging);
+			user = weibo.verifyCredentials();
+			listStatus = weibo.getUserTimeline(user.getUserId(), paging);
 		} catch (LibException e) {
 			e.printStackTrace();
 		}
@@ -223,7 +227,7 @@ public class TimelineMethods {
 		}
 		
 		//测试下翻
-		PagingTest.pageDown(listStatus, mBlog, method, user.getUserId());
+		PagingTest.pageDown(listStatus, weibo, method, user.getUserId());
 	}
 	
 	//翻页：自由方式(FreeStyle)
@@ -233,7 +237,7 @@ public class TimelineMethods {
 		Paging<Status> paging = new Paging<Status>();
 
 		try {
-			listStatus = mBlog.getMentionTimeline(paging);
+			listStatus = weibo.getMentionTimeline(paging);
 		} catch (LibException e) {
 			e.printStackTrace();
 			assertTrue(false);
@@ -245,7 +249,7 @@ public class TimelineMethods {
 	@Test
 	public void getMentions_params() {
 	    try {
-			mBlog.getMentionTimeline(null);
+			weibo.getMentionTimeline(null);
 			assertTrue(false);
 		} catch (LibException e) {
 			assertTrue(true);
@@ -258,7 +262,7 @@ public class TimelineMethods {
         Paging<Status> paging = new Paging<Status>();
 
 		try {
-			listStatus = mBlog.getMentionTimeline(paging);
+			listStatus = weibo.getMentionTimeline(paging);
 		} catch (LibException e) {
 			e.printStackTrace();
 		}
@@ -279,13 +283,13 @@ public class TimelineMethods {
 		}
 		
         //测试上翻
-		PagingTest.pageUp(listStatus, mBlog, method);
+		PagingTest.pageUp(listStatus, weibo, method);
 		
 		//测试下翻
-		PagingTest.pageDown(listStatus, mBlog, method);
+		PagingTest.pageDown(listStatus, weibo, method);
 		
 		//测试中间展开
-        PagingTest.pageExpand(listStatus, mBlog, method);
+        PagingTest.pageExpand(listStatus, weibo, method);
 	}
 	
 }

@@ -11,27 +11,31 @@ import org.junit.Test;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.Paging;
+import com.cattong.commons.http.auth.Authorization;
 import com.cattong.entity.User;
-import com.cattong.weibo.Weibo;
+import com.cattong.oauth.Config;
 import com.cattong.weibo.entity.Group;
 
 public class GroupMembersMethods {
-	private static Weibo mBlog = null;
+	private static Weibo weibo = null;
 	private Group testGroup;
 
 	@BeforeClass
 	public static void beforClass() {
-        mBlog = Config.getMicroBlog(Config.currentProvider);
+		Authorization auth = new Authorization(Config.SP);
+		auth.setAccessToken(Config.ACCESS_TOKEN);
+        auth.setAccessSecret(Config.ACCESS_SECRET);
+		weibo = WeiboFactory.getInstance(auth);
 	}
 
 	@Before
 	public void createTestGroup() throws LibException {
-		testGroup = mBlog.createGroup("What", false,  "测试" + System.currentTimeMillis());
+		testGroup = weibo.createGroup("What", false,  "测试" + System.currentTimeMillis());
 	}
 
 	@After
 	public void destroyTestGroup() throws LibException {
-		mBlog.destroyGroup(testGroup.getId());
+		weibo.destroyGroup(testGroup.getId());
 	}
 
 	@Test
@@ -39,10 +43,10 @@ public class GroupMembersMethods {
 		try {
 			Paging<User> paging = new Paging<User>();
 			paging.moveToFirst();
-			List<User> users = mBlog.getFriends(paging);
-			mBlog.createGroupMember(testGroup.getId(), users.get(0).getUserId());
+			List<User> users = weibo.getFriends(paging);
+			weibo.createGroupMember(testGroup.getId(), users.get(0).getUserId());
 			paging.moveToFirst();
-			List<User> members = mBlog.getGroupMembers(testGroup.getId(), paging);
+			List<User> members = weibo.getGroupMembers(testGroup.getId(), paging);
 			Assert.assertTrue(members.size() == 1);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -56,8 +60,8 @@ public class GroupMembersMethods {
 		try {
 			Paging<User> paging = new Paging<User>();
 			paging.moveToFirst();
-			List<User> users = mBlog.getFriends(paging);
-			Group userList = mBlog.createGroupMember(testGroup.getId(), users.get(0).getUserId());
+			List<User> users = weibo.getFriends(paging);
+			Group userList = weibo.createGroupMember(testGroup.getId(), users.get(0).getUserId());
 			Assert.assertTrue(userList != null);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -75,9 +79,9 @@ public class GroupMembersMethods {
 		try {
 			Paging<User> paging = new Paging<User>();
 			paging.moveToFirst();
-			List<User> users = mBlog.getFriends(paging);
-			mBlog.createGroupMember(testGroup.getId(), users.get(0).getUserId());
-			Group deleted = mBlog.destroyGroupMember(testGroup.getId(), users.get(0).getUserId());
+			List<User> users = weibo.getFriends(paging);
+			weibo.createGroupMember(testGroup.getId(), users.get(0).getUserId());
+			Group deleted = weibo.destroyGroupMember(testGroup.getId(), users.get(0).getUserId());
 			Assert.assertTrue(deleted != null);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -90,12 +94,12 @@ public class GroupMembersMethods {
 		try {
 			Paging<User> paging = new Paging<User>();
 			paging.moveToFirst();
-			List<User> users = mBlog.getFriends(paging);
+			List<User> users = weibo.getFriends(paging);
 			String userId = users.get(0).getUserId();
-			User user = mBlog.showGroupMember(testGroup.getId(), userId);
+			User user = weibo.showGroupMember(testGroup.getId(), userId);
 			Assert.assertTrue(user == null);
-			mBlog.createGroupMember(testGroup.getId(), users.get(0).getUserId());
-			user = mBlog.showGroupMember(testGroup.getId(), userId);
+			weibo.createGroupMember(testGroup.getId(), users.get(0).getUserId());
+			user = weibo.showGroupMember(testGroup.getId(), userId);
 			Assert.assertTrue(user != null);
 		} catch (Exception e) {
 			e.printStackTrace();

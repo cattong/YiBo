@@ -5,7 +5,7 @@ public enum ServiceProvider {
 	None(-1, null, ServiceProvider.CATEGORY_WEIBO, null), // 空，仅用于非SP请求或无需指定SP的情况
 	
 	//微博
-	Sina(ServiceProvider.SP_SINA, "新浪微博", ServiceProvider.CATEGORY_WEIBO, "YiBo微博客户端"),
+	Sina(ServiceProvider.SP_SINA, "新浪微博", ServiceProvider.CATEGORY_WEIBO, "外号猫哥"),
 	Sohu(ServiceProvider.SP_SOHU, "搜狐微博", ServiceProvider.CATEGORY_WEIBO, "YiBo微博客户端"),
 	NetEase(ServiceProvider.SP_NETEASE, "网易微博", ServiceProvider.CATEGORY_WEIBO, "YiBo微博客户端"),
 	Tencent(ServiceProvider.SP_TENCENT, "腾讯微博", ServiceProvider.CATEGORY_WEIBO, "yiboclient"),
@@ -46,21 +46,21 @@ public enum ServiceProvider {
 	public String getOfficalName() {
 		return officalName;
 	}
-
-	public static final int SP_SOCIALCAT       = 30;     //shejiaomao.com的SP编号
 	
-	//微博平台编号
+	//平台编号
 	public static final int SP_SINA            = 1;     // 新浪的SP编号
-	public static final int SP_SOHU            = 2;     // 搜狐的SP编号
-	public static final int SP_NETEASE         = 3;     // 网易的SP编号
-	public static final int SP_TENCENT         = 4;     // 腾讯的SP编号
-	public static final int SP_TWITTER         = 5;     // 推特的SP编号
-	public static final int SP_FANFOU          = 6;     // 饭否的SP编号
+	public static final int SP_TENCENT         = 2;     // 腾讯的SP编号
+	public static final int SP_QQZONE          = 3;     // QQ空间的SP编号
+	public static final int SP_TWITTER         = 4;     // 推特的SP编号
+	public static final int SP_SOHU            = 20;     // 搜狐的SP编号
+	public static final int SP_NETEASE         = 21;     // 网易的SP编号	
+	
+	public static final int SP_FANFOU          = 22;     // 饭否的SP编号
 
-	public static final int SP_RENREN          = 21;     // 人人网的SP编号
-	public static final int SP_KAIXIN          = 22;     // 开心网的SP编号
-	public static final int SP_QQZONE          = 23;     // QQ空间的SP编号
-	public static final int SP_FACEBOOK        = 24;     // Facebook的SP编号
+	public static final int SP_RENREN          = 23;     // 人人网的SP编号
+	public static final int SP_KAIXIN          = 24;     // 开心网的SP编号
+	
+	public static final int SP_FACEBOOK        = 25;     // Facebook的SP编号
 
 	public static final String CATEGORY_WEIBO = "weibo";
 	public static final String CATEGORY_SNS = "sns";

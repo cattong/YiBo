@@ -5,22 +5,22 @@ import java.util.Hashtable;
 import com.cattong.commons.Logger;
 import com.cattong.commons.ServiceProvider;
 
-public class HttpConfigurationFactory {
-    private static final String CLASS_NAME_FORMAT = "com.cattong.%1$s%2$s.%3$sHttpConfiguration";
+public class HttpConfigFactory {
+    private static final String CLASS_NAME_FORMAT = "com.cattong.%1$s.impl.%2$s.%3$sHttpConfig";
 
-	private static Hashtable<ServiceProvider, HttpConfiguration> spHttpConfigs =
-		new Hashtable<ServiceProvider, HttpConfiguration>();
+	private static Hashtable<ServiceProvider, HttpConfig> spHttpConfigs =
+		new Hashtable<ServiceProvider, HttpConfig>();
 
-	public static synchronized HttpConfiguration getHttpConfiguration(ServiceProvider serviceProvider) {
+	public static synchronized HttpConfig getHttpConfiguration(ServiceProvider serviceProvider) {
 
-		HttpConfiguration conf = spHttpConfigs.get(serviceProvider);
+		HttpConfig conf = spHttpConfigs.get(serviceProvider);
 		if (conf != null) {
 			return conf;
 		}
 
 		try {
 			if (serviceProvider == ServiceProvider.None) {
-				conf = new HttpConfigurationBase();
+				conf = new HttpConfigBase();
 			} else {
 				String spCategoryPath = serviceProvider.getSpCategory().toLowerCase();
 				
@@ -32,12 +32,12 @@ public class HttpConfigurationFactory {
 	                    serviceProvider.toString()
 	                );
 
-		        conf = (HttpConfiguration) Class.forName(className).newInstance();
+		        conf = (HttpConfig) Class.forName(className).newInstance();
 			}
 
         } catch (Exception e) {
             Logger.debug("Get HttpConfiguration instance for {}", serviceProvider, e);
-        	conf = new HttpConfigurationBase();
+        	conf = new HttpConfigBase();
         }
 		spHttpConfigs.put(serviceProvider, conf);
 

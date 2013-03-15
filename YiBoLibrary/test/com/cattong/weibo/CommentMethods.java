@@ -15,19 +15,24 @@ import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
 import com.cattong.commons.Paging;
 import com.cattong.commons.ServiceProvider;
+import com.cattong.commons.http.auth.Authorization;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.Comment;
 import com.cattong.entity.Status;
 import com.cattong.entity.StatusUpdate;
+import com.cattong.oauth.Config;
 
 //已经完成基本的测试用例
 //@Ignore
 public class CommentMethods {
-	private static Weibo mBlog = null;
+	private static Weibo weibo = null;
 
 	@BeforeClass
 	public static void beforClass() {
-        mBlog = Config.getMicroBlog(Config.currentProvider);
+		Authorization auth = new Authorization(Config.SP);
+		auth.setAccessToken(Config.ACCESS_TOKEN);
+        auth.setAccessSecret(Config.ACCESS_SECRET);
+		weibo = WeiboFactory.getInstance(auth);
 	}
 
 	@AfterClass
@@ -42,20 +47,20 @@ public class CommentMethods {
 		try {
 			String text = "测试评论接口：createComment，造微博数据，" + System.currentTimeMillis();
 			StatusUpdate sUpdate = new StatusUpdate(text);
-			Status status = mBlog.updateStatus(sUpdate);
+			Status status = weibo.updateStatus(sUpdate);
 			assertTrue(status != null);
 
 			TestUtil.sleep();
 
 			//评论
 			String commentText = "测试评论接口：createComment,写评论!" + System.currentTimeMillis();
-			comment = mBlog.createComment(commentText, status.getStatusId());
+			comment = weibo.createComment(commentText, status.getStatusId());
 			assertTrue(comment != null);
 
 			TestUtil.sleep();
 			//回复评论
 			String replyCommentText = "回复@xxx: 测试回复评论接口：createComment,回复评论!" + System.currentTimeMillis();
-			Comment replayComment = mBlog.createComment(replyCommentText, status.getStatusId(), comment.getCommentId());
+			Comment replayComment = weibo.createComment(replyCommentText, status.getStatusId(), comment.getCommentId());
 			assertTrue(replayComment != null);
 		} catch (LibException e) {
 			e.printStackTrace();
@@ -69,16 +74,16 @@ public class CommentMethods {
 		try {
 			String text = "测试删除评论接口：destroyComment，造微博数据，" + System.currentTimeMillis();
 			StatusUpdate sUpdate = new StatusUpdate(text);
-			Status status = mBlog.updateStatus(sUpdate);
+			Status status = weibo.updateStatus(sUpdate);
 			assertTrue(status != null);
 
 			TestUtil.sleep();
 			String commentText = "测试删除评论接口：destroyComment，造评论数据" + System.currentTimeMillis();
-			Comment comment = mBlog.createComment(commentText, status.getStatusId());
+			Comment comment = weibo.createComment(commentText, status.getStatusId());
 			assertTrue(comment != null);
 			assertNotNull(comment.getCommentId());
 
-			Comment destroyComment = mBlog.destroyComment(comment.getCommentId());
+			Comment destroyComment = weibo.destroyComment(comment.getCommentId());
 			assertTrue(destroyComment != null);
 			if (comment.getServiceProvider() != ServiceProvider.NetEase) {
 			    assertNotNull(destroyComment.getCommentId());
@@ -100,23 +105,23 @@ public class CommentMethods {
 		try {
 			String text = "测试获得微博评论列表的接口：getCommentsOfStatus，造微博数据，" + System.currentTimeMillis();
 			StatusUpdate sUpdate = new StatusUpdate(text);
-			Status status = mBlog.updateStatus(sUpdate);
+			Status status = weibo.updateStatus(sUpdate);
 			assertTrue(status != null);
 
 			TestUtil.sleep();
 			//评论
 			String commentText = "测试获得微博评论列表的接口：getCommentsOfStatus，造评论数据，" + System.currentTimeMillis();
-			Comment comment = mBlog.createComment(commentText, status.getStatusId());
+			Comment comment = weibo.createComment(commentText, status.getStatusId());
 			assertTrue(comment != null);
 
 			TestUtil.sleep();
 			//回复评论
 			String replyCommentText = "回复@xxxx: 测试获得微博评论列表的接口：getCommentsOfStatus，造回复评论数据，" + System.currentTimeMillis();
-			Comment replayComment = mBlog.createComment(replyCommentText, status.getStatusId(), comment.getCommentId());
+			Comment replayComment = weibo.createComment(replyCommentText, status.getStatusId(), comment.getCommentId());
 			assertTrue(replayComment != null);
 
 			TestUtil.sleep();
-			listComment = mBlog.getCommentsOfStatus(status.getStatusId(), paging);
+			listComment = weibo.getCommentsOfStatus(status.getStatusId(), paging);
 			assertTrue(ListUtil.isNotEmpty(listComment));
 			assertTrue(listComment.size() == 2);
 
@@ -127,7 +132,7 @@ public class CommentMethods {
 			int i = 0;
 			while (paging.hasNext() && i < 2) {
 				paging.moveToNext();
-				listComment = mBlog.getCommentsOfStatus(status.getStatusId(), paging);
+				listComment = weibo.getCommentsOfStatus(status.getStatusId(), paging);
 				assertTrue(ListUtil.isNotEmpty(listComment));
 				assertTrue(listComment.size() == 1);
 				i++;
@@ -146,14 +151,14 @@ public class CommentMethods {
 		Paging<Comment> paging = new Paging<Comment>();
 
 		try {
-			listComment = mBlog.getCommentsOfStatus("", paging);
+			listComment = weibo.getCommentsOfStatus("", paging);
 			assertTrue(false);
 		} catch (LibException e) {
 			assertTrue(true);
 		}
 
 		try {
-			listComment = mBlog.getCommentsOfStatus("123", null);
+			listComment = weibo.getCommentsOfStatus("123", null);
 			assertTrue(false);
 		} catch (LibException e) {
 			assertTrue(true);
@@ -170,7 +175,7 @@ public class CommentMethods {
 		Paging<Comment> paging = new Paging<Comment>();
 
 		try {
-			listComment = mBlog.getCommentTimeline(paging);
+			listComment = weibo.getCommentTimeline(paging);
 			assertTrue(ListUtil.isNotEmpty(listComment));
 		} catch (LibException e) {
 			e.printStackTrace();
@@ -192,13 +197,13 @@ public class CommentMethods {
 		}
 
         //测试上翻
-		PagingTest.pageUp(listComment, mBlog, method);
+		PagingTest.pageUp(listComment, weibo, method);
 
 		//测试下翻
-		PagingTest.pageDown(listComment, mBlog, method);
+		PagingTest.pageDown(listComment, weibo, method);
 
 		//测试中间展开
-        PagingTest.pageExpand(listComment, mBlog, method);
+        PagingTest.pageExpand(listComment, weibo, method);
 	}
 
 	//@Ignore
@@ -207,7 +212,7 @@ public class CommentMethods {
 		List<Comment> listComment = null;
 
 		try {
-			listComment = mBlog.getCommentTimeline(null);
+			listComment = weibo.getCommentTimeline(null);
 			assertTrue(false);
 			assertNull(listComment);
 		} catch (LibException e) {
@@ -226,7 +231,7 @@ public class CommentMethods {
 		Paging<Comment> paging = new Paging<Comment>();
 
 		try {
-			listComment = mBlog.getCommentsByMe(paging);
+			listComment = weibo.getCommentsByMe(paging);
 			assertTrue(ListUtil.isNotEmpty(listComment));
 		} catch (LibException e) {
 			e.printStackTrace();
@@ -248,13 +253,13 @@ public class CommentMethods {
 		}
 
         //测试上翻
-		PagingTest.pageUp(listComment, mBlog, method);
+		PagingTest.pageUp(listComment, weibo, method);
 
 		//测试下翻
-		PagingTest.pageDown(listComment, mBlog, method);
+		PagingTest.pageDown(listComment, weibo, method);
 
 		//测试中间展开
-        PagingTest.pageExpand(listComment, mBlog, method);
+        PagingTest.pageExpand(listComment, weibo, method);
 	}
 
 	//@Ignore
@@ -263,7 +268,7 @@ public class CommentMethods {
 		List<Comment> listComment = null;
 
 		try {
-			listComment = mBlog.getCommentsByMe(null);
+			listComment = weibo.getCommentsByMe(null);
 			assertTrue(false);
 			assertNull(listComment);
 		} catch (LibException e) {
@@ -282,7 +287,7 @@ public class CommentMethods {
 		Paging<Comment> paging = new Paging<Comment>();
 
 		try {
-			listComment = mBlog.getCommentsToMe(paging);
+			listComment = weibo.getCommentsToMe(paging);
 			assertTrue(ListUtil.isNotEmpty(listComment));
 		} catch (LibException e) {
 			e.printStackTrace();
@@ -304,13 +309,13 @@ public class CommentMethods {
 		}
 
         //测试上翻
-		PagingTest.pageUp(listComment, mBlog, method);
+		PagingTest.pageUp(listComment, weibo, method);
 
 		//测试下翻
-		PagingTest.pageDown(listComment, mBlog, method);
+		PagingTest.pageDown(listComment, weibo, method);
 
 		//测试中间展开
-        PagingTest.pageExpand(listComment, mBlog, method);
+        PagingTest.pageExpand(listComment, weibo, method);
 	}
 
 	//@Ignore
@@ -319,7 +324,7 @@ public class CommentMethods {
 		List<Comment> listComment = null;
 
 		try {
-			listComment = mBlog.getCommentsToMe(null);
+			listComment = weibo.getCommentsToMe(null);
 			assertTrue(false);
 			assertNull(listComment);
 		} catch (LibException e) {

@@ -3,9 +3,10 @@ package com.cattong.weibo.impl.sohu;
 import com.cattong.commons.http.auth.Authorization;
 import com.cattong.commons.oauth.config.OAuthConfigBase;
 
-public class SohuOAuthConfiguration extends OAuthConfigBase {
+public class SohuOAuthConfig extends OAuthConfigBase {
+	private static final long serialVersionUID = 1318416428421524310L;
 
-	public SohuOAuthConfiguration() {
+	public SohuOAuthConfig() {
 		this.setAuthVersion(Authorization.AUTH_VERSION_OAUTH_1);
 		this.setConsumerKey("aXApAcuyUy");
 		this.setConsumerSecret("uUJMr8tgymwqcnC^pda0cXUP=rjkl=");

@@ -202,7 +202,7 @@ class TencentStatusAdaptor {
 
 			if (!json.isNull("image")) {
 				String imageString = getRawString("image", json);
-				String[] images = imageString.replace("[\"", "").replace("\"]", "").replace("\\/", "/").split(",");
+				String[] images = imageString.replace("[\"", "").replace("\"]", "").replace("\\/", "/").replace("\"", "").split(",");
 				String image = images[0];
 				if (StringUtil.isNotEmpty(image)) {
 					status.setThumbnailPictureUrl(image + "/160");

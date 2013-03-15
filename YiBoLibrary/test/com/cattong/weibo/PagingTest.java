@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.cattong.commons.Paging;
 import com.cattong.commons.util.ListUtil;
-import com.cattong.weibo.Weibo;
 
 
 public class PagingTest {

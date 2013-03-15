@@ -9,9 +9,9 @@ public class TencentOAuthConfig extends OAuthConfigBase {
 
 	public TencentOAuthConfig() {
 		this.setAuthVersion(Authorization.AUTH_VERSION_OAUTH_1);
-		this.setConsumerKey("801229968");
-		this.setConsumerSecret("76a9cf84a06e8f2f83107c3ec76cf2f0");
-		this.setCallbackUrl("http://www.jifenbang.net/getAccessToken.do");
+		this.setConsumerKey("d793a554c70746e5bf2c8c18f91845d5");
+		this.setConsumerSecret("e7d311a073b653c0ef4bdd63183820ea");
+		this.setCallbackUrl("http://www.yibo.me/authorize/getAccessToken.do");
 
 		this.setAccessTokenUrl("http://open.t.qq.com/cgi-bin/access_token");
 		this.setAuthorizeUrl("http://open.t.qq.com/cgi-bin/authorize");

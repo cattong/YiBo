@@ -9,7 +9,7 @@ import java.util.Properties;
  * @author cattong.com
  * @time
  */
-public class HttpConfigurationBase implements HttpConfiguration, java.io.Serializable {
+public class HttpConfigBase implements HttpConfig, java.io.Serializable {
 
 	private String userAgent;
 
@@ -31,7 +31,7 @@ public class HttpConfigurationBase implements HttpConfiguration, java.io.Seriali
 
 
 	private static final long serialVersionUID = -6610497517837844232L;
-	public HttpConfigurationBase() {
+	public HttpConfigBase() {
 		setHttpProxyPort(-1);
 		setHttpConnectionTimeout(10000);
 		setHttpReadTimeout(120000);

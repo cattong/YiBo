@@ -45,8 +45,8 @@ import com.cattong.commons.LibResultCode;
 import com.cattong.commons.LibRuntimeException;
 import com.cattong.commons.Logger;
 import com.cattong.commons.ServiceProvider;
-import com.cattong.commons.http.config.HttpConfiguration;
-import com.cattong.commons.http.config.HttpConfigurationFactory;
+import com.cattong.commons.http.config.HttpConfig;
+import com.cattong.commons.http.config.HttpConfigFactory;
 import com.cattong.commons.oauth.OAuthException;
 import com.cattong.commons.util.StringUtil;
 
@@ -63,7 +63,7 @@ public class HttpRequestHelper {
 	}
 
 	private static HttpClient getHttpClient(ServiceProvider sp) {
-		HttpConfiguration conf = HttpConfigurationFactory.getHttpConfiguration(sp);
+		HttpConfig conf = HttpConfigFactory.getHttpConfiguration(sp);
 		HttpClient httpClient = spHttpClients.get(sp);
 		if (httpClient == null) {
 			httpClient = createHttpClient(conf);
@@ -73,7 +73,7 @@ public class HttpRequestHelper {
 		return httpClient;
 	}
 
-	private static synchronized HttpClient createHttpClient(HttpConfiguration config) {
+	private static synchronized HttpClient createHttpClient(HttpConfig config) {
 		if (config == null) {
 			return null;
 		}
@@ -117,7 +117,7 @@ public class HttpRequestHelper {
 		return httpClient;
 	}
 
-	private static void updateProxySetting(HttpConfiguration config, DefaultHttpClient httpClient) {
+	private static void updateProxySetting(HttpConfig config, DefaultHttpClient httpClient) {
 		if (config == null || httpClient == null){
 			return;
 		}
@@ -387,7 +387,7 @@ public class HttpRequestHelper {
 		}
 
 		for (ServiceProvider sp : spHttpClients.keySet()) {
-			HttpConfiguration config = HttpConfigurationFactory.getHttpConfiguration(sp);
+			HttpConfig config = HttpConfigFactory.getHttpConfiguration(sp);
 			DefaultHttpClient httpClient = (DefaultHttpClient) spHttpClients.get(sp);
 			updateProxySetting(config, httpClient);
 		}

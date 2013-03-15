@@ -32,36 +32,38 @@ public class Authorization implements java.io.Serializable {
 	private Date expiredAt;
 	private String refreshToken;
 	
-	public Authorization(ServiceProvider serviceProvider) {
-		if (serviceProvider == null) {
+	public Authorization(ServiceProvider sp) {
+		if (sp == null) {
 			return;
 		}
-		this.serviceProvider = serviceProvider;		
-		this.oAuthConfig = OAuthConfigFactory.getOAuthConfig(
-			serviceProvider);
-		this.authVersion = oAuthConfig.getAuthVersion();
+		this.serviceProvider = sp;		
+		this.oAuthConfig = OAuthConfigFactory.getOAuthConfig(sp);
+		this.authVersion = AUTH_VERSION_OAUTH_1;
+		if (oAuthConfig != null) {
+		    this.authVersion = oAuthConfig.getAuthVersion();
+		}
 	}
 	
-	public Authorization(ServiceProvider serviceProvider, int authVersion) {
-		if (serviceProvider == null) {
-			return;
-		}
-		this.serviceProvider = serviceProvider;
-		
-		this.authVersion = authVersion;
-		
-		switch(authVersion) {
-		case AUTH_VERSION_BASIC:
-			break;
-		case AUTH_VERSION_OAUTH_1:
-		case AUTH_VERSION_OAUTH_2:
-			this.oAuthConfig = OAuthConfigFactory.getOAuthConfig(serviceProvider);
-			break;
-		}
-	}
+//	public Authorization(ServiceProvider serviceProvider, int authVersion) {
+//		if (serviceProvider == null) {
+//			return;
+//		}
+//		this.serviceProvider = serviceProvider;
+//		
+//		this.authVersion = authVersion;
+//		
+//		switch(authVersion) {
+//		case AUTH_VERSION_BASIC:
+//			break;
+//		case AUTH_VERSION_OAUTH_1:
+//		case AUTH_VERSION_OAUTH_2:
+//			this.oAuthConfig = OAuthConfigFactory.getOAuthConfig(serviceProvider);
+//			break;
+//		}
+//	}
 	
 	public Authorization(ServiceProvider serviceProvider, String accessToken, String accessSecret) {
-		this(serviceProvider, AUTH_VERSION_OAUTH_1);
+		this(serviceProvider);
 		this.accessToken = accessToken;
 		this.accessSecret = accessSecret;
 	}

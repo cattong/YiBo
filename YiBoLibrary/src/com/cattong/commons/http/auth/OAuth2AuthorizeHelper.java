@@ -186,7 +186,7 @@ public class OAuth2AuthorizeHelper {
 	        }
 	    }
 
-	    Authorization auth = new Authorization(ServiceProvider.None, Authorization.AUTH_VERSION_OAUTH_2);
+	    Authorization auth = new Authorization(ServiceProvider.None);
 		if (parameters != null) {
 			if (parameters.containsKey(OAuth2.ACCESS_TOKEN)) {
 				String accessToken = parameters.get(OAuth2.ACCESS_TOKEN);

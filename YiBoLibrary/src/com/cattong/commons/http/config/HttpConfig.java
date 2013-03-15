@@ -8,7 +8,7 @@ package com.cattong.commons.http.config;
  * @author cattong.com
  * @time 2010-8-1 上午10:50:18
  */
-public interface HttpConfiguration extends java.io.Serializable {
+public interface HttpConfig extends java.io.Serializable {
 
 	boolean isUseGzip();
 
