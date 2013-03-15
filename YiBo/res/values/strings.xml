@@ -533,7 +533,7 @@
 
 	<!-- About -->
 	<string name="defaultVersion">2.0.1</string>
-	<string name="about">SheJiaoMao v%1$s \nEmail: jifenbang.net@gmail.com \nSite: http://www.shejiaomao.com \nCopyright © 2012-2013 \nSheJiaoMao.com All Rights Reserved.</string>
+	<string name="about">YiBo v%1$s \nEmail: dev123.net@gmail.com \nSite: https://github.com/cattong/YiBo \nCopyright © 2012-2013 \n github open source.</string>
 
 	<!-- app common -->
 	<string name="title_dialog_net_setting">Connection failed</string>

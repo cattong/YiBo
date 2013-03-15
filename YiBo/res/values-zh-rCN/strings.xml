@@ -530,7 +530,7 @@
 
 	<!-- About -->
 	<string name="defaultVersion">2.0.1</string>
-	<string name="about">yibo微博客户端 v%1$s \nEmail: dev123.net@gmail.com \n网址: S打包 </string>
+	<string name="about">yibo微博客户端 v%1$s \nEmail: dev123.net@gmail.com \n网址: https://github.com/cattong/YiBo \n github开源社区版 </string>
 
 	<!-- App common -->
 	<string name="title_dialog_net_setting">连接失败</string>

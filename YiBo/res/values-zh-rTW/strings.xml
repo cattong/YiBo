@@ -531,7 +531,7 @@
 
 	<!-- About -->
 	<string name="defaultVersion">2.0.1</string>
-	<string name="about">yibo微博客戶端 v%1$s \nEmail: dev123.net@gmail.com \n網址: s打包 </string>
+	<string name="about">yibo微博客戶端 v%1$s \nEmail: dev123.net@gmail.com \n網址: https://github.com/cattong/YiBo \n github开源社区版 </string>
 
 	<!-- app common -->
 	<string name="title_dialog_net_setting">連接失敗</string>
