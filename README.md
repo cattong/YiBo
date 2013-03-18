@@ -11,7 +11,7 @@ Apache Licence！
 
 维护人介绍
 =====
-欢迎联系新浪微博 @外号猫哥，支持社区开发捐赠:http://item.taobao.com/item.htm?id=23181704824 感谢您对社区的支持！
+欢迎联系新浪微博 @外号猫哥，支持社区开发捐赠:https://me.alipay.com/cattong 感谢您对社区的支持！
 
 社区版本
 =====
