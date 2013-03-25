@@ -22,6 +22,7 @@ import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.params.ClientPNames;
+import org.apache.http.client.params.CookiePolicy;
 import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.conn.params.ConnManagerParams;
@@ -91,7 +92,9 @@ public class HttpRequestHelper {
 		if (config.getHttpReadTimeout() > 0) {
 			httpParams.setIntParameter(CoreConnectionPNames.SO_TIMEOUT, config.getHttpReadTimeout());
 		}
-
+		// 设置cookie策略
+	    httpParams.setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.BROWSER_COMPATIBILITY);
+				
 		// 设置http.protocol.expect-continue参数为false，即不使用Expect:100-Continue握手，
 		// 因为如果服务器不支持HTTP 1.1，则会导致HTTP 417错误。
 		HttpProtocolParams.setUseExpectContinue(httpParams, false);

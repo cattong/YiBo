@@ -11,7 +11,7 @@ public class FacebookOAuthConfig extends OAuthConfigBase {
     	
         this.setConsumerKey("301548906522958");
         this.setConsumerSecret("d6791ea182ab25487a07c326f3e7189b");
-        this.setCallbackUrl("http://www.cattong.com/getAccessToken.do");
+        this.setCallbackUrl("http://www.yibo.me/authorize/getAccessToken.do");
         this.setAccessTokenUrl("https://graph.facebook.com/oauth/access_token");
         this.setAuthorizeUrl("https://graph.facebook.com/oauth/authorize");
 

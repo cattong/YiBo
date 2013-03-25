@@ -62,6 +62,7 @@ public class Twitter extends Weibo {
 				}
 			}
 			apiConfig.updateRestApiUrl();
+			auth.setAuthVersion(Authorization.AUTH_VERSION_BASIC);
 		}
 		responseHandler = new TwitterResponseHandler();
 	}

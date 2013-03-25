@@ -11,7 +11,7 @@ public class KaiXinOAuthConfig extends OAuthConfigBase {
 		
 		this.setConsumerKey("1982098675974e1bc64db341904c8cdc");
 		this.setConsumerSecret("9635f53c8d6b0673523a5508a954c39a");
-		this.setCallbackUrl("http://www.cattong.com/getAccessToken.do");
+		this.setCallbackUrl("http://www.yibo.me/authorize/getAccessToken.do");
 		this.setAccessTokenUrl("https://api.kaixin001.com/oauth2/access_token");
 		this.setAuthorizeUrl("http://api.kaixin001.com/oauth2/authorize?oauth_client=1");
 

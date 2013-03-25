@@ -9,9 +9,9 @@ public class QQZoneOAuthConfig extends OAuthConfigBase {
 	public QQZoneOAuthConfig() {
 		this.setAuthVersion(Authorization.AUTH_VERSION_OAUTH_2);
 		
-		this.setConsumerKey("100331861");
-		this.setConsumerSecret("98b7aa619d48db9174246971ec7569f8");
-		this.setCallbackUrl("http://www.jifenbang.net/getAccessToken.do");
+		this.setConsumerKey("221523");
+		this.setConsumerSecret("887f5a7424c087bf6bc6393bc0696801");
+		this.setCallbackUrl("http://www.yibo.me/authorize/getAccessToken.do");
 		this.setAccessTokenUrl("https://graph.qq.com/oauth2.0/token");
 		this.setAuthorizeUrl("https://graph.qq.com/oauth2.0/authorize?display=mobile");
 

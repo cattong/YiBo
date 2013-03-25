@@ -11,7 +11,7 @@ public class RenRenOAuthConfig extends OAuthConfigBase {
 		
 		this.setConsumerKey("525209e407784e1099679ab7a6723438");
 		this.setConsumerSecret("e4266569bcea4bdcb4aa00ce222d48df");
-		this.setCallbackUrl("http://www.cattong.com/getAccessToken.do");
+		this.setCallbackUrl("http://www.yibo.me/getAccessToken.do");
 		this.setAccessTokenUrl("https://graph.renren.com/oauth/token");
 		this.setAuthorizeUrl("https://graph.renren.com/oauth/authorize?display=touch");
 

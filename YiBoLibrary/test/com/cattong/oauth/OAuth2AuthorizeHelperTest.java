@@ -18,7 +18,7 @@ public class OAuth2AuthorizeHelperTest {
 
 	@Test
 	public void testAuthorizationCode() {
-		Authorization auth = new Authorization(ServiceProvider.Sina);
+		Authorization auth = new Authorization(Config.SP);
 		try {
 			OAuth2AuthorizeHelper oauthHelper = new OAuth2AuthorizeHelper();
 			String authorzieUrl = oauthHelper.getAuthorizeUrl(auth, GrantType.AUTHORIZATION_CODE, DisplayType.PC);

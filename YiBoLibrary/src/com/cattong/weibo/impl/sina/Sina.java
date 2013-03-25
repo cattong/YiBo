@@ -35,7 +35,6 @@ import com.cattong.weibo.entity.RateLimitStatus;
 import com.cattong.weibo.entity.ResponseCount;
 import com.cattong.weibo.entity.UnreadCount;
 import com.cattong.weibo.entity.UnreadType;
-import com.cattong.weibo.impl.sina.SinaEmotions;
 
 /**
  * Sina微博API实现
@@ -1228,30 +1227,22 @@ public class Sina extends Weibo {
 	@Override
 	public List<Group> getGroups(String groupOwnerUserId,
 			Paging<Group> paging) throws LibException {
-		if (paging == null || StringUtil.isEmpty(groupOwnerUserId)) {
+		if (paging == null) {
 			throw new LibException(LibResultCode.E_PARAM_NULL);
 		}
-		if (paging.isPagePaging()) {
-			initCursorPaging(paging);
+		if (paging.isCursorPaging()) {
+			initPagePaging(paging);
 		}
+		
 		//目前每人最多创建20个分组，此接口分页每页20个，一次性取完
-		String url = conf.getGroupListUrl();
 		HttpRequestWrapper httpRequestWrapper = new HttpRequestWrapper(
-			HttpMethod.GET, url, auth);
-		//httpRequestWrapper.addParameter("cursor", Paging.CURSOR_START);
+			HttpMethod.GET, conf.getGroupListUrl(), auth);
+	
 		String response = HttpRequestHelper.execute(httpRequestWrapper, responseHandler);
-		//默认获取的是公开的分组
-		List<Group> resultList = SinaGroupAdaptor.createPagableGroupList(response);
-		if (getUserId().equals(groupOwnerUserId)
-			|| getScreenName().equals(groupOwnerUserId)) {
-			httpRequestWrapper.addParameter("listType", 1); //获取私有列表
-			httpRequestWrapper.addParameter("cursor", Paging.CURSOR_START);
-			response = HttpRequestHelper.execute(httpRequestWrapper, responseHandler);
-			PagableList<Group> privateList = SinaGroupAdaptor.createPagableGroupList(response);
-			resultList.addAll(privateList);
-		}
+		List<Group> groupList = SinaGroupAdaptor.createGroupList(response);
 		paging.setLastPage(true); //一次性取完，直接设为true;
-		return resultList;
+		
+		return groupList;
 	}
 
 	/**
@@ -1300,22 +1291,22 @@ public class Sina extends Weibo {
 		if (StringUtil.isEmpty(groupId) || paging == null) {
 			throw new LibException(LibResultCode.E_PARAM_NULL);
 		}
-		String url = String.format(conf.getGroupStatusesUrl(), getUserId(), groupId);
-		HttpRequestWrapper httpRequestWrapper = new HttpRequestWrapper(HttpMethod.GET, url, auth);
+		
+		HttpRequestWrapper httpRequestWrapper = new HttpRequestWrapper(
+			HttpMethod.GET, conf.getGroupStatusesUrl(), auth);
+		httpRequestWrapper.addParameter("list_id", groupId);
 		httpRequestWrapper.addParameter("page", paging.getPageIndex());
-		httpRequestWrapper.addParameter("per_page", paging.getPageSize());
-		Status max = paging.getMax();
-		Status since = paging.getSince();
-		if (max != null) {
-			httpRequestWrapper.addParameter("max_id", max.getStatusId());
+		httpRequestWrapper.addParameter("count", paging.getPageSize());
+		if (paging.getMax() != null) {
+			httpRequestWrapper.addParameter("max_id", paging.getMax().getStatusId());
 		}
-		if (since != null) {
-			httpRequestWrapper.addParameter("since_id", since.getStatusId());
+		if (paging.getSince() != null) {
+			httpRequestWrapper.addParameter("since_id", paging.getSince().getStatusId());
 		}
 		String response = HttpRequestHelper.execute(httpRequestWrapper, responseHandler);
-		List<Status> statusList =  SinaStatusAdaptor.createStatusList(response);
+		List<Status> statusList = SinaStatusAdaptor.createStatusList(response);
 		if (ListUtil.isNotEmpty(statusList)) {
-			ListUtil.truncate(statusList, max, since);
+			ListUtil.truncate(statusList, paging.getMax(), paging.getSince());
 		}
 
 		updatePaging(statusList, paging);

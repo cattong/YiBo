@@ -5,6 +5,7 @@ import static com.cattong.commons.util.ParseUtil.getInt;
 import static com.cattong.commons.util.ParseUtil.getRawString;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,8 +13,6 @@ import org.json.JSONObject;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
-import com.cattong.commons.PagableList;
-import com.cattong.commons.util.ParseUtil;
 import com.cattong.entity.User;
 import com.cattong.weibo.entity.Group;
 
@@ -44,61 +43,22 @@ class SinaGroupAdaptor {
 		}
 	}
 
-	/**
-	 * 从JSON字符串创建User对象列表
-	 *
-	 * @param jsonString
-	 *            JSON字符串
-	 * @return User对象列表
-	 * @throws LibException
-	 */
-	public static PagableList<Group> createPagableGroupList(
-			String jsonString) throws LibException {
-		try {
-			if ("[]".equals(jsonString) || "{}".equals(jsonString)) {
-				return new PagableList<Group>(0, 0, 0);
-			}
-			JSONObject json = new JSONObject(jsonString);
-			JSONArray jsonList = json.getJSONArray("lists");
-			long nextCursor = 0L;
-			long previousCursor = 0L;
-			if (json.has("next_cursor")) {
-				nextCursor = ParseUtil.getLong("next_cursor", json);
-				previousCursor = ParseUtil.getLong("previous_cursor", json);
-			}
-			int size = jsonList.length();
-			PagableList<Group> userList = new PagableList<Group>(size,
-					previousCursor, nextCursor);
-			for (int i = 0; i < size; i++) {
-				userList.add(createGroup(jsonList.getJSONObject(i)));
-			}
-			return userList;
-		} catch (JSONException e) {
-			throw new LibException(LibResultCode.JSON_PARSE_ERROR);
-		}
-	}
 
-	/**
-	 * 从JSON字符串创建User对象列表
-	 *
-	 * @param jsonString
-	 *            JSON字符串
-	 * @return User对象列表
-	 * @throws LibException
-	 */
-	public static ArrayList<Group> createGroupList(String jsonString)
+	public static List<Group> createGroupList(String jsonString)
 			throws LibException {
 		try {
 			if ("[]".equals(jsonString) || "{}".equals(jsonString)) {
 				return new ArrayList<Group>(0);
 			}
-			JSONArray jsonArray = new JSONArray(jsonString);
-			int size = jsonArray.length();
-			ArrayList<Group> userListList = new ArrayList<Group>(size);
+			
+			JSONObject json = new JSONObject(jsonString);
+			JSONArray jsonList = json.getJSONArray("lists");
+			int size = jsonList.length();
+			List<Group> groupList = new ArrayList<Group>(size);
 			for (int i = 0; i < size; i++) {
-				userListList.add(createGroup(jsonArray.getJSONObject(i)));
+				groupList.add(createGroup(jsonList.getJSONObject(i)));
 			}
-			return userListList;
+			return groupList;
 		} catch (JSONException e) {
 			throw new LibException(LibResultCode.JSON_PARSE_ERROR);
 		}
@@ -114,7 +74,7 @@ class SinaGroupAdaptor {
 	 */
 	static Group createGroup(JSONObject json) throws LibException {
 		Group group = new Group();
-		group.setId(getRawString("id", json));
+		group.setId(getRawString("idstr", json));
 		group.setName(getRawString("name", json));
 		group.setFullName(getRawString("full_name", json));
 		group.setSlug(getRawString("slug", json));
