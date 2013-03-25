@@ -10,7 +10,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
 
-import com.shejiaomao.weibo.common.Constants;
+import com.cattong.commons.Logger;
 import com.shejiaomao.widget.ImageViewTouchBase;
 
 /**
@@ -139,7 +139,7 @@ public class GifView implements GifAction {
     public void parseOk(boolean parseStatus, int frameIndex) {
     	isRun = true;
     	if (!parseStatus || gifDecoder == null) {
-    		if (Constants.DEBUG) Log.e("gif","parse error");
+    		if (Logger.isDebug()) Log.e("gif","parse error");
     		return;
     	}
 

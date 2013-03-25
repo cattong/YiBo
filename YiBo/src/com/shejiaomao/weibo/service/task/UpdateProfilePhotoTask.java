@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.FileUtil;
 import com.cattong.entity.User;
 import com.cattong.weibo.Weibo;
@@ -22,7 +23,6 @@ import com.shejiaomao.common.NetType;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.ProfileEditActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.service.cache.ImageCache;
 
@@ -81,7 +81,7 @@ public class UpdateProfilePhotoTask extends AsyncTask<Void, Void, User> {
 				} else if (quality == ImageQuality.Middle
 						||	quality == ImageQuality.Low	) {
 					size = quality.getSize();
-					if(Constants.DEBUG) Log.d(TAG, "prefix size: " + size);
+					if(Logger.isDebug()) Log.d(TAG, "prefix size: " + size);
 					//对低速网络进行压缩
 					if (GlobalVars.NET_TYPE == NetType.MOBILE_GPRS ||
 						GlobalVars.NET_TYPE == NetType.MOBILE_EDGE
@@ -99,7 +99,7 @@ public class UpdateProfilePhotoTask extends AsyncTask<Void, Void, User> {
 	            user = microBlog.updateProfileImage(image);
 			}
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(TAG, "Task", e);
+			if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		}
 

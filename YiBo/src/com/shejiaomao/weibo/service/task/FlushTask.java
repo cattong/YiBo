@@ -3,7 +3,7 @@ package com.shejiaomao.weibo.service.task;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.shejiaomao.weibo.common.Constants;
+import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.service.cache.Cache;
 
 public class FlushTask extends AsyncTask<Void, Void, Void> {
@@ -28,7 +28,7 @@ public class FlushTask extends AsyncTask<Void, Void, Void> {
 		}
 		
 		cache.flush();
-		if (Constants.DEBUG) Log.v(TAG, "flush data!");
+		if (Logger.isDebug()) Log.v(TAG, "flush data!");
 		return null;
 	}
 

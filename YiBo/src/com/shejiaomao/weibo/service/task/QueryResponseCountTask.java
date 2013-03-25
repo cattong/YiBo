@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
+import com.cattong.commons.Logger;
 import com.cattong.commons.ServiceProvider;
 import com.cattong.weibo.Weibo;
 import com.cattong.weibo.entity.ResponseCount;
@@ -17,7 +18,6 @@ import com.shejiaomao.common.NetType;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.MicroBlogActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalResource;
 import com.shejiaomao.weibo.common.GlobalVars;
 
@@ -62,7 +62,7 @@ public class QueryResponseCountTask extends AsyncTask<Void, Void, ResponseCount>
 			fillClickableResponseCount(retweetCount, commentCount);
     	} else {
 			if (CompatibilityUtil.isSdk1_5()) {
-				if (Constants.DEBUG) Log.v(LOG_TAG, "sdk1.5");
+				if (Logger.isDebug()) Log.v(LOG_TAG, "sdk1.5");
 				cancel(true);
 			}
     	}
@@ -83,7 +83,7 @@ public class QueryResponseCountTask extends AsyncTask<Void, Void, ResponseCount>
 		try {
 			count = weibo.getResponseCount(status);
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(LOG_TAG, resultMsg, e);
+			if (Logger.isDebug()) Log.e(LOG_TAG, resultMsg, e);
 			if (e.getErrorCode() != LibResultCode.API_UNSUPPORTED) {
 			    resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 			}

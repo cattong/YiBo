@@ -2,14 +2,15 @@ package com.shejiaomao.weibo.activity;
 
 import java.util.List;
 
+import net.dev123.yibo.R;
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.ActivityManager.RunningTaskInfo;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.ActivityManager.RunningTaskInfo;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,17 +28,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.LinearLayout.LayoutParams;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.http.HttpRequestHelper;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.Status;
-import net.dev123.yibo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.CacheManager;
 import com.shejiaomao.weibo.common.Constants;
@@ -73,7 +74,7 @@ public class HomePageActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		sheJiaoMao = (SheJiaoMaoApplication) getApplication();
 
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onCreate……" + ", Intent : " + getIntent());
 		}
 
@@ -136,7 +137,7 @@ public class HomePageActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		MobclickAgent.onResume(this);
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onResume……" + ", Skeleton is " + skeleton);
 		}
 	}
@@ -144,7 +145,7 @@ public class HomePageActivity extends Activity {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onActivityResult……" + ", Skeleton is " + skeleton);
 		}
 
@@ -326,7 +327,7 @@ public class HomePageActivity extends Activity {
 	@Override
 	protected void onNewIntent(Intent newIntent) {
 		super.onNewIntent(newIntent);
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onNewIntent……" + ", Intent : " + newIntent);
 		}
 
@@ -376,14 +377,14 @@ public class HomePageActivity extends Activity {
 	protected void onPause() {
 		super.onPause();
 		MobclickAgent.onPause(this);
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onPause……" + ", Skeleton is " + skeleton);
 		}
 	}
 
 	protected void onStop() {
 		super.onStop();
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onStop……" + ", Skeleton is " + skeleton);
 		}
 		if (!sheJiaoMao.isShowStatusIcon()) {
@@ -424,7 +425,7 @@ public class HomePageActivity extends Activity {
 		super.onStart();
 		NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 		notificationManager.cancel(R.string.app_name);
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onStart……" + ", Skeleton is " + skeleton);
 		}
 	}
@@ -473,7 +474,7 @@ public class HomePageActivity extends Activity {
 			outState.putInt("CONTENT_TYPE", skeleton.getContentType());
 		}
 
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onSaveInstanceState……" + ", Skeleton is " + skeleton);
 		}
 	}
@@ -481,7 +482,7 @@ public class HomePageActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onDestroy……" + ", Skeleton is " + skeleton);
 		}
 	}
@@ -515,7 +516,7 @@ public class HomePageActivity extends Activity {
         }
 		CacheManager.getInstance().reclaim(ReclaimLevel.MODERATE);
 		MobclickAgent.onEvent(this, "on_low_memory");
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 		    Toast.makeText(this, "low memory!", Toast.LENGTH_SHORT).show();
 		    Log.w(TAG, "low memory, will reclaim!");
 		}

@@ -3,11 +3,7 @@ package com.shejiaomao.weibo.db;
 import java.util.Date;
 import java.util.List;
 
-import com.cattong.commons.Paging;
-import com.cattong.commons.ServiceProvider;
-import com.cattong.commons.util.ListUtil;
-import com.cattong.weibo.entity.DirectMessage;
-import com.cattong.entity.User;
+import net.dev123.yibo.R;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.Resources;
@@ -15,8 +11,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import net.dev123.yibo.R;
-import com.shejiaomao.weibo.common.Constants;
+import com.cattong.commons.Logger;
+import com.cattong.commons.Paging;
+import com.cattong.commons.ServiceProvider;
+import com.cattong.commons.util.ListUtil;
+import com.cattong.entity.User;
+import com.cattong.weibo.entity.DirectMessage;
 
 public class DirectMessageDao extends BaseDao<DirectMessage> {
 	private static final String TABLE = "Direct_Message";
@@ -64,7 +64,7 @@ public class DirectMessageDao extends BaseDao<DirectMessage> {
 		if (isNull(msg) || isNull(account)) {
 			return;
 		}
-		if(Constants.DEBUG){
+		if(Logger.isDebug()){
 			Log.d("Save DirectMessage:", msg.toString());
 		}
 		ContentValues values = new ContentValues();

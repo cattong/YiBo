@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.cattong.commons.Logger;
 import com.shejiaomao.common.NetUtil;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.HomePageActivity;
@@ -38,7 +39,7 @@ public class InitAppTask extends AsyncTask<Void, Void, Void> {
 
 	@Override
 	protected Void doInBackground(Void... params) {
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "InitAppTask ... , Intent : " + context.getIntent());
 		}
 

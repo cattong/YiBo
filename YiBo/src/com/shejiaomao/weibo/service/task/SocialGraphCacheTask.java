@@ -7,10 +7,10 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.entity.User;
 import com.cattong.weibo.Weibo;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.db.Relation;
@@ -69,7 +69,7 @@ public class SocialGraphCacheTask extends AsyncTask<Void, List<User>, Integer> {
 				    listUser = microBlog.getFollowers(paging);
 				}
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, "Task", e);
+				if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			}
 			if (listUser != null && listUser.size() > 0) {
 				cacheCount += listUser.size();

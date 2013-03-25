@@ -13,6 +13,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
@@ -69,7 +70,7 @@ public class DestroyStatusTask extends AsyncTask<Void, Void, Boolean> {
 		try {
 			newStatus = microBlog.destroyStatus(status.getStatusId());
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(TAG, "Task", e);
+			if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		}
 

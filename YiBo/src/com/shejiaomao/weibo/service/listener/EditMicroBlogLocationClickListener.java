@@ -1,6 +1,6 @@
 package com.shejiaomao.weibo.service.listener;
 
-import com.cattong.entity.GeoLocation;
+import net.dev123.yibo.R;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
@@ -11,10 +11,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
-import net.dev123.yibo.R;
+import com.cattong.commons.Logger;
+import com.cattong.entity.GeoLocation;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.EditMicroBlogActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.theme.Theme;
 
 public class EditMicroBlogLocationClickListener implements OnClickListener {
@@ -74,7 +74,7 @@ public class EditMicroBlogLocationClickListener implements OnClickListener {
 	        if (location != null) {
 	        	geoLocation = new GeoLocation(location.getLatitude(), location.getLongitude());
 	        	context.setGeoLocation(geoLocation);
-	            if (Constants.DEBUG) {
+	            if (Logger.isDebug()) {
 	            	Toast.makeText(context, location.getProvider() + " last known-->" + location.getLatitude() + ":" + location.getLongitude(), Toast.LENGTH_LONG).show();
 	            }
 	        }
@@ -110,7 +110,7 @@ public class EditMicroBlogLocationClickListener implements OnClickListener {
 			    removeListener();
 			    registerListener();
 			}
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 			    Toast.makeText(context, location.getProvider() + "-->" + location.getLatitude() + ":" + location.getLongitude(), Toast.LENGTH_LONG).show();
 			    System.out.println("location: " + location.getProvider() + location);
 		    }

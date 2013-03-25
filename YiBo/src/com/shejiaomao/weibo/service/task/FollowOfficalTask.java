@@ -4,11 +4,11 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.ServiceProvider;
 import com.cattong.entity.Relationship;
 import com.cattong.entity.User;
 import com.cattong.weibo.Weibo;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.LocalAccount;
 
@@ -50,7 +50,7 @@ public class FollowOfficalTask extends AsyncTask<Void, Void, Void> {
 				microBlog.createFriendship(offical.getUserId());
 			}
 		} catch (LibException e) {
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.e(TAG, e.getMessage(), e);
 			}
 		}

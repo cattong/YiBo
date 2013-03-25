@@ -7,10 +7,10 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.activity.PublicTimelineActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.service.adapter.PublicTimelineListAdapter;
@@ -44,7 +44,7 @@ public class PublicTimelineTask extends AsyncTask<Void, Void, List<com.cattong.e
 		try {
 			listStatus = microBlog.getPublicTimeline();
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.v(TAG, e.getMessage(), e);
+			if (Logger.isDebug()) Log.v(TAG, e.getMessage(), e);
 			message = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		}
         ResponseCountUtil.getResponseCounts(listStatus, microBlog);

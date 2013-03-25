@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.Comment;
@@ -122,7 +123,7 @@ public class CommentsPageUpTask extends AsyncTask<Void, Void, Boolean> {
 				List<Comment> tempCommentList = microBlog.getCommentsToMe(paging);
 				commentList.addAll(tempCommentList);
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, "Task", e);
+				if (Logger.isDebug()) Log.e(TAG, "Task", e);
 				if (e.getErrorCode() != LibResultCode.API_UNSUPPORTED) {
 				    resultMsg = ResourceBook.getResultCodeValue(
 				    	e.getErrorCode(), context);

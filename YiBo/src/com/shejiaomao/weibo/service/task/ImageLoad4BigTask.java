@@ -38,7 +38,6 @@ import com.shejiaomao.weibo.activity.ImageViewer4GifActivity;
 import com.shejiaomao.weibo.activity.ImageViewerActivity;
 import com.shejiaomao.weibo.activity.ImageWebViewerActivity;
 import com.shejiaomao.weibo.common.CacheManager;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.service.cache.ImageCache;
 import com.shejiaomao.weibo.service.cache.wrap.CachedImage;
 import com.shejiaomao.weibo.service.cache.wrap.CachedImageKey;
@@ -84,7 +83,7 @@ public class ImageLoad4BigTask extends AsyncTask<Void, Integer, CachedImage> {
 		        onPostExecute(null);
 			}
 		} catch (BadTokenException e) {
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.d(LOG_TAG, e.getMessage(), e);
 			}
 			cancel(true);
@@ -99,7 +98,7 @@ public class ImageLoad4BigTask extends AsyncTask<Void, Integer, CachedImage> {
 			return wrap;
 		}
 
-		if(Constants.DEBUG) Log.i(LOG_TAG, "Get middle image from remote!");
+		if(Logger.isDebug()) Log.i(LOG_TAG, "Get middle image from remote!");
 		String filePath = ImageCache.getImageSavePath(imageInfo);
 		File destFile = new File(filePath);
 		try {
@@ -107,7 +106,7 @@ public class ImageLoad4BigTask extends AsyncTask<Void, Integer, CachedImage> {
 			ProgressResponseHandler progressResponseHandler = new ProgressResponseHandler(destFile);
 			destFile = HttpRequestHelper.getContent(url, progressResponseHandler);
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(LOG_TAG, e.getMessage(), e);
+			if (Logger.isDebug()) Log.e(LOG_TAG, e.getMessage(), e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 			destFile.delete();
 		}

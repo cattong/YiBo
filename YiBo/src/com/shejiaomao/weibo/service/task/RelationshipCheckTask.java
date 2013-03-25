@@ -9,13 +9,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.entity.BaseUser;
 import com.cattong.entity.Relationship;
 import com.cattong.entity.User;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.ProfileActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;
 import com.shejiaomao.weibo.db.LocalAccount;
@@ -74,7 +74,7 @@ public class RelationshipCheckTask extends AsyncTask<Void, Void, Relationship> {
 			relationship = microBlog.showRelationship(
 				sourceUser.getUserId(),	targetUser.getUserId());
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(TAG, "Task", e);
+			if (Logger.isDebug()) Log.e(TAG, "Task", e);
 		}
 
 		return relationship;

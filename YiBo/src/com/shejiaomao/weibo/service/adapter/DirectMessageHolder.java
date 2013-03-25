@@ -1,13 +1,13 @@
 package com.shejiaomao.weibo.service.adapter;
 
+import net.dev123.yibo.R;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import net.dev123.yibo.R;
-import com.shejiaomao.weibo.common.Constants;
+import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.common.GlobalResource;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.common.theme.Theme;
@@ -61,7 +61,7 @@ public class DirectMessageHolder {
 		if (tvMessageText != null) {
     		if (tvMessageText.getTextSize() != GlobalVars.FONT_SIZE_HOME_BLOG) {
     			tvMessageText.setTextSize(GlobalVars.FONT_SIZE_HOME_BLOG);
-    		    if (Constants.DEBUG) Log.d(TAG, "tweet FontSize: " + GlobalVars.FONT_SIZE_HOME_BLOG);
+    		    if (Logger.isDebug()) Log.d(TAG, "tweet FontSize: " + GlobalVars.FONT_SIZE_HOME_BLOG);
     	    }
 			tvMessageText.setText("");
 		}
@@ -73,6 +73,6 @@ public class DirectMessageHolder {
 		if (headTask != null) {
 			headTask.cancel(true);
 		}
-		if (Constants.DEBUG) Log.d(TAG, "message convertView recycle");
+		if (Logger.isDebug()) Log.d(TAG, "message convertView recycle");
 	}
 }

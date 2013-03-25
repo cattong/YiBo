@@ -8,11 +8,11 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.activity.MyFavoritesActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.service.adapter.MyFavoriteListAdapter;
@@ -60,7 +60,7 @@ public class MyFavoritesTask extends AsyncTask<Void, Void, List<com.cattong.enti
 			try {
 				listStatus = microBlog.getFavorites(paging);
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, "Task", e);
+				if (Logger.isDebug()) Log.e(TAG, "Task", e);
 				message = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 			}
 		}

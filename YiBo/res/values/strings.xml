@@ -10,7 +10,7 @@
 	<!-- App string -->
     <string name="app_name">YiBo</string>
     <string name="app_image_viewer">YiBo Image Viewer</string>
-    <string name="copyright">© 2012-2013 S make apk.</string>
+    <string name="copyright">© 2012-2013 Studio.</string>
 
     <string name="title_home_page">%1$s\@%1$s</string>
     <string name="title_accounts">Accounts</string>
@@ -129,7 +129,7 @@
 	<string name="msg_accounts_delete_failed">Delete Failed</string>
 	<string name="msg_accounts_set_successful">Set Successful</string>
 	<string name="msg_accounts_set_failed">Set Failed</string>
-	<string name="label_passport_username">SheJiaoMao Passport</string>
+	<string name="label_passport_username">YiBo Passport</string>
 	<string name="label_accounts_sync">Synchronize Account</string>
 	<string name="label_passport_points">Points: %1$d, Title: %2$s</string>
 	<string name="btn_accounts_sync">Synchronize</string>
@@ -154,10 +154,10 @@
 	<string name="msg_accounts_add_already_exist">The account has already exist.</string>
 	<string name="msg_loading_appkeys">Loading AppKeys...</string>
 	<string name="hint_accounts_oauth_intro">We do not store your password , it is only used to get OAuth authentication information. OAuth is more secure than basic authentication method. </string>
-    <string name="hint_accounts_oauth_intro_tencent">Click \"Start Authorization\" to open the official authorization page , login and authorize SheJiaoMao to use your account, submit , then SheJiaoMao will complete the remaining work. </string>
+    <string name="hint_accounts_oauth_intro_tencent">Click \"Start Authorization\" to open the official authorization page , login and authorize yibo to use your account, submit , then yibo will complete the remaining work. </string>
     <string name="hint_accounts_sns">Note: Only sync update operation is supported on this platform currently.</string>
     
-    <string name="msg_accounts_add_cmwap_https">For the limits of CMWAP network, SheJiaoMao can not complete this action. Please switch to other networks and retry.</string>
+    <string name="msg_accounts_add_cmwap_https">For the limits of CMWAP network, Yibo can not complete this action. Please switch to other networks and retry.</string>
     <string name="msg_accounts_add_time_inaccurate">Inaccurate system time may lead to authentication fail, please adjust it</string>
     <string name="msg_accounts_add_invalid_proxy_url">Invalid proxy url</string>
     <string name="label_accounts_add_use_proxy">Use API Proxy</string>
@@ -340,7 +340,7 @@
     <string name="label_blog_retweet_retweet_count">Original RT(%1$d)</string>
     <string name="label_blog_retweet_comment_count">Original CMT(%1$d)</string>
     <string name="msg_big_image_loading">Loading Image...</string>
-    <string name="msg_extra_subject">Share tweet messages through SheJiaoMao</string>
+    <string name="msg_extra_subject">Share tweet messages through YiBo</string>
     <string name="msg_extra_simple_text">%1$s retweet[%2$s]</string>
     <string name="msg_extra_rich_text">%1$s \n-----------------\nRetweet[%2$s]</string>
     <string name="msg_extra_image">\nAdditional Images：%1$s</string>
@@ -383,7 +383,7 @@
     <string name="msg_comment_success">Comment updated successfully!</string>
     <string name="msg_comment_failed">Comment update failed, please try again!</string>
     <string name="msg_status_success">Status updated successfully!</string>
-    <string name="hint_feedback_identify">#SheJiaoMao weibo##%1$s##%2$s# \@%3$s</string>
+    <string name="hint_feedback_identify">#YiBo weibo##%1$s##%2$s# \@%3$s</string>
     <string name="menu_recomment">Reply</string>
     <string name="menu_personal_info">User Profile</string>
     <string name="hint_recomment">To \@%1$s: </string>

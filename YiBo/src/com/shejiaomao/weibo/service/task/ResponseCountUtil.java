@@ -3,12 +3,12 @@ package com.shejiaomao.weibo.service.task;
 import java.util.List;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.Status;
 import com.cattong.weibo.Weibo;
 import com.cattong.weibo.impl.sina.Sina;
 import com.cattong.weibo.impl.sohu.Sohu;
-import com.shejiaomao.weibo.common.Constants;
 
 public class ResponseCountUtil {
     private static int COUNT_BATCH_MAX_NUM = 100;
@@ -36,7 +36,7 @@ public class ResponseCountUtil {
 		    }
 			isSuccess = true;
 		} catch (LibException e) {
-			if (Constants.DEBUG) e.printStackTrace();
+			if (Logger.isDebug()) e.printStackTrace();
 		}
 		
 		return isSuccess;

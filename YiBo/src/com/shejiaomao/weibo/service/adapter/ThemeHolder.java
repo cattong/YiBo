@@ -1,5 +1,6 @@
 package com.shejiaomao.weibo.service.adapter;
 
+import net.dev123.yibo.R;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
@@ -7,8 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import net.dev123.yibo.R;
-import com.shejiaomao.weibo.common.Constants;
+import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.common.GlobalResource;
 import com.shejiaomao.weibo.common.theme.Theme;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;
@@ -69,6 +69,6 @@ public class ThemeHolder {
 		if (themePictureTask != null) {
 			themePictureTask.cancel(true);
 		}
-		if (Constants.DEBUG) Log.d(TAG, "user convertView recycle");
+		if (Logger.isDebug()) Log.d(TAG, "user convertView recycle");
 	}
 }

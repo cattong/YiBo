@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.http.HttpRequestHelper;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.commons.util.TimeSpanUtil;
@@ -343,7 +344,7 @@ public class SheJiaoMaoApplication extends Application {
 	 * @return 当前帐号
 	 */
 	public LocalAccount getCurrentAccount() {
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.d(TAG, "Get Current Account : " + currentAccount);
 		}
 		return currentAccount;
@@ -355,7 +356,7 @@ public class SheJiaoMaoApplication extends Application {
 	 * @param currentAccount 当前帐号
 	 */
 	public void setCurrentAccount(LocalAccount currentAccount) {
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.d(TAG, "Set Current Account : " + currentAccount);
 		}
 		this.currentAccount = currentAccount;
@@ -408,7 +409,7 @@ public class SheJiaoMaoApplication extends Application {
 	}
 	
     private void initGlobalVars() {
-    	if (Constants.DEBUG) {
+    	if (Logger.isDebug()) {
     		Log.d(TAG, "initGlobalVars Start : " + System.currentTimeMillis() / 1000);
     	}
         
@@ -435,9 +436,9 @@ public class SheJiaoMaoApplication extends Application {
     	String isMobileNetUpdateVersion = MobclickAgent.getConfigParams(this, "IS_MOBILE_NET_UPDATE_VERSION");
         GlobalVars.IS_OBEY_SINA_AGREEMENT = Boolean.parseBoolean(isObeySinaAgreement);
         GlobalVars.IS_MOBILE_NET_UPDATE_VERSION = Boolean.parseBoolean(isMobileNetUpdateVersion);
-        if (Constants.DEBUG) Log.d(TAG, "IS_OBEY_SINA_AGREEMENT=" + isObeySinaAgreement);
+        if (Logger.isDebug()) Log.d(TAG, "IS_OBEY_SINA_AGREEMENT=" + isObeySinaAgreement);
 
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
     		Log.d(TAG, "initGlobalVars Finish : " + System.currentTimeMillis() / 1000);
     	}
     }
@@ -475,7 +476,7 @@ public class SheJiaoMaoApplication extends Application {
     }
 
     private void initAvatarSize() {
-    	if (Constants.DEBUG) {
+    	if (Logger.isDebug()) {
     		Log.d(TAG, "initAvatarSize Start : " + System.currentTimeMillis() / 1000);
     	}
     	WindowManager windowManager = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
@@ -505,7 +506,7 @@ public class SheJiaoMaoApplication extends Application {
 			smallAvatarSize = Constants.IMAGE_HEAD_MINI_SIZE_XHDPI;
 			normalAvatarSize = Constants.IMAGE_HEAD_NORMAL_SIZE_XHDPI;
 		}
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v("Display Width: ", " " + displayWidth);
 			Log.v("Display Height: ", " " + displayHeight);
 			Log.v("Display Density: ", " " + densityDpi);
@@ -535,7 +536,7 @@ public class SheJiaoMaoApplication extends Application {
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			HttpRequestHelper.evictConnections();
-			if (Constants.DEBUG) Log.v("globalReceiver", "connection evict!");
+			if (Logger.isDebug()) Log.v("globalReceiver", "connection evict!");
 		}
 	};
 

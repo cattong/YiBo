@@ -2,9 +2,7 @@ package com.shejiaomao.weibo.service.listener;
 
 import java.util.regex.Matcher;
 
-import com.cattong.commons.util.StringUtil;
-import com.cattong.weibo.Emotions;
-
+import net.dev123.yibo.R;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -16,7 +14,9 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
-import net.dev123.yibo.R;
+import com.cattong.commons.Logger;
+import com.cattong.commons.util.StringUtil;
+import com.cattong.weibo.Emotions;
 import com.shejiaomao.weibo.activity.EditCommentActivity;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.EmotionLoader;
@@ -71,7 +71,7 @@ public class MicroBlogTextWatcher implements TextWatcher {
             s.setSpan(span, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
         
-        if (Constants.DEBUG) {
+        if (Logger.isDebug()) {
         	Log.d(this.getClass().getSimpleName(), s.toString());
         }
 	}

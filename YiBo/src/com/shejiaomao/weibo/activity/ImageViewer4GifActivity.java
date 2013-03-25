@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+import net.dev123.yibo.R;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -19,11 +20,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.FileUtil;
 import com.cattong.commons.util.StringUtil;
 import com.shejiaomao.common.ImageUtil;
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
 import com.shejiaomao.weibo.activity.ImageViewerActivity.Mode;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;
@@ -60,7 +61,7 @@ public class ImageViewer4GifActivity extends BaseActivity {
 		this.setContentView(R.layout.image_viewer);
 		initComponent();
 		bindEvent();
-		if(Constants.DEBUG) {
+		if(Logger.isDebug()) {
 			Log.d(TAG, "onCreate……");
 		}
 	}
@@ -92,7 +93,7 @@ public class ImageViewer4GifActivity extends BaseActivity {
 			@Override
 			public void recycle(Bitmap b) {
 				if (!(b == null || b.isRecycled())) {
-					if (Constants.DEBUG) {
+					if (Logger.isDebug()) {
 						Log.d(TAG, "Recycle Bitmap : " + b);
 					}
 					b.recycle();
@@ -113,7 +114,7 @@ public class ImageViewer4GifActivity extends BaseActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if(Constants.DEBUG) {
+		if(Logger.isDebug()) {
 			Log.d(TAG, "onResume……");
 		}
 		if (isInitialized) {
@@ -126,7 +127,7 @@ public class ImageViewer4GifActivity extends BaseActivity {
 	}
 
 	private void initImageData() {
-		if(Constants.DEBUG) {
+		if(Logger.isDebug()) {
 			Log.d(TAG, "initImageData……");
 		}
 		Uri uri = getIntent().getData();
@@ -143,13 +144,13 @@ public class ImageViewer4GifActivity extends BaseActivity {
 			try {
 				mode = Mode.valueOf(getIntent().getStringExtra("mode"));
 			} catch (Exception e) {
-				if (Constants.DEBUG) {
+				if (Logger.isDebug()) {
 					Log.d(TAG, e.getMessage(), e);
 				}
 			}
 		}
 
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.d(TAG, "Image Path : " + imagePath);
 		}
 
@@ -211,7 +212,7 @@ public class ImageViewer4GifActivity extends BaseActivity {
 			try {
 				int retryCount = 0;
 				while (inputStream == null && retryCount < RETRY_COUNT) {
-					if (Constants.DEBUG) {
+					if (Logger.isDebug()) {
 						Log.d(TAG, "Reload Image: " + retryCount + " : " + path);
 					}
 
@@ -221,12 +222,12 @@ public class ImageViewer4GifActivity extends BaseActivity {
 					retryCount ++;
 				}
 			} catch (Exception ee) {
-				if (Constants.DEBUG) {
+				if (Logger.isDebug()) {
 					Log.d(TAG, ee.getMessage(), ee);
 				}
 			}
 		} catch (Exception e) {
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.d(TAG, e.getMessage(), e);
 			}
 		}
@@ -242,7 +243,7 @@ public class ImageViewer4GifActivity extends BaseActivity {
 			try {
 				int retryCount = 0;
 				while (bitmap == null && retryCount < RETRY_COUNT) {
-					if (Constants.DEBUG) {
+					if (Logger.isDebug()) {
 						Log.d(TAG, "Reload Image: " + retryCount + " : " + uri.toString());
 					}
 
@@ -251,12 +252,12 @@ public class ImageViewer4GifActivity extends BaseActivity {
 					retryCount ++;
 				}
 			} catch (Exception ee) {
-				if (Constants.DEBUG) {
+				if (Logger.isDebug()) {
 					Log.d(TAG, ee.getMessage(), ee);
 				}
 			}
 		} catch (Exception e) {
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.d(TAG, e.getMessage(), e);
 			}
 		}
@@ -339,7 +340,7 @@ public class ImageViewer4GifActivity extends BaseActivity {
 
 	@Override
 	protected void onNewIntent(Intent intent) {
-		if(Constants.DEBUG) {
+		if(Logger.isDebug()) {
 			Log.d(TAG, "onNewIntent……");
 		}
 		setIntent(intent);

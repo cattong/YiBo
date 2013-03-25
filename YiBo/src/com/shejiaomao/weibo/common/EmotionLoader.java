@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.ServiceProvider;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.weibo.Emotions;
@@ -212,7 +213,7 @@ public class EmotionLoader {
 	}
 	
 	public static Drawable getDrawableByEmontionName(String emotionFileName) {
-		if (Constants.DEBUG) Log.d(TAG, emotionFileName);
+		if (Logger.isDebug()) Log.d(TAG, emotionFileName);
 		
 		Drawable drawable = null;
 		

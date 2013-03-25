@@ -12,11 +12,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.MicroBlogActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 
 public class ToggleFavoriteTask extends AsyncTask<Void, Void, Boolean> {
@@ -28,7 +28,7 @@ public class ToggleFavoriteTask extends AsyncTask<Void, Void, Boolean> {
 
 	private com.cattong.entity.Status status = null;
 	private ProgressDialog dialog = null;
-	private String resultMsg = null;;
+	private String resultMsg = null;
 	public ToggleFavoriteTask(Context context, com.cattong.entity.Status status) {
 		this.context = context;
         this.status = status;
@@ -74,7 +74,7 @@ public class ToggleFavoriteTask extends AsyncTask<Void, Void, Boolean> {
 			    newStatus = microBlog.createFavorite(status.getStatusId());
 			}
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(TAG, "Task", e);
+			if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		}
 
@@ -85,9 +85,7 @@ public class ToggleFavoriteTask extends AsyncTask<Void, Void, Boolean> {
 	protected void onPostExecute(Boolean result) {
 		super.onPostExecute(result);
 
-		if (dialog != null &&
-			dialog.getContext() != null
-		) {
+		if (dialog != null) {
 			try {
 			    dialog.dismiss();
 			} catch (Exception e) {}

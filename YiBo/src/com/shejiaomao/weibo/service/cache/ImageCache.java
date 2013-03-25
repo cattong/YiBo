@@ -20,7 +20,6 @@ import com.cattong.commons.Logger;
 import com.cattong.commons.util.StringUtil;
 import com.shejiaomao.common.ImageUtil;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.service.cache.wrap.CachedImage;
 import com.shejiaomao.weibo.service.cache.wrap.CachedImageKey;
 
@@ -238,11 +237,11 @@ public class ImageCache implements MapCache<CachedImageKey, CachedImage> {
 				byteCount -= readCount;
 			}
 		} catch (FileNotFoundException e) {
-			if(Constants.DEBUG) e.printStackTrace();
+			if(Logger.isDebug()) e.printStackTrace();
 		} catch (IOException e) {
-			if(Constants.DEBUG) e.printStackTrace();
+			if(Logger.isDebug()) e.printStackTrace();
 		} catch (Exception e) {
-			if(Constants.DEBUG) e.printStackTrace();
+			if(Logger.isDebug()) e.printStackTrace();
 	    } finally {
 	    	if (fis != null) {
 			    try {
@@ -264,7 +263,7 @@ public class ImageCache implements MapCache<CachedImageKey, CachedImage> {
 	    long bitmapSize = ImageUtil.calculateBitmapSize(options);
 	    if (bitmapSize >= BIG_IMG_SIZE_LEVEL) {
 	    	options.inSampleSize = ImageUtil.getScaleSampleSize(options, 120);
-	    	if(Constants.DEBUG) Log.d(TAG, "compress local big bitmap");
+	    	if(Logger.isDebug()) Log.d(TAG, "compress local big bitmap");
 	    }
 	    options.inJustDecodeBounds = false;
 	    Bitmap bitmap = BitmapFactory.decodeByteArray(fileBytes, 0, fileBytes.length, options);
@@ -272,7 +271,7 @@ public class ImageCache implements MapCache<CachedImageKey, CachedImage> {
 		CachedImage wrap = new CachedImage(bitmap);
 
 		long endRead = System.currentTimeMillis();
-		if (Constants.DEBUG) Log.d(TAG, "read local bitmap use time: " + (endRead - startRead) + "ms");
+		if (Logger.isDebug()) Log.d(TAG, "read local bitmap use time: " + (endRead - startRead) + "ms");
         return wrap;
 	}
 
@@ -296,7 +295,7 @@ public class ImageCache implements MapCache<CachedImageKey, CachedImage> {
 		if (file.exists()) {
 			return;
 		}
-		if (Constants.DEBUG) Log.v(TAG, file.getPath() + "|media state: " + Environment.getExternalStorageState());
+		if (Logger.isDebug()) Log.v(TAG, file.getPath() + "|media state: " + Environment.getExternalStorageState());
 
 		FileOutputStream fos = null;
 		try {

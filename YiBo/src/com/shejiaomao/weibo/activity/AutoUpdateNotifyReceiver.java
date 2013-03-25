@@ -1,5 +1,6 @@
 package com.shejiaomao.weibo.activity;
 
+import net.dev123.yibo.R;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -11,8 +12,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.StringUtil;
-import net.dev123.yibo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.NotificationEntity;
@@ -37,7 +38,7 @@ public class AutoUpdateNotifyReceiver extends BroadcastReceiver {
         entity = (NotificationEntity)bundle.getSerializable("NOTIFICATION_ENTITY");
 
         noticeNewBlog(context);
-        if(Constants.DEBUG) Log.v(TAG, entity.toString());
+        if(Logger.isDebug()) Log.v(TAG, entity.toString());
 	}
 
 	private void noticeNewBlog(Context context) {

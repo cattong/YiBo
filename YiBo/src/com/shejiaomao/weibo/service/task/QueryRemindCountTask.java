@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
+import com.cattong.commons.Logger;
 import com.cattong.weibo.Weibo;
 import com.cattong.weibo.entity.UnreadCount;
 import com.cattong.weibo.entity.UnreadType;
@@ -58,7 +59,7 @@ public class QueryRemindCountTask extends AsyncTask<Void, Void, UnreadCount> {
 		try {
 			unreadCount = microBlog.getUnreadCount();
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(TAG, "Task", e);
+			if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			if (e.getErrorCode() == LibResultCode.API_UNSUPPORTED) {
 				updateIfUnreadCountUnsupport();
 			}
@@ -84,7 +85,7 @@ public class QueryRemindCountTask extends AsyncTask<Void, Void, UnreadCount> {
 		}
 
 		LocalAccount account = adapterCache.getAccount();
-		if (Constants.DEBUG) Log.v(TAG, "accountId:" + account.getAccountId() + " updateByRemindCount");
+		if (Logger.isDebug()) Log.v(TAG, "accountId:" + account.getAccountId() + " updateByRemindCount");
 		MyHomeListAdapter myHomeAdapter = adapterCache.getMyHomeListAdapter();
 		if (myHomeAdapter != null && sheJiaoMao.isCheckStatuses()) {
 			MyHomePageUpTask task = new MyHomePageUpTask(myHomeAdapter);
@@ -133,7 +134,7 @@ public class QueryRemindCountTask extends AsyncTask<Void, Void, UnreadCount> {
 		}
 
 		LocalAccount account = adapterCache.getAccount();
-		if (Constants.DEBUG) Log.v(TAG, "accountId:" + account.getAccountId() + " updateIfunreadCountUnsupport");
+		if (Logger.isDebug()) Log.v(TAG, "accountId:" + account.getAccountId() + " updateIfunreadCountUnsupport");
 		MyHomeListAdapter myHomeAdapter = adapterCache.getMyHomeListAdapter();
 		if (myHomeAdapter != null && sheJiaoMao.isCheckStatuses()) {
 			MyHomePageUpTask task = new MyHomePageUpTask(myHomeAdapter);

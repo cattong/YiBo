@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
@@ -128,7 +129,7 @@ public class NetUtil {
 		if (networkInfo == null) {
 			return;
 		}
-		NetworkOperator operator = getNetworkOperator(context);
+		
 		if (type == NetType.MOBILE_EDGE 
 			|| type == NetType.MOBILE_GPRS
 			|| type == NetType.MOBILE_3G) {
@@ -137,7 +138,7 @@ public class NetUtil {
 			Logger.debug("extraInfo:{}", apnName);
 
 			// 获取当前移动网络下，APN接入点名称，查询并获取接入点代理配置信息
-			if (StringUtil.isNotEmpty(apnName)) {
+			if (StringUtil.isNotEmpty(apnName) && !(Build.VERSION.SDK_INT >= 17)) {
 
 				String[] projection = {"apn", "proxy", "port", "user", "password"};
 				Cursor cursor = context.getContentResolver().query(PREFER_APN_CONTENT_URI, 

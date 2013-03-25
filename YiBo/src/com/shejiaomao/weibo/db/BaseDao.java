@@ -3,12 +3,12 @@ package com.shejiaomao.weibo.db;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.shejiaomao.weibo.common.Constants;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+
+import com.cattong.commons.Logger;
 
 
 public abstract class BaseDao<T> implements CursorDataExtractor<T> {
@@ -35,7 +35,7 @@ public abstract class BaseDao<T> implements CursorDataExtractor<T> {
 	}
 
 	List<T> find(SQLiteDatabase sqLiteDatabase, String sql) {
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.d("SQLiteDatabase Query", sql);
 		}
 		List<T> resultList = null;

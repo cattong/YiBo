@@ -15,6 +15,7 @@ import android.net.ConnectivityManager;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.db.LocalAccount;
@@ -83,7 +84,7 @@ public class AutoUpdateService extends Service {
 			sheJiaoMao.getUpdateInterval() * 1000, pi
 		);//重复设置
 		
-		if(Constants.DEBUG) {
+		if(Logger.isDebug()) {
 			Log.v(TAG, "start autoUpdateService, interval: " + sheJiaoMao.getUpdateInterval() + "s!");
 		}
 	}
@@ -110,7 +111,7 @@ public class AutoUpdateService extends Service {
 		if (shakeUpdateListener != null) {
 			shakeUpdateListener.stopMonitor();
 		}
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "AutoUpdateService destory");
 		}
 	}
@@ -120,7 +121,7 @@ public class AutoUpdateService extends Service {
 			return;
 		}
 		accountList.add(account);
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "register update account, accountId:" + account.getAccountId());
 		}
 	}
@@ -135,7 +136,7 @@ public class AutoUpdateService extends Service {
 	public class ScreenOffReceiver extends BroadcastReceiver {
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			if (Constants.DEBUG) Log.d(TAG, "Screen Off");
+			if (Logger.isDebug()) Log.d(TAG, "Screen Off");
 			if (shakeUpdateListener != null) {
 				shakeUpdateListener.stopMonitor();
 			}			
@@ -145,7 +146,7 @@ public class AutoUpdateService extends Service {
 	public class ScreenOnReceiver extends BroadcastReceiver {
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			if (Constants.DEBUG) Log.d(TAG, "Screen On");
+			if (Logger.isDebug()) Log.d(TAG, "Screen On");
 			if (shakeUpdateListener != null) {
 				shakeUpdateListener.startMonitor();
 			}			

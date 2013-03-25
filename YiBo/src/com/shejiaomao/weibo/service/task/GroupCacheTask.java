@@ -8,11 +8,11 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.weibo.Weibo;
 import com.cattong.weibo.entity.Group;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.GroupDao;
 import com.shejiaomao.weibo.db.LocalAccount;
@@ -55,7 +55,7 @@ public class GroupCacheTask extends AsyncTask<Void, List<Group>, Integer> {
 					groupList.addAll(tempList);
 				}
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, "Task", e);
+				if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			}
 		}
 
@@ -70,7 +70,7 @@ public class GroupCacheTask extends AsyncTask<Void, List<Group>, Integer> {
 	protected void onPostExecute(Integer result) {
 		super.onPostExecute(result);		
 		
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.d(TAG, "cache group count: " + cacheCount);
 		}
 	}

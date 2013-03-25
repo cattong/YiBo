@@ -10,10 +10,10 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.entity.Comment;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.service.adapter.CacheAdapter;
 
@@ -53,7 +53,7 @@ public class DestroyCommentTask extends AsyncTask<Void, Void, Comment> {
         try {
 			result = microBlog.destroyComment(comment.getCommentId());
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(LOG, "Task", e);
+			if (Logger.isDebug()) Log.e(LOG, "Task", e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		}
 

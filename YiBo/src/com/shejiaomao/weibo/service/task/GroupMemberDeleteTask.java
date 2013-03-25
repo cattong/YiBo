@@ -15,11 +15,11 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.BaseUser;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.db.LocalGroup;
@@ -76,7 +76,7 @@ public class GroupMemberDeleteTask extends AsyncTask<Void, BaseUser, List<BaseUs
 		        microBlog.destroyGroupMember(group.getSpGroupId(), user.getUserId());
 		        deletedUserList.add(user);
 		    } catch (LibException e) {
-			    if (Constants.DEBUG) Log.e(TAG, "Task", e);
+			    if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			    resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 			    this.publishProgress(user);
 		    }

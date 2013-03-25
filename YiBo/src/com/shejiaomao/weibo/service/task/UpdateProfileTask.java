@@ -11,12 +11,12 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.entity.User;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.ProfileEditActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 
 public class UpdateProfileTask extends AsyncTask<Void, Void, User> {
@@ -72,7 +72,7 @@ public class UpdateProfileTask extends AsyncTask<Void, Void, User> {
 			 }
 	         user = microBlog.updateProfile(screenName, null, null, null, description);
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(TAG, "Task", e);
+			if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		}
 

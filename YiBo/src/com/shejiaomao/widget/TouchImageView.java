@@ -7,7 +7,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 
-import com.shejiaomao.weibo.common.Constants;
+import com.cattong.commons.Logger;
 
 public class TouchImageView extends ImageViewTouchBase {
     private static final String TAG = TouchImageView.class.getSimpleName();
@@ -47,7 +47,7 @@ public class TouchImageView extends ImageViewTouchBase {
 
 	@Override
     public boolean onTouchEvent(MotionEvent event) {
-    	if (Constants.DEBUG) {
+    	if (Logger.isDebug()) {
             Log.d(TAG, "onTouchEvent……");
             dumpEvent(event);
         }
@@ -143,7 +143,7 @@ public class TouchImageView extends ImageViewTouchBase {
              mScaleFactor *= detector.getScaleFactor();
              // Don't let the object get too small or too large.
              mScaleFactor = Math.max(1.0F, Math.min(mScaleFactor, maxZoom()));
-             if (Constants.DEBUG) {
+             if (Logger.isDebug()) {
             	 Log.d(TAG, "Zoom To : " + mScaleFactor);
              }
              zoomTo(mScaleFactor);

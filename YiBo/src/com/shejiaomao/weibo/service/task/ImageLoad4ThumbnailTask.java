@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.StringUtil;
 import com.shejiaomao.common.ImageUtil;
 import com.shejiaomao.common.NetType;
@@ -120,7 +121,7 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
 			bigImageUrl = StatusUtil.getBigImageUrl(status);
 		}
 
-		if(Constants.DEBUG) Log.d(TAG, "Get thumbnail image from remote!");
+		if(Logger.isDebug()) Log.d(TAG, "Get thumbnail image from remote!");
 		try {
 			byte[] imageData = ImageUtil.getByteArrayByUrl(orignUrl);
 			bitmap = ImageUtil.decodeByteArray(imageData);
@@ -159,7 +160,7 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
 			imageCache.put(cachedImageKey, cachedImage);
 			
 		} catch (LibException e) {
-			if(Constants.DEBUG) Log.e(TAG, e.getMessage(), e);
+			if(Logger.isDebug()) Log.e(TAG, e.getMessage(), e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), imageView.getContext());
 		}
 
@@ -173,10 +174,10 @@ public class ImageLoad4ThumbnailTask extends AsyncTask<com.cattong.entity.Status
 		if (result != null) {
 			imageView.setVisibility(View.VISIBLE);
 			imageView.setImageBitmap(bitmap);			
-			if (Constants.DEBUG) Log.v(TAG, "update imageview");
+			if (Logger.isDebug()) Log.v(TAG, "update imageview");
 		} else {
 			imageView.setVisibility(View.GONE);
-			if (Constants.DEBUG && resultMsg != null) {
+			if (Logger.isDebug() && resultMsg != null) {
 				Toast.makeText(imageView.getContext(),
 					resultMsg, Toast.LENGTH_SHORT).show();
 			}

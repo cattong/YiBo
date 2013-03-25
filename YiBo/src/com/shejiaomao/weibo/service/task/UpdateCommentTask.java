@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.Comment;
 import com.cattong.weibo.Weibo;
@@ -81,7 +82,7 @@ public class UpdateCommentTask extends AsyncTask<Void, Void, Comment> {
 				newComment = microBlog.createComment(text, statusId, commentId);
 			}
 		} catch(LibException e) {
-			if (Constants.DEBUG) Log.e(TAG, "Task", e);
+			if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		}
 

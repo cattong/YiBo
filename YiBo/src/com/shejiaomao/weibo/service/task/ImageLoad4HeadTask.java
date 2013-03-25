@@ -6,12 +6,12 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.StringUtil;
 import com.shejiaomao.common.ImageUtil;
 import com.shejiaomao.common.NetType;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.CacheManager;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalResource;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.service.cache.ImageCache;
@@ -76,7 +76,7 @@ public class ImageLoad4HeadTask extends AsyncTask<Void, Void, Bitmap> {
 			return bitmap;
 		}
 
-		if(Constants.DEBUG) Log.i(LOG_TAG, "Get Header image from remote!");
+		if(Logger.isDebug()) Log.i(LOG_TAG, "Get Header image from remote!");
 		try {
 			Bitmap newBitmap = ImageUtil.getBitmapByUrl(url);
 
@@ -111,7 +111,7 @@ public class ImageLoad4HeadTask extends AsyncTask<Void, Void, Bitmap> {
 				}
 			}
 		} catch (LibException e) {
-			if(Constants.DEBUG) Log.e(LOG_TAG, e.getMessage(), e);
+			if(Logger.isDebug()) Log.e(LOG_TAG, e.getMessage(), e);
 		}
 
 		return bitmap;
@@ -123,7 +123,7 @@ public class ImageLoad4HeadTask extends AsyncTask<Void, Void, Bitmap> {
 
 		if (result != null) {
 		    imageView.setImageBitmap(result);
-			if(Constants.DEBUG) Log.v(LOG_TAG, "update imageview");
+			if(Logger.isDebug()) Log.v(LOG_TAG, "update imageview");
 		}
 	}
 

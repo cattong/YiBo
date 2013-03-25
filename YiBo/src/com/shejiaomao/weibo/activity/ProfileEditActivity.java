@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Date;
 
+import net.dev123.yibo.R;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -22,13 +23,13 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.DateTimeUtil;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.User;
 import com.shejiaomao.common.CompatibilityUtil;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.FileModifiedTimeComparator;
@@ -376,7 +377,7 @@ public class ProfileEditActivity extends BaseActivity {
 			outState.putString(Constants.PREFS_KEY_IMAGE_PATH, imagePath);
 		}
 
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onSaveInstanceState……");
 		}
 	}
@@ -386,13 +387,13 @@ public class ProfileEditActivity extends BaseActivity {
 			return;
 		}
 
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "restoreFromInstanceState……");
 		}
 
 		if (savedInstanceState.containsKey(Constants.PREFS_KEY_CURRENT_ACCOUNT)) {
 			long accountId = savedInstanceState.getLong(Constants.PREFS_KEY_CURRENT_ACCOUNT);
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.v(TAG, "Restore AccountId : " + accountId);
 			}
 			LocalAccount currentAccount = GlobalVars.getAccount(accountId);

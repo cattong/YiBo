@@ -3,18 +3,18 @@ package com.shejiaomao.weibo.db;
 import java.util.Date;
 import java.util.List;
 
-import com.shejiaomao.weibo.common.Constants;
-
-import com.cattong.commons.ServiceProvider;
-import com.cattong.commons.util.ListUtil;
-import com.cattong.commons.util.StringUtil;
-import com.cattong.entity.BaseUser;
-import com.cattong.entity.Gender;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+
+import com.cattong.commons.Logger;
+import com.cattong.commons.ServiceProvider;
+import com.cattong.commons.util.ListUtil;
+import com.cattong.commons.util.StringUtil;
+import com.cattong.entity.BaseUser;
+import com.cattong.entity.Gender;
 
 public class UserDao extends BaseDao<BaseUser> {
 	private static final String TABLE = "User";
@@ -51,7 +51,7 @@ public class UserDao extends BaseDao<BaseUser> {
 		if (isNull(user)) {
 			return;
 		}
-		if(Constants.DEBUG){
+		if(Logger.isDebug()){
 			Log.d("Save User:", user.toString());
 		}
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 import com.umeng.analytics.MobclickAgent;
@@ -31,7 +32,7 @@ public class SplashActivity extends Activity {
 		MobclickAgent.onError(this);
 		MobclickAgent.updateOnlineConfig(this);
 
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onCreate……");
 		}
 		//意外退出时，重启，清除通知;
@@ -46,7 +47,7 @@ public class SplashActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onResume……");
 		}
 		MobclickAgent.onResume(this);
@@ -56,7 +57,7 @@ public class SplashActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onPause……");
 		}
 		MobclickAgent.onPause(this);
@@ -65,7 +66,7 @@ public class SplashActivity extends Activity {
 	@Override
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onNewIntent……");
 		}
 		Intent startIntent = new Intent(this, HomePageActivity.class);
@@ -74,7 +75,7 @@ public class SplashActivity extends Activity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onActivityResult……");
 		}
 
@@ -88,7 +89,7 @@ public class SplashActivity extends Activity {
 	@Override
 	protected void onStop() {
 		super.onStop();
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onStop……");
 		}
 	}
@@ -96,7 +97,7 @@ public class SplashActivity extends Activity {
 	@Override
 	protected void onStart() {
 		super.onStop();
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onStart……");
 		}
 	}
@@ -104,7 +105,7 @@ public class SplashActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.v(TAG, "onDestroy……");
 		}
 	}

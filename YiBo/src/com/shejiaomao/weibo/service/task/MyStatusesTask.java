@@ -7,12 +7,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.entity.User;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.activity.MyStatusesActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.service.adapter.MyStatusesListAdapter;
 
@@ -53,7 +53,7 @@ public class MyStatusesTask extends AsyncTask<Void, Void, List<com.cattong.entit
 			try {
 				listStatus = microBlog.getUserTimeline(user.getUserId(), paging);
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, "Task", e);
+				if (Logger.isDebug()) Log.e(TAG, "Task", e);
 				message = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 				paging.moveToPrevious();
 			}

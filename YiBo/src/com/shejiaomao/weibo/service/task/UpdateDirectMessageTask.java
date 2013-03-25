@@ -14,13 +14,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.weibo.Weibo;
 import com.cattong.weibo.entity.DirectMessage;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.activity.ConversationActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.LocalAccount;
 
@@ -75,7 +75,7 @@ public class UpdateDirectMessageTask extends AsyncTask<List<String>, Integer, In
     		    newMessage = microBlog.sendDirectMessage(identifyName, text);
         	}
 		}  catch (LibException e) {
-			if (Constants.DEBUG)
+			if (Logger.isDebug())
 				Log.e(LOG, "Task", e);
 			
 			if (StringUtil.isEmpty(resultMsg)) {

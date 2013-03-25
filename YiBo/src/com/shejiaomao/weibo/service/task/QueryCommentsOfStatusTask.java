@@ -9,13 +9,13 @@ import android.widget.Toast;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.Comment;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.activity.MicroBlogActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.service.adapter.CommentsOfStatusListAdapter;
 
@@ -67,7 +67,7 @@ public class QueryCommentsOfStatusTask extends AsyncTask<Void, Void, List<Commen
 					}
 				}
 			} catch (LibException e) {
-				if(Constants.DEBUG) Log.e(TAG, TAG, e);
+				if(Logger.isDebug()) Log.e(TAG, TAG, e);
 				if (e.getErrorCode() != LibResultCode.API_UNSUPPORTED) {
 				    resultMsg = ResourceBook.getResultCodeValue(
 				    	e.getErrorCode(), context);

@@ -5,13 +5,13 @@ import java.io.File;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.FileUtil;
 import com.cattong.entity.StatusUpdate;
 import com.shejiaomao.common.ImageQuality;
 import com.shejiaomao.common.ImageUtil;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.EditMicroBlogActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.service.cache.ImageCache;
 
@@ -68,7 +68,7 @@ public abstract class AbstractUpdateStatusTask<Params, Progress, Result> extends
 		} else {
 			imageSize = ImageQuality.Low.getSize();
 		}
-		if(Constants.DEBUG) {
+		if(Logger.isDebug()) {
 			Log.d(TAG, "prefix size: " + imageSize);
 		}
 
@@ -82,12 +82,12 @@ public abstract class AbstractUpdateStatusTask<Params, Progress, Result> extends
 	        statusUpdate.setImage(image);
 	    }
 	    
-	    if (Constants.DEBUG) {
+	    if (Logger.isDebug()) {
 	    	Log.d(TAG, isCompress + " scale upload file, size: " + imageSize);
 	    }
 		
 
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.d(TAG, "image file: " + image.getAbsolutePath());
 		}
 		return isCompress;

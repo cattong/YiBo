@@ -1,11 +1,11 @@
 package com.shejiaomao.weibo.db;
 
+import net.dev123.yibo.R;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import net.dev123.yibo.R;
-import com.shejiaomao.weibo.common.Constants;
+import com.cattong.commons.Logger;
 import com.shejiaomao.widget.SQLiteOpenHelper;
 
 /**
@@ -57,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
 	private void execSQLs(SQLiteDatabase sqLiteDatabase, String[] sqls) {
 		if (sqls != null && sqls.length > 0) {
 			for (int i = 0; i < sqls.length; i++) {
-				if (Constants.DEBUG) {
+				if (Logger.isDebug()) {
 					Log.d("EXECSQL", sqls[i]);
 				}
 				sqLiteDatabase.execSQL(sqls[i]);

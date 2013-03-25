@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.Relationship;
 import com.cattong.entity.User;
@@ -19,7 +20,6 @@ import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.ProfileActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;
 import com.shejiaomao.weibo.service.listener.ProfileFollowClickListener;
@@ -91,7 +91,7 @@ public class RelationshipActionTask extends AsyncTask<Void, Void, Boolean> {
 			}
 			isSuccess = true;
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(LOG, "Task", e);
+			if (Logger.isDebug()) Log.e(LOG, "Task", e);
 			resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		}
 		

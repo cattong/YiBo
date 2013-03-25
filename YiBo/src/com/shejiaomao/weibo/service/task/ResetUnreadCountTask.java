@@ -6,9 +6,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.weibo.Weibo;
 import com.cattong.weibo.entity.UnreadType;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.LocalAccount;
 
@@ -34,7 +34,7 @@ public class ResetUnreadCountTask extends AsyncTask<Void, Void, Boolean> {
 		try {
 			isSuccess = microBlog.resetUnreadCount(type);
 		} catch (LibException e) {
-			if (Constants.DEBUG) e.printStackTrace();
+			if (Logger.isDebug()) e.printStackTrace();
 		}
 		
 		return isSuccess;
@@ -45,9 +45,9 @@ public class ResetUnreadCountTask extends AsyncTask<Void, Void, Boolean> {
 		super.onPostExecute(result);
 		
 		if (result) {
-			if (Constants.DEBUG) Toast.makeText(context, "reset remind successfully!", Toast.LENGTH_SHORT).show();
+			if (Logger.isDebug()) Toast.makeText(context, "reset remind successfully!", Toast.LENGTH_SHORT).show();
 		}
-		if(Constants.DEBUG) Log.v(TAG, "reset " + type + " remind count!" + result);
+		if(Logger.isDebug()) Log.v(TAG, "reset " + type + " remind count!" + result);
 	}
 
 	

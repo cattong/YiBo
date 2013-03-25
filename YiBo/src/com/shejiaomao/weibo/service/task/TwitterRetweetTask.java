@@ -10,10 +10,10 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 
 public class TwitterRetweetTask extends AsyncTask<Void, Void, com.cattong.entity.Status> {
@@ -60,7 +60,7 @@ public class TwitterRetweetTask extends AsyncTask<Void, Void, com.cattong.entity
 			}
 			newStatus = microBlog.retweetStatus(originalStatusId, null, false);
 		} catch (LibException e) {
-			if (Constants.DEBUG) Log.e(TAG, e.getMessage(), e);
+			if (Logger.isDebug()) Log.e(TAG, e.getMessage(), e);
 			errorMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		}
 
@@ -69,11 +69,10 @@ public class TwitterRetweetTask extends AsyncTask<Void, Void, com.cattong.entity
 
 	@Override
 	protected void onPostExecute(com.cattong.entity.Status resultStatus) {
-		if (dialog != null &&
-			dialog.isShowing() &&
-			dialog.getWindow() != null
-		) {
+		if (dialog != null) {
+			try {
 			dialog.dismiss();
+			} catch(Exception e) {}
 		}
 
 		if (resultStatus != null && errorMsg == null) {

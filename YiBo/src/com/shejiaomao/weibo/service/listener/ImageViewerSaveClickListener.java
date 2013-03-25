@@ -8,8 +8,7 @@ import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.cattong.commons.util.FileUtil;
-import com.cattong.commons.util.StringUtil;
+import net.dev123.yibo.R;
 import android.content.Context;
 import android.media.MediaScannerConnection;
 import android.media.MediaScannerConnection.MediaScannerConnectionClient;
@@ -21,7 +20,9 @@ import android.view.View.OnClickListener;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
-import net.dev123.yibo.R;
+import com.cattong.commons.Logger;
+import com.cattong.commons.util.FileUtil;
+import com.cattong.commons.util.StringUtil;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 
@@ -87,7 +88,7 @@ public class ImageViewerSaveClickListener implements OnClickListener {
 			inputChannel.transferTo(0, inputChannel.size(), outputChannel);
 			isSuccess = true;
 		} catch (IOException e) {
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.e(TAG, e.getMessage(), e);
 			}
 
@@ -101,7 +102,7 @@ public class ImageViewerSaveClickListener implements OnClickListener {
 					outputChannel.close();
 				}
 			} catch (IOException e) {
-				if (Constants.DEBUG) {
+				if (Logger.isDebug()) {
 					Log.e(TAG, e.getMessage(), e);
 				}
 			}

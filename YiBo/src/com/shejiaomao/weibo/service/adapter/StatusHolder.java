@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.ServiceProvider;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalResource;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.common.theme.Theme;
@@ -131,7 +131,7 @@ public class StatusHolder {
     		tvText.setText("");
     		if (tvText.getTextSize() != GlobalVars.FONT_SIZE_HOME_BLOG) {
     		    tvText.setTextSize(GlobalVars.FONT_SIZE_HOME_BLOG);
-    		    if (Constants.DEBUG) Log.d(TAG, "tweet FontSize: " + GlobalVars.FONT_SIZE_HOME_BLOG);
+    		    if (Logger.isDebug()) Log.d(TAG, "tweet FontSize: " + GlobalVars.FONT_SIZE_HOME_BLOG);
     	    }
     	}
     	if (llRetweet != null) {
@@ -142,7 +142,7 @@ public class StatusHolder {
     		tvRetweetText.setText("");
     		if (tvRetweetText.getTextSize() != GlobalVars.FONT_SIZE_HOME_RETWEET) {
     		    tvRetweetText.setTextSize(GlobalVars.FONT_SIZE_HOME_RETWEET);
-    		    if (Constants.DEBUG) Log.d(TAG, "retweet FontSize: " + GlobalVars.FONT_SIZE_HOME_RETWEET);
+    		    if (Logger.isDebug()) Log.d(TAG, "retweet FontSize: " + GlobalVars.FONT_SIZE_HOME_RETWEET);
     		}
     	}
     	if (ivThumbnail != null) {
@@ -188,6 +188,6 @@ public class StatusHolder {
     	thumbnailTask = null;
     	responseCountTask = null;
 
-    	if (Constants.DEBUG) Log.d(TAG, "status convertView recycle");
+    	if (Logger.isDebug()) Log.d(TAG, "status convertView recycle");
     }
 }

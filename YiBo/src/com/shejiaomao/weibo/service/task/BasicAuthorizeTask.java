@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.ServiceProvider;
 import com.cattong.commons.http.auth.Authorization;
 import com.cattong.entity.Account;
@@ -99,10 +100,10 @@ public class BasicAuthorizeTask extends AsyncTask<Void, Void, Boolean> {
 			isSuccess = true;
 		} catch (LibException e) {
             message = ResourceBook.getResultCodeValue(e, context);
-			if(Constants.DEBUG) Log.d(TAG, e.getMessage(),e);
+			if(Logger.isDebug()) Log.d(TAG, e.getMessage(),e);
 		} catch(SheJiaoMaoException e) {
 			message = ResourceBook.getResultCodeValue(e.getStatusCode(), context);
-			if(Constants.DEBUG) Log.d(TAG, e.getMessage(),e);
+			if(Logger.isDebug()) Log.d(TAG, e.getMessage(),e);
 		}
 
         return isSuccess;

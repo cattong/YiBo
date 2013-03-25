@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.weibo.Weibo;
@@ -94,7 +95,7 @@ public class MyHomePageUpTask extends AsyncTask<Void, Void, Boolean> {
 				List<com.cattong.entity.Status> statuses = microBlog.getHomeTimeline(paging);
 				listStatus.addAll(statuses);
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, e.getMessage(), e);
+				if (Logger.isDebug()) Log.e(TAG, e.getMessage(), e);
 				resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 			}
 		}

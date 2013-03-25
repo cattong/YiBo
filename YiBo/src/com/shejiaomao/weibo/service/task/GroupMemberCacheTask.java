@@ -7,12 +7,12 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.BaseUser;
 import com.cattong.entity.User;
 import com.cattong.weibo.Weibo;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.db.LocalGroup;
@@ -52,7 +52,7 @@ public class GroupMemberCacheTask extends AsyncTask<Void, List<? extends BaseUse
 			try {
 				userList = microBlog.getGroupMembers(group.getSpGroupId(), paging);
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, "Task", e);
+				if (Logger.isDebug()) Log.e(TAG, "Task", e);
 			}
 			if (ListUtil.isNotEmpty(userList)) {
 				cacheCount += userList.size();

@@ -9,6 +9,7 @@ import android.hardware.SensorManager;
 import android.os.Vibrator;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 
@@ -88,7 +89,7 @@ public class ShakeUpdateListener {
             	&& lastDiffY < 0 
             	&& tempDiffX > SHAKE_UPDATE_ACCELERATION_X 
             	&& tempDiffY > SHAKE_UPDATE_ACCELERATION_Y) {
-            	if (Constants.DEBUG) Log.v(TAG, "vibrateToUpdate: x->" + x + ", y->" + y + ", z->" + z);
+            	if (Logger.isDebug()) Log.v(TAG, "vibrateToUpdate: x->" + x + ", y->" + y + ", z->" + z);
             	vibrateToUpdate();
             }
             

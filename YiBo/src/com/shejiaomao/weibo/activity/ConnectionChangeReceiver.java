@@ -5,11 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.shejiaomao.common.NetType;
 import com.shejiaomao.common.NetUtil;
 import com.shejiaomao.common.NetUtil.NetworkOperator;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 
 public class ConnectionChangeReceiver extends BroadcastReceiver {
@@ -38,7 +38,7 @@ public class ConnectionChangeReceiver extends BroadcastReceiver {
 			NetUtil.updateNetworkConfig(context);
 		}
 
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.d(TAG, "Network switch to " + type);
 		}
 	}

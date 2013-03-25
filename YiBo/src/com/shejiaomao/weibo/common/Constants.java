@@ -10,7 +10,7 @@ import android.net.Uri;
 public final class Constants {
 	private Constants() { }
 
-	public static final boolean DEBUG  = true;   // 调试模式
+	//public static final boolean DEBUG  = false;   // 调试模式
 
     //应用特有配置:intent-filter action名
 	public static final String ACTION_WEIBO_MAIN = "com.shejiaomao.weibo.MAIN";

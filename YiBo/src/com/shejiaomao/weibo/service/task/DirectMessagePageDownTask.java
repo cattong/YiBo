@@ -9,13 +9,13 @@ import android.widget.Toast;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.weibo.Weibo;
 import com.cattong.weibo.entity.DirectMessage;
 import com.shejiaomao.common.NetType;
 import com.shejiaomao.common.ResourceBook;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.db.LocalDirectMessage;
@@ -83,7 +83,7 @@ public class DirectMessagePageDownTask extends AsyncTask<DirectMessage, Void, Bo
 				messageList = microBlog.getOutboxDirectMessages(paging);
 				//}
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, "Task", e);
+				if (Logger.isDebug()) Log.e(TAG, "Task", e);
 				resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), adapter.getContext());
 				paging.moveToPrevious();
 			}

@@ -11,9 +11,9 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.SettingActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.db.DBHelper;
 
 public class CacheCleanTask extends AsyncTask<Void, Integer, Boolean> {
@@ -74,7 +74,7 @@ public class CacheCleanTask extends AsyncTask<Void, Integer, Boolean> {
 		try {
 			sqLiteDatabase.beginTransaction();
 			for (int i = 0; i < dataCleanSQL.length; i++) {
-				if (Constants.DEBUG) {
+				if (Logger.isDebug()) {
 					Log.d("EXECSQL", dataCleanSQL[i]);
 				}
 				sqLiteDatabase.execSQL(dataCleanSQL[i]);

@@ -8,8 +8,8 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.shejiaomao.common.MemoryManager;
-import com.shejiaomao.weibo.common.Constants;
 
 public class GifDecoder extends Thread {
     private static final String TAG = "GifDecoder";
@@ -275,7 +275,7 @@ public class GifDecoder extends Thread {
 				isMove = true;
 			}
 
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				int frameIndex = currentFrame.frameIndex;
 				int delay = currentFrame.delay;
 				Log.d(TAG, "display currentFrame index->" + frameIndex + " delay->" + delay);
@@ -321,7 +321,7 @@ public class GifDecoder extends Thread {
 			    gifStream.close();
 			}
 		} catch (Exception e) {
-		    if (Constants.DEBUG) Log.d(TAG, TAG, e);
+		    if (Logger.isDebug()) Log.d(TAG, TAG, e);
 		}
 
 		return status;
@@ -621,7 +621,7 @@ public class GifDecoder extends Thread {
 		GifFrame newFrame = null;
 
 		long frameHeapSize = width * height * 1; //只存储像素索引
-		if (Constants.DEBUG) MemoryManager.trace();
+		if (Logger.isDebug()) MemoryManager.trace();
 		if (frameHeapSize * (frameCount + 1) > MAX_HEAP_SIZE) {
 			return newFrame;
 		}
@@ -684,7 +684,7 @@ public class GifDecoder extends Thread {
 		default: break;
 		}
 
-        if (Constants.DEBUG) Log.d(TAG, "graphic control disposal:" + gcExt.disposal);
+        if (Logger.isDebug()) Log.d(TAG, "graphic control disposal:" + gcExt.disposal);
 		int tempColor = 0;
 		if (gcExt.transparentColorFlag) {
 			tempColor = imgData.colorTable[gcExt.transparentColorIndex];

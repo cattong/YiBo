@@ -7,10 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.ListUtil;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.CacheManager;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.service.cache.AdapterCollectionCache;
 import com.shejiaomao.weibo.service.cache.Cache;
@@ -42,7 +42,7 @@ public class AutoUpdateReceiver extends BroadcastReceiver {
 			    remindCountTask.execute();
 			}
 		}
-		if(Constants.DEBUG) Log.v(TAG, "auto update receiver");
+		if(Logger.isDebug()) Log.v(TAG, "auto update receiver");
 	}
 
 }

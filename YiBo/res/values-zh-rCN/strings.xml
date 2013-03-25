@@ -381,7 +381,7 @@
     <string name="msg_comment_success">评论成功!</string>
     <string name="msg_comment_failed">评论失败，请重新发送!</string>
     <string name="msg_status_success">微博更新成功！</string>
-    <string name="hint_feedback_identify">#yibo客户端##%1$s##%2$s# \@%3$s</string>
+    <string name="hint_feedback_identify">#YiBo微博##%1$s##%2$s# \@%3$s</string>
     <string name="menu_recomment">回复评论</string>
     <string name="menu_personal_info">查看用户资料</string>
     <string name="hint_recomment">回复\@%1$s: </string>

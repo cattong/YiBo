@@ -1,5 +1,6 @@
 package com.shejiaomao.weibo.activity;
 
+import net.dev123.yibo.R;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,12 +10,13 @@ import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,14 +24,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.Passport;
 import com.cattong.entity.PointsLevel;
 import com.shejiaomao.common.CompatibilityUtil;
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;
@@ -298,7 +299,7 @@ public class AccountsActivity extends BaseActivity {
 					Toast.LENGTH_SHORT).show();
 				break;
 			}
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.d(TAG, "Set Account " + account + " as default");
 			}
 			try {
@@ -306,7 +307,7 @@ public class AccountsActivity extends BaseActivity {
 				Toast.makeText(context, R.string.msg_accounts_set_successful,
 					Toast.LENGTH_LONG).show();
 			} catch (Exception e) {
-				if (Constants.DEBUG) {
+				if (Logger.isDebug()) {
 					Log.e(TAG, e.getMessage(), e);
 				}
 				Toast.makeText(context, R.string.msg_accounts_set_failed,
@@ -316,7 +317,7 @@ public class AccountsActivity extends BaseActivity {
 			break;
 		case DELETE_MENU_ID:
 			//删除帐号被选中
-			if (Constants.DEBUG) Log.d(TAG, "Delete Account " + account);
+			if (Logger.isDebug()) Log.d(TAG, "Delete Account " + account);
 			new AlertDialog.Builder(context)
 			.setTitle(R.string.title_dialog_alert)
 			.setMessage(R.string.msg_accounts_delete_confirm)
@@ -355,7 +356,7 @@ public class AccountsActivity extends BaseActivity {
 				Toast.LENGTH_SHORT).show();
 			return;
 		}
-		if (Constants.DEBUG) {
+		if (Logger.isDebug()) {
 			Log.d(TAG, "Switch To Account " + account);
 		}
 		if (originCurrentAccount == null

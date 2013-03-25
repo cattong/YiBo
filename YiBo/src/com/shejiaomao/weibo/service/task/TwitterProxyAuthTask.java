@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.ServiceProvider;
 import com.cattong.entity.Account;
 import com.cattong.entity.User;
@@ -105,10 +106,10 @@ public class TwitterProxyAuthTask extends AsyncTask<Void, Void, JSONObject> {
 
 			succeeded = true;
 		} catch (LibException e) {
-			if(Constants.DEBUG) Log.d(TAG, e.getMessage(),e);
+			if(Logger.isDebug()) Log.d(TAG, e.getMessage(),e);
             message = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 		} catch (SheJiaoMaoException e) {
-			if(Constants.DEBUG) Log.d(TAG, e.getMessage(),e);
+			if(Logger.isDebug()) Log.d(TAG, e.getMessage(),e);
 			message = ResourceBook.getResultCodeValue(e.getStatusCode(), context);
 		}
 
@@ -117,7 +118,7 @@ public class TwitterProxyAuthTask extends AsyncTask<Void, Void, JSONObject> {
         	json.put("succeeded", succeeded);
         	json.put("message", message);
         } catch (JSONException e) {
-        	if(Constants.DEBUG) Log.d(TAG,e.getMessage(), e);
+        	if(Logger.isDebug()) Log.d(TAG,e.getMessage(), e);
         }
         return json;
     }
@@ -147,7 +148,7 @@ public class TwitterProxyAuthTask extends AsyncTask<Void, Void, JSONObject> {
     				context.finish();
                 }
             } catch (JSONException e) {
-                if(Constants.DEBUG) Log.d(TAG,e.getMessage(), e);
+                if(Logger.isDebug()) Log.d(TAG,e.getMessage(), e);
             }
         }
     }

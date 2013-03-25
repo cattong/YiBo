@@ -4,6 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
 
+import net.dev123.yibo.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,13 +22,13 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.ServiceProvider;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.commons.util.TimeSpanUtil;
 import com.cattong.entity.Status;
 import com.cattong.entity.User;
 import com.shejiaomao.common.ResourceBook;
-import net.dev123.yibo.R;
 import com.shejiaomao.weibo.activity.MyFavoritesActivity;
 import com.shejiaomao.weibo.activity.ProfileEditActivity;
 import com.shejiaomao.weibo.common.Constants;
@@ -124,7 +125,7 @@ public class ProfileChangeListener implements PropertyChangeListener {
 		View contentView = null;
 		if (refView != null) {
 			contentView = refView.get();
-			if (Constants.DEBUG && contentView == null) {
+			if (Logger.isDebug() && contentView == null) {
 				Log.v("AppChangeListener", "HomePage_App View recycle");
 			}
 		}
@@ -132,7 +133,7 @@ public class ProfileChangeListener implements PropertyChangeListener {
 			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			contentView = inflater.inflate(R.layout.home_page_content_profile, null);
 			refView = new WeakReference<View>(contentView);
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.v("AppChangeListener", "reclaim:" + this.getClass().getCanonicalName());
 			}
 		}

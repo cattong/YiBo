@@ -15,6 +15,8 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 
 import net.dev123.yibo.R;
+
+import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.common.Constants;
 
 public class Theme extends AbsTheme {
@@ -54,7 +56,7 @@ public class Theme extends AbsTheme {
 			int resId = res.getIdentifier(resName, "drawable", currentPackageName);
 			drawable= res.getDrawable(resId);
 		} catch (NotFoundException e) {
-			if (Constants.DEBUG) Log.e(TAG, e.getMessage(), e);
+			if (Logger.isDebug()) Log.e(TAG, e.getMessage(), e);
 		}
 		
 		return drawable;
@@ -73,7 +75,7 @@ public class Theme extends AbsTheme {
 			int resId = res.getIdentifier(resName, "color", currentPackageName);
 			drawable= res.getDrawable(resId);
 		} catch (NotFoundException e) {
-			if (Constants.DEBUG) Log.e(TAG, e.getMessage(), e);
+			if (Logger.isDebug()) Log.e(TAG, e.getMessage(), e);
 		}
 		
 		return drawable;
@@ -88,7 +90,7 @@ public class Theme extends AbsTheme {
 			int resId = res.getIdentifier(resName, "color", currentPackageName);
 			color = res.getColor(resId);
 		} catch (NotFoundException e) {
-			if (Constants.DEBUG) Log.e(TAG, e.getMessage(), e);
+			if (Logger.isDebug()) Log.e(TAG, e.getMessage(), e);
 		}
 		
 		return color;
@@ -112,7 +114,7 @@ public class Theme extends AbsTheme {
 			int resId = res.getIdentifier(resName, "color", currentPackageName);
 			colorStateList = res.getColorStateList(resId);
 		} catch (NotFoundException e) {
-			if (Constants.DEBUG) Log.e(TAG, e.getMessage(), e);
+			if (Logger.isDebug()) Log.e(TAG, e.getMessage(), e);
 		}
 		
 		return colorStateList;

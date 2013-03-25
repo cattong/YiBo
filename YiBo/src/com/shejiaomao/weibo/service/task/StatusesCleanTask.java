@@ -10,8 +10,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.StatusCatalog;
 import com.shejiaomao.weibo.db.DBHelper;
 
@@ -43,18 +43,18 @@ public class StatusesCleanTask extends AsyncTask<Void, Void, Boolean> {
 			time, StatusCatalog.Home.getCatalogId(), 
 			StatusCatalog.Others.getCatalogId(), time);
 
-		if (Constants.DEBUG) Log.d(TAG, sql);
+		if (Logger.isDebug()) Log.d(TAG, sql);
 		SQLiteDatabase sqLiteDatabase = DBHelper.getInstance(context).getWritableDatabase();
 		boolean success = false;
 		try {
 			long startTime = System.currentTimeMillis();
 			sqLiteDatabase.execSQL(sql);
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.v(TAG, "Statused Clean use time:" + (System.currentTimeMillis() - startTime));
 			}
 			success = true;
 		} catch (SQLException e) {
-			if (Constants.DEBUG) {
+			if (Logger.isDebug()) {
 				Log.d(TAG, e.getMessage(), e);
 			}
 		}

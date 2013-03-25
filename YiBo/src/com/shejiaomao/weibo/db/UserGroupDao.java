@@ -9,13 +9,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.commons.ServiceProvider;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.BaseUser;
 import com.cattong.weibo.entity.Group;
-import com.shejiaomao.weibo.common.Constants;
 
 public class UserGroupDao extends BaseDao<UserGroup> {
 	private static final String TABLE = "User_Group";
@@ -73,7 +73,7 @@ public class UserGroupDao extends BaseDao<UserGroup> {
 		if (isNull(userGroup)) {
 			return;
 		}
-		if(Constants.DEBUG){
+		if(Logger.isDebug()){
 			Log.d("Save UserGroup:", userGroup.toString());
 		}
 

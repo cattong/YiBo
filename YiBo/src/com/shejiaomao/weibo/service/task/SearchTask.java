@@ -8,12 +8,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.cattong.commons.LibException;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.weibo.Weibo;
 import com.shejiaomao.common.ResourceBook;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.SearchActivity;
-import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.service.adapter.StatusSearchResultAdapter;
 import com.shejiaomao.weibo.service.adapter.UserSearchResultAdapter;
@@ -70,7 +70,7 @@ public class SearchTask extends AsyncTask<Void, Void, List> {
 					searchResult = microBlog.searchUsers(keyword, paging);
 				}
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e("SearchTask", e.getMessage(), e);
+				if (Logger.isDebug()) Log.e("SearchTask", e.getMessage(), e);
 				message = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 			}
 		}

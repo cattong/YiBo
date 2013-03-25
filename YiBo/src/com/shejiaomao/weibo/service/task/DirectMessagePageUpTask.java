@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.cattong.commons.LibException;
 import com.cattong.commons.LibResultCode;
+import com.cattong.commons.Logger;
 import com.cattong.commons.Paging;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.commons.util.StringUtil;
@@ -133,7 +134,7 @@ public class DirectMessagePageUpTask extends AsyncTask<Void, Void, Boolean> {
 			try {
 			    inboxList = microBlog.getInboxDirectMessages(inboxPaging);
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, "Task", e);
+				if (Logger.isDebug()) Log.e(TAG, "Task", e);
 				resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 			}
 		}
@@ -143,7 +144,7 @@ public class DirectMessagePageUpTask extends AsyncTask<Void, Void, Boolean> {
 			try {
 				outboxList = microBlog.getOutboxDirectMessages(outboxPaging);
 			} catch (LibException e) {
-				if (Constants.DEBUG) Log.e(TAG, "Task", e);
+				if (Logger.isDebug()) Log.e(TAG, "Task", e);
 				resultMsg = ResourceBook.getResultCodeValue(e.getErrorCode(), context);
 			}
 		}
