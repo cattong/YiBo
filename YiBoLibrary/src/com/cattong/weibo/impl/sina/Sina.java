@@ -1332,7 +1332,7 @@ public class Sina extends Weibo {
 		HttpRequestWrapper httpRequestWrapper = new HttpRequestWrapper(HttpMethod.GET, url, auth);
 		httpRequestWrapper.addParameter("cursor", paging.getCursor());
 		String response = HttpRequestHelper.execute(httpRequestWrapper, responseHandler);
-		List<Group> userListList =  SinaGroupAdaptor.createPagableGroupList(response);
+		List<Group> userListList =  SinaGroupAdaptor.createGroupList(response);
 		updatePaging(userListList, paging);
 		return userListList;
 	}
