@@ -12,7 +12,7 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.Toast;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.MicroBlogActivity;
 
 public class MicroBlogStatusContextMenuListener implements

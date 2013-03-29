@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.cattong.commons.Paging;
 import com.cattong.commons.util.StringUtil;
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;

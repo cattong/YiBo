@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.EntityUtil;
 
 public class MicroBlogShareClickListener implements OnClickListener {

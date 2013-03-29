@@ -10,7 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.CacheManager;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.service.adapter.AdapterUtil;

@@ -34,7 +34,7 @@ import android.widget.Toast;
 
 import com.shejiaomao.common.ExifUtil;
 import com.shejiaomao.common.ImageUtil;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.widget.CropImageView;
 import com.shejiaomao.widget.HighlightView;
 

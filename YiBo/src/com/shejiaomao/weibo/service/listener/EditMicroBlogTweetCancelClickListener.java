@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.widget.TweetProgressDialog;
 
 public class EditMicroBlogTweetCancelClickListener implements OnClickListener {

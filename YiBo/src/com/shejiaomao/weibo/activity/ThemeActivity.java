@@ -9,7 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;
 import com.shejiaomao.weibo.db.LocalAccount;

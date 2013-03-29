@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.view.GestureDetector.OnGestureListener;
 
 import com.shejiaomao.common.CompatibilityUtil;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.AccountsActivity;
 import com.shejiaomao.weibo.common.Constants;
 

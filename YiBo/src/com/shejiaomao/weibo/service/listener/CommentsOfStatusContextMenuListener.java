@@ -3,7 +3,7 @@ package com.shejiaomao.weibo.service.listener;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

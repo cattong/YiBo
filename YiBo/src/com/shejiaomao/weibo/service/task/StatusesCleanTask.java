@@ -2,7 +2,7 @@ package com.shejiaomao.weibo.service.task;
 
 import java.util.Calendar;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.database.SQLException;

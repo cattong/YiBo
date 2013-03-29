@@ -17,7 +17,7 @@ import android.widget.BaseAdapter;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.EditMicroBlogActivity;
 import com.shejiaomao.weibo.common.EntityUtil;
 import com.shejiaomao.weibo.service.adapter.AdapterUtil;

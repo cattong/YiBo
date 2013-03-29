@@ -4,7 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.AdapterView.OnItemClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 
 public class ListChooseDialog {
 	private Context context;

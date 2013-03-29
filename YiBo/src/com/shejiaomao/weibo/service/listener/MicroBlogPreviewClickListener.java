@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.MicroBlogActivity;
 import com.shejiaomao.weibo.common.CacheManager;
 import com.shejiaomao.weibo.db.LocalAccount;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
  	android:installLocation="auto"
-	package="net.dev123.yibo"
-	android:versionName="Cat_2.4.2" 
-	android:versionCode="31416">
+	package="com.shejiaomao.maobo"
+	android:versionName="2.9.0" 
+	android:versionCode="29000">
 	<application 
 	    android:name="com.shejiaomao.weibo.SheJiaoMaoApplication"
 	    android:icon="@drawable/icon"

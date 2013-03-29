@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.AdapterView.OnItemClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 
 public class EditMicroBlogEmotionItemClickListener implements
 		OnItemClickListener {

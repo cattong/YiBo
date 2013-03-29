@@ -15,7 +15,7 @@ import android.widget.CheckBox;
 import android.widget.Filter;
 import android.widget.Filterable;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.common.SelectMode;
 import com.shejiaomao.weibo.db.LocalAccount;

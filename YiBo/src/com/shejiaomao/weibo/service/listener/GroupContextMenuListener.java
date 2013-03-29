@@ -15,7 +15,7 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.GroupMemberActivity;
 import com.shejiaomao.weibo.common.SelectMode;
 import com.shejiaomao.weibo.service.adapter.GroupListAdapter;

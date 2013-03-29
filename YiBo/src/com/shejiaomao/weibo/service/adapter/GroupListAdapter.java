@@ -9,7 +9,7 @@ import com.cattong.weibo.entity.Group;
 import android.view.View;
 import android.view.ViewGroup;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.GroupActivity;
 import com.shejiaomao.weibo.db.GroupDao;
 import com.shejiaomao.weibo.db.LocalAccount;

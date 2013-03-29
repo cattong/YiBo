@@ -17,7 +17,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.SelectMode;
 import com.shejiaomao.weibo.common.theme.Theme;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;

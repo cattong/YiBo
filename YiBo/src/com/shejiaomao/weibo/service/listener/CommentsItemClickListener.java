@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;

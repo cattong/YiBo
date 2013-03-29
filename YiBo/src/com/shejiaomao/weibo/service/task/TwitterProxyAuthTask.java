@@ -2,7 +2,7 @@ package com.shejiaomao.weibo.service.task;
 
 import java.util.Date;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

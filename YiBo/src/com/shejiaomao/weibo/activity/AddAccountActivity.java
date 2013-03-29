@@ -1,6 +1,6 @@
 package com.shejiaomao.weibo.activity;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;

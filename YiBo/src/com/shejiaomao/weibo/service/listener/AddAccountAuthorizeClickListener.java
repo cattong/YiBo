@@ -20,7 +20,7 @@ import com.cattong.commons.http.auth.OAuth2AuthorizeHelper;
 import com.cattong.commons.oauth.OAuth2.DisplayType;
 import com.cattong.commons.oauth.OAuth2.GrantType;
 import com.cattong.commons.oauth.config.OAuthConfig;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.AddAccountActivity;
 import com.shejiaomao.weibo.activity.AuthorizeActivity;
 import com.shejiaomao.weibo.common.Constants;

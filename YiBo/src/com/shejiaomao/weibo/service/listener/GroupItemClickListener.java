@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.AdapterView.OnItemClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.GroupActivity;
 import com.shejiaomao.weibo.activity.GroupMemberActivity;
 import com.shejiaomao.weibo.common.SelectMode;

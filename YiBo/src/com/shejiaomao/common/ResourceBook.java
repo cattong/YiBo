@@ -2,7 +2,7 @@ package com.shejiaomao.common;
 
 import java.util.Properties;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.Context;
 
 import com.cattong.commons.LibException;

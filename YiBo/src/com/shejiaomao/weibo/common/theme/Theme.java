@@ -14,7 +14,7 @@ import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 
 import com.cattong.commons.Logger;
 import com.shejiaomao.weibo.common.Constants;

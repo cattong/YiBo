@@ -5,7 +5,7 @@ import java.util.List;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.EditMicroBlogActivity;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.common.SelectMode;

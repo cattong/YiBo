@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

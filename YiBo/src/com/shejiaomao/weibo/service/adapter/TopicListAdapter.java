@@ -8,7 +8,7 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.db.LocalAccount;
 
 public class TopicListAdapter extends CacheAdapter<String> {   

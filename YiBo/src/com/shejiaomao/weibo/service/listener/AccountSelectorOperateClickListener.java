@@ -3,7 +3,7 @@ package com.shejiaomao.weibo.service.listener;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.EditMicroBlogActivity;
 import com.shejiaomao.weibo.widget.AccountSelectorWindow;
 

@@ -1,6 +1,6 @@
 package com.shejiaomao.weibo;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;

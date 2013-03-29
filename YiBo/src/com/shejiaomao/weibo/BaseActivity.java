@@ -20,7 +20,7 @@ import android.view.WindowManager;
 import android.widget.ListView;
 
 import com.shejiaomao.weibo.activity.ImageViewer4GifActivity;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.SplashActivity;
 import com.shejiaomao.weibo.common.CacheManager;
 import com.shejiaomao.weibo.common.GlobalVars;

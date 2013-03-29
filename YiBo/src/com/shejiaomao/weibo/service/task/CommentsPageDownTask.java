@@ -2,7 +2,7 @@ package com.shejiaomao.weibo.service.task;
 
 import java.util.List;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;

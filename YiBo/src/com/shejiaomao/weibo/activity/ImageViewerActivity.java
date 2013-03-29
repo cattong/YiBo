@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;

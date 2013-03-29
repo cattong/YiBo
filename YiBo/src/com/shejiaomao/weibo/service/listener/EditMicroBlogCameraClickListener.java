@@ -14,7 +14,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.EditMicroBlogActivity;
 import com.shejiaomao.weibo.activity.ProfileEditActivity;
 import com.shejiaomao.weibo.common.Constants;

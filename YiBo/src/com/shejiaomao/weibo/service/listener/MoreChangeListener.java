@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 import com.cattong.commons.ServiceProvider;
 import com.shejiaomao.common.CompatibilityUtil;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.activity.EditMicroBlogActivity;
 import com.shejiaomao.weibo.activity.GroupActivity;

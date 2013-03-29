@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 
 import com.shejiaomao.common.CompatibilityUtil;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 
 public class GoBackClickListener implements OnClickListener {
 	private int enterAnim = -1;

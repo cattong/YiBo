@@ -2,7 +2,7 @@ package com.shejiaomao.weibo.service.task;
 
 import java.io.File;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;

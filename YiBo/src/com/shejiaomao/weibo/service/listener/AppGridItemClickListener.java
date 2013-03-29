@@ -1,6 +1,6 @@
 package com.shejiaomao.weibo.service.listener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;

@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Date;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;

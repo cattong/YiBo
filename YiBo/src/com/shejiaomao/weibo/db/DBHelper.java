@@ -1,6 +1,6 @@
 package com.shejiaomao.weibo.db;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;

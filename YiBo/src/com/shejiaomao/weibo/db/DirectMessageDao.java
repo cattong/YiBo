@@ -3,7 +3,7 @@ package com.shejiaomao.weibo.db;
 import java.util.Date;
 import java.util.List;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.Resources;

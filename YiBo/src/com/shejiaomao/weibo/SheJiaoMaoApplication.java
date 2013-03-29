@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Locale;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.AlarmManager;
 import android.app.Application;
 import android.app.PendingIntent;

@@ -11,7 +11,7 @@ import com.cattong.entity.Status;
 import android.content.Context;
 import android.content.res.Resources;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.common.StatusCatalog;
 import com.shejiaomao.weibo.db.LocalAccount;

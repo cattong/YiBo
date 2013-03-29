@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;
 import com.shejiaomao.weibo.service.listener.GoBackClickListener;
 import com.shejiaomao.weibo.service.task.PassportLoginTask;

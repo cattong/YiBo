@@ -1,6 +1,6 @@
 package com.shejiaomao.weibo.service.adapter;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.ReentrantLock;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;

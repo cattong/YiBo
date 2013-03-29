@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.cattong.commons.ServiceProvider;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.AddAccountActivity;
 import com.shejiaomao.weibo.service.adapter.ConfigAppSpinnerAdapter;
 

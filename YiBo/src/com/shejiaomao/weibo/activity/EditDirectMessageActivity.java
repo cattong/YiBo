@@ -18,7 +18,7 @@ import com.cattong.commons.util.ListUtil;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.User;
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.SelectMode;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;

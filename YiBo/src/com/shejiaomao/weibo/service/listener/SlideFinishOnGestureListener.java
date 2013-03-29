@@ -9,7 +9,7 @@ import android.view.GestureDetector.OnGestureListener;
 import android.widget.Toast;
 
 import com.shejiaomao.common.CompatibilityUtil;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.ImageViewer4GifActivity;
 
 public class SlideFinishOnGestureListener implements OnGestureListener {

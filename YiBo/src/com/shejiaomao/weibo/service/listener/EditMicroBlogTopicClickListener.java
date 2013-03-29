@@ -6,7 +6,7 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.widget.EmotionViewController;
 
 public class EditMicroBlogTopicClickListener implements OnClickListener {

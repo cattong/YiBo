@@ -13,7 +13,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.EditDirectMessageActivity;
 import com.shejiaomao.weibo.activity.ProfileActivity;
 import com.shejiaomao.weibo.service.adapter.AdapterUtil;

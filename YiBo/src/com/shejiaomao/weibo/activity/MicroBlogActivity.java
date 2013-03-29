@@ -3,7 +3,7 @@ package com.shejiaomao.weibo.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.res.ColorStateList;

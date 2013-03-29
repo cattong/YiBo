@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.db.GroupDao;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.service.task.HomePageGroupTask;

@@ -13,7 +13,7 @@ import android.net.Uri;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.AutoUpdateService;
 import com.shejiaomao.weibo.common.CacheManager;
 import com.shejiaomao.weibo.common.GlobalVars;

@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 import com.cattong.commons.util.StringUtil;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 
 public class SearchCatalogProvider extends ContentProvider {
 	public static final int SEARCH_CATALOG_STATUS = 1;

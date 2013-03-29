@@ -11,7 +11,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.cattong.entity.Status;
 import com.shejiaomao.common.CompatibilityUtil;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.MicroBlogActivity;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.db.LocalStatus;

@@ -20,7 +20,7 @@ import com.cattong.commons.util.ListUtil;
 import com.cattong.entity.BaseUser;
 import com.cattong.weibo.entity.Group;
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.SelectMode;

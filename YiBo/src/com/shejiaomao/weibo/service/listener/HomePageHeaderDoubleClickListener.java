@@ -6,7 +6,7 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.service.adapter.CacheAdapter;
 import com.shejiaomao.weibo.service.cache.ReclaimLevel;
 

@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.shejiaomao.weibo.activity.GroupActivity;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.service.adapter.GroupListAdapter;
 import com.shejiaomao.weibo.service.adapter.SocialGraphListAdapter;
 import com.shejiaomao.weibo.service.task.GroupTask;

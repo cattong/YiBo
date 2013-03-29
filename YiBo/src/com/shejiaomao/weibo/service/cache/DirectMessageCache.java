@@ -14,7 +14,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.db.BaseDao;
 import com.shejiaomao.weibo.db.DirectMessageDao;
 import com.shejiaomao.weibo.db.LocalAccount;

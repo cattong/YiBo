@@ -7,7 +7,7 @@ import android.content.DialogInterface;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.service.task.DestroyStatusTask;
 
 public class MicroBlogDeleteClickListener implements OnClickListener {

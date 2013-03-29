@@ -25,7 +25,7 @@ import com.cattong.commons.oauth.OAuth2;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.commons.util.UrlUtil;
 import com.shejiaomao.weibo.BaseActivity;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.Constants;
 
 public class AuthorizeActivity extends BaseActivity {

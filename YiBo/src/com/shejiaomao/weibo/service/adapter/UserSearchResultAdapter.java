@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.User;
 import com.shejiaomao.common.ResourceBook;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.SearchActivity;
 import com.shejiaomao.weibo.service.task.ImageLoad4HeadTask;
 

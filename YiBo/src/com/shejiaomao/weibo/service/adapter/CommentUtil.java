@@ -3,7 +3,7 @@ package com.shejiaomao.weibo.service.adapter;
 import java.util.Date;
 import java.util.List;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.Context;
 import android.text.Spannable;
 import android.view.LayoutInflater;

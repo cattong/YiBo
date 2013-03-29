@@ -11,7 +11,7 @@ import com.cattong.entity.User;
 import android.content.Context;
 import android.content.res.Resources;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.db.DirectMessageDao;
 import com.shejiaomao.weibo.db.LocalAccount;
 import com.shejiaomao.weibo.db.LocalDirectMessage;

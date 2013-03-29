@@ -29,7 +29,7 @@ import android.text.style.ImageSpan;
 import android.util.Config;
 import android.util.Log;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 
 public class EmotionLoader {	

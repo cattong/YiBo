@@ -8,7 +8,7 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.theme.Theme;
 import com.shejiaomao.weibo.common.theme.ThemeEntry;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;

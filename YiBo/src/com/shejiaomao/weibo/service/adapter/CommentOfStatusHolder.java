@@ -1,6 +1,6 @@
 package com.shejiaomao.weibo.service.adapter;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;

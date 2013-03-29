@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.service.adapter.EmotionsGridAdapter;
 import com.shejiaomao.weibo.service.listener.EditMicroBlogEmotionItemClickListener;
 

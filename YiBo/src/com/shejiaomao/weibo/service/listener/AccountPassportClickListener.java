@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.shejiaomao.common.CompatibilityUtil;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.AccountsActivity;
 import com.shejiaomao.weibo.activity.PassportActivity;
 import com.shejiaomao.weibo.common.Constants;

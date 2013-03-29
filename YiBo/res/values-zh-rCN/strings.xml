@@ -8,9 +8,9 @@
 	<!-- title_: 标题类，用于界面的头部的标题、对话框标题，包括每个界面的醒目标题 -->
 
 	<!-- App string -->
-	<string name="app_name">YiBo微博</string>
-	<string name="app_image_viewer">YiBo图片浏览器</string>
-	<string name="copyright">Copyright © 2011–2012 S打包</string>
+	<string name="app_name">MaoBo微博</string>
+	<string name="app_image_viewer">MaoBo图片浏览器</string>
+	<string name="copyright">Copyright © 2011–2012 MaoBo studio 支持</string>
 
 	<string name="title_home_page">%1$s\@%1$s</string>
     <string name="title_accounts">帐号管理</string>

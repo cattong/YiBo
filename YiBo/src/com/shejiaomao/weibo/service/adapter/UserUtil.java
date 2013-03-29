@@ -8,7 +8,7 @@ import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.Relationship;
 import com.cattong.entity.User;
 import com.shejiaomao.common.ResourceBook;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.service.task.ImageLoad4HeadTask;
 import com.shejiaomao.weibo.service.task.RelationshipCheckTask;
 

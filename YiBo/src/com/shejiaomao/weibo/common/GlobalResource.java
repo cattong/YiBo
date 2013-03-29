@@ -5,7 +5,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.theme.Theme;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;
 

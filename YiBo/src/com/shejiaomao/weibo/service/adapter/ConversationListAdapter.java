@@ -15,7 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.common.EmotionLoader;
 import com.shejiaomao.weibo.common.GlobalVars;
 import com.shejiaomao.weibo.common.theme.ThemeUtil;

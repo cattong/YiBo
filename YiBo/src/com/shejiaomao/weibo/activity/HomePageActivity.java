@@ -2,7 +2,7 @@ package com.shejiaomao.weibo.activity;
 
 import java.util.List;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;

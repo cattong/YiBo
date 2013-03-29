@@ -15,7 +15,7 @@ import com.cattong.commons.ServiceProvider;
 import com.cattong.commons.util.ListUtil;
 import com.cattong.commons.util.StringUtil;
 import com.cattong.entity.StatusUpdate;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.EditMicroBlogActivity;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalVars;

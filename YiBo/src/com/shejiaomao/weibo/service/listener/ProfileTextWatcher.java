@@ -8,7 +8,7 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.ProfileEditActivity;
 
 public class ProfileTextWatcher implements TextWatcher {

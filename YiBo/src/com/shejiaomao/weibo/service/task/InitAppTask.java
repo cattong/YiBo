@@ -1,6 +1,6 @@
 package com.shejiaomao.weibo.service.task;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;

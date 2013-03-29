@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;

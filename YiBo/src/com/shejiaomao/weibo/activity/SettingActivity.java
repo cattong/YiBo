@@ -19,7 +19,7 @@ import android.widget.EditText;
 import com.cattong.commons.util.StringUtil;
 import com.shejiaomao.common.ImageQuality;
 import com.shejiaomao.common.NetUtil;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.SheJiaoMaoApplication;
 import com.shejiaomao.weibo.common.Constants;
 import com.shejiaomao.weibo.common.GlobalResource;

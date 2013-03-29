@@ -3,7 +3,7 @@ package com.shejiaomao.weibo.service.task;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;

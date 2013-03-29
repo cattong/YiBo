@@ -26,7 +26,7 @@ import com.cattong.entity.Status;
 import com.cattong.entity.User;
 import com.cattong.weibo.FeaturePatternUtils;
 import com.shejiaomao.common.ImageQuality;
-import net.dev123.yibo.R;
+import com.shejiaomao.maobo.R;
 import com.shejiaomao.weibo.activity.EditMicroBlogActivity;
 import com.shejiaomao.weibo.activity.EditRetweetActivity;
 import com.shejiaomao.weibo.common.Constants;
